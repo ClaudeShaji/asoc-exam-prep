@@ -40,7 +40,7 @@ fun ScreenScaffold(
     Column(Modifier.fillMaxSize().testTag("screen_$tag")) {
         TopAppBar(title = { Text(title) }, actions = actions, navigationIcon = navigationIcon)
         Column(
-            Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp),
+            Modifier.fillMaxSize().testTag("scroll_$tag").verticalScroll(rememberScrollState()).padding(horizontal = 16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
             content()

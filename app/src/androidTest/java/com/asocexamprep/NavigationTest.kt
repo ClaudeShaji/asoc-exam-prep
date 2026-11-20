@@ -2,7 +2,11 @@ package com.asocexamprep
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -50,5 +54,20 @@ class NavigationTest {
         rule.onNodeWithTag("open_reference").performClick()
         rule.onNodeWithTag("ref_tab_1").performClick()
         rule.onNodeWithText("QRL").assertIsDisplayed()
+    }
+
+    @Test fun gradeSwitchFiltersSyllabus() {
+        rule.onNodeWithTag("tab_study").performClick()
+        rule.onNodeWithTag("study_grade_RESTRICTED").performClick()
+        rule.waitUntil(5_000) { rule.onAllNodesWithTag("topic_g-space").fetchSemanticsNodes().isEmpty() }
+        rule.onNodeWithTag("study_grade_GENERAL").performClick()
+        rule.waitUntil(5_000) { rule.onAllNodesWithTag("topic_g-space").fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("scroll_study").performScrollToNode(hasTestTag("topic_g-space"))
+        rule.onNodeWithTag("topic_g-space").assertIsDisplayed()
+        rule.onNodeWithTag("tab_home").performClick()
+        rule.onNodeWithTag("home_grade_RESTRICTED").performClick()
+        rule.waitUntil(5_000) { rule.onAllNodesWithText("Exam · Restricted").fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("home_grade_GENERAL").performClick()
+        rule.waitUntil(5_000) { rule.onAllNodesWithText("Exam · General").fetchSemanticsNodes().isNotEmpty() }
     }
 }

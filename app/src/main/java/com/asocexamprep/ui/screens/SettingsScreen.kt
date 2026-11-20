@@ -13,10 +13,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.SegmentedButton
-import androidx.compose.material3.SegmentedButtonDefaults
 import androidx.compose.material3.SelectableDates
-import androidx.compose.material3.SingleChoiceSegmentedButtonRow
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -35,7 +32,6 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.asocexamprep.container
-import com.asocexamprep.data.settings.Grade
 import com.asocexamprep.data.settings.Settings
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -60,16 +56,7 @@ fun SettingsScreen(onBack: () -> Unit) {
         },
     ) {
         Section("Grade") {
-            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
-                Grade.entries.forEachIndexed { i, g ->
-                    SegmentedButton(
-                        selected = s.grade == g,
-                        onClick = { scope.launch { store.setGrade(g) } },
-                        shape = SegmentedButtonDefaults.itemShape(i, Grade.entries.size),
-                        modifier = Modifier.testTag("grade_${g.name}"),
-                    ) { Text(g.label) }
-                }
-            }
+            GradeSwitch()
         }
         Section("Exam date") {
             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {

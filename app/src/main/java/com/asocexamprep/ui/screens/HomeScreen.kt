@@ -40,6 +40,7 @@ fun HomeScreen(onSettings: () -> Unit) {
             }
         },
     ) {
+        GradeSwitch(tagPrefix = "home_grade")
         val left = daysUntil(settings.examDay, day)
         StatCard(
             label = "Exam · ${settings.grade.label}",

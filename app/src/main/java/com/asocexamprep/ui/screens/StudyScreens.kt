@@ -75,6 +75,7 @@ fun StudyScreen(onTopic: (String) -> Unit, onInfo: () -> Unit, onReference: () -
     val all = units.flatMap { it.topics }
 
     ScreenScaffold("Study", "study") {
+        GradeSwitch(tagPrefix = "study_grade")
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             ShortcutCard("Licence info", Icons.Outlined.Verified, Modifier.weight(1f).testTag("open_info"), onInfo)
             ShortcutCard("Reference", Icons.Outlined.TableChart, Modifier.weight(1f).testTag("open_reference"), onReference)
