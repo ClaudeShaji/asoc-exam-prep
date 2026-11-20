@@ -18,5 +18,7 @@ enum class Tab(val route: String, val label: String, val icon: ImageVector) {
 
 object Routes {
     const val SETTINGS = "settings"
-    val all: Set<String> = Tab.entries.map { it.route }.toSet() + SETTINGS
+    const val INFO = "info"
+    const val REFERENCE = "reference"
+    val all: Set<String> = Tab.entries.map { it.route }.toSet() + SETTINGS + INFO + REFERENCE
 }

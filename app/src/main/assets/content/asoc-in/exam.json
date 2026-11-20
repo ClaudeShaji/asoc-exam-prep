@@ -1,0 +1,19 @@
+{
+  "id": "asoc-in",
+  "title": "Amateur Station Operator Certificate (India)",
+  "authority": "Department of Telecommunications (WPC), Government of India",
+  "rulesNote": "Telecommunications (Amateur Services) Rules, 2024, rule 5(5): a minimum of 40% of the total marks is required. The published syllabus sets the stricter per-section and aggregate marks used here.",
+  "sections": [
+    { "id": "A", "title": "Radio Theory and Practice", "questions": 50,
+      "exemptionNote": "Graduates in engineering/science or engineering diploma holders who studied electronics or telecommunications are exempt from Section A." },
+    { "id": "B", "title": "Radio Regulations", "questions": 50 }
+  ],
+  "grades": [
+    { "id": "RESTRICTED", "title": "Restricted", "minutes": 60, "maxMarks": 100,
+      "minSectionPercent": 40, "minAggregatePercent": 50, "morse": null },
+    { "id": "GENERAL", "title": "General", "minutes": 120, "maxMarks": 100,
+      "minSectionPercent": 50, "minAggregatePercent": 60,
+      "morse": { "wpm": 8, "minutes": 5, "characters": 200, "maxErrors": 5,
+                 "errorFreeMinutePasses": true, "receive": true, "send": true } }
+  ]
+}

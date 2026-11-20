@@ -5,17 +5,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
-import androidx.compose.material.icons.outlined.AccountTree
 import androidx.compose.material.icons.outlined.Badge
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material.icons.outlined.Hearing
 import androidx.compose.material.icons.outlined.History
-import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Keyboard
-import androidx.compose.material.icons.outlined.PictureAsPdf
 import androidx.compose.material.icons.outlined.Repeat
 import androidx.compose.material.icons.outlined.School
-import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.runtime.Composable
@@ -27,14 +23,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.radioprep.container
 import com.radioprep.domain.currentStreak
-
-@Composable
-fun StudyScreen() = ScreenScaffold("Study", "study") {
-    PlannedRow(Icons.Outlined.AccountTree, "Syllabus", "M1")
-    PlannedRow(Icons.Outlined.Info, "Licence info", "M1")
-    PlannedRow(Icons.Outlined.PictureAsPdf, "PDF library", "M2")
-    PlannedRow(Icons.Outlined.Search, "Search", "M2")
-}
 
 @Composable
 fun MorseScreen() = ScreenScaffold("Morse", "morse") {

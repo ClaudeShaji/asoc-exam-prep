@@ -1,0 +1,89 @@
+{
+  "syllabusSource": "ASOC syllabus as reproduced in the NIAR Study Manual (2016, 2021). Section B references to the 1973/1978 rules now read as the Telecommunications (Amateur Services) Rules, 2024.",
+  "units": [
+    { "id": "A1", "section": "A", "title": "Electricity and magnetism", "topics": [
+      { "id": "a-atomic", "title": "Atoms, conductors and Ohm's law", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Elementary theory of electricity", "Conductors and insulators: properties, units of circuit elements, Ohm's law", "Kirchhoff's current and voltage laws: simple applications", "Power and energy: definition, units and simple applications"] },
+      { "id": "a-resistors", "title": "Resistors", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Passive devices: resistors", "Series and parallel resistance", "Specific resistance"] },
+      { "id": "a-capacitors", "title": "Capacitors", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Passive devices: capacitors", "Capacitance units, series and parallel combinations"] },
+      { "id": "a-magnetism", "title": "Magnetism", "grades": ["RESTRICTED","GENERAL"], "minutes": 15,
+        "syllabus": ["Permanent magnets and electromagnets: definition, properties and their use"] },
+      { "id": "a-inductors", "title": "Inductors", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Passive devices: inductors", "Definition of self and mutual inductance"] },
+      { "id": "a-transformers", "title": "Transformers", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Passive devices: transformers"] }
+    ] },
+    { "id": "A2", "section": "A", "title": "Alternating current", "topics": [
+      { "id": "a-ac", "title": "AC fundamentals and resonance", "grades": ["RESTRICTED","GENERAL"], "minutes": 40,
+        "syllabus": ["Sinusoidal quantities: peak, instantaneous, RMS and average values", "Phase, reactance, impedance, power factor", "Series and parallel circuits with R, L and C; resonance; coupled circuits"] }
+    ] },
+    { "id": "A3", "section": "A", "title": "Semiconductors and circuits", "topics": [
+      { "id": "a-semiconductors", "title": "Semiconductor devices", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Active devices: diodes and transistors", "Properties of semiconductor devices"] },
+      { "id": "a-rectifiers", "title": "Rectifiers and regulation", "grades": ["RESTRICTED","GENERAL"], "minutes": 30,
+        "syllabus": ["Rectifiers, voltage regulation and smoothing circuits"] },
+      { "id": "a-transistors", "title": "Transistors", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Transistor properties and configurations"] },
+      { "id": "a-amplifiers", "title": "Amplifiers", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Use of diodes and transistors to construct amplifiers"] },
+      { "id": "a-oscillators", "title": "Oscillators", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Oscillators and frequency changers", "Crystal oscillators and oscillator stability"] }
+    ] },
+    { "id": "A4", "section": "A", "title": "Receivers and transmitters", "topics": [
+      { "id": "a-modulation", "title": "Modulation and detection", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Detectors", "Modulation basics"] },
+      { "id": "a-receivers", "title": "Radio receivers", "grades": ["RESTRICTED","GENERAL"], "minutes": 35,
+        "syllabus": ["TRF and superheterodyne receivers", "CW reception", "Sensitivity, selectivity, fidelity, adjacent channel and image interference", "AVC, squelch and signal-to-noise ratio"] },
+      { "id": "a-transmitters", "title": "Transmitters", "grades": ["RESTRICTED","GENERAL"], "minutes": 20,
+        "syllabus": ["Low power transmitters", "Semiconductor based transmitter construction"] }
+    ] },
+    { "id": "A5", "section": "A", "title": "Propagation, aerials and measurement", "topics": [
+      { "id": "a-propagation", "title": "Radio wave propagation", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Electromagnetic spectrum", "Wavelength, frequency, frequency bands", "Ground, sky and space waves; skip distance, skip zone and fading"] },
+      { "id": "a-aerials", "title": "Aerials", "grades": ["RESTRICTED","GENERAL"], "minutes": 35,
+        "syllabus": ["Common types of transmitting and receiving aerials"] },
+      { "id": "a-frequency-measurement", "title": "Frequency measurement", "grades": ["RESTRICTED","GENERAL"], "minutes": 10,
+        "syllabus": ["Measurement of frequency and use of simple frequency meters"] }
+    ] },
+    { "id": "A6", "section": "A", "title": "General grade additions", "topics": [
+      { "id": "g-communication", "title": "Principles of communication", "grades": ["GENERAL"], "minutes": 25,
+        "syllabus": ["Analog and digital communication", "Need for modulation: amplitude, frequency and pulse modulation", "Demodulation"] },
+      { "id": "g-transformers", "title": "Transformer construction and losses", "grades": ["GENERAL"], "minutes": 15,
+        "syllabus": ["Construction of transformers", "Transformer losses", "Transformer as a matching device"] },
+      { "id": "g-semiconductors", "title": "Semiconductor conduction and biasing", "grades": ["GENERAL"], "minutes": 20,
+        "syllabus": ["Principles of conduction and construction", "Symbols and biasing methods"] },
+      { "id": "g-power-supplies", "title": "Power supplies", "grades": ["GENERAL"], "minutes": 15,
+        "syllabus": ["Half-wave and full-wave rectifiers", "Bridge rectifier, smoothing and regulating circuits"] },
+      { "id": "g-fax-tv", "title": "Facsimile and television", "grades": ["GENERAL"], "minutes": 10,
+        "syllabus": ["Transmission and reception of facsimile and television signals"] },
+      { "id": "g-ionosphere", "title": "Ionosphere and troposphere", "grades": ["GENERAL"], "minutes": 15,
+        "syllabus": ["Characteristics of ionosphere and troposphere", "Ionospheric layers", "Critical frequency; day and night frequencies"] },
+      { "id": "g-aerials", "title": "Radiation and band aerials", "grades": ["GENERAL"], "minutes": 15,
+        "syllabus": ["Principles of radiation", "Aerials for different bands, including microwave"] },
+      { "id": "g-space", "title": "Space communication", "grades": ["GENERAL"], "minutes": 15,
+        "syllabus": ["Communication via satellites"] }
+    ] },
+    { "id": "B1", "section": "B", "title": "Radio regulations", "topics": [
+      { "id": "b-licensing", "title": "Amateur service and the ASOC", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Telecommunications (Amateur Services) Rules, 2024", "Definition of amateur service and amateur station", "Grades, eligibility, validity, renewal, reciprocal licences"] },
+      { "id": "b-phonetics-codes", "title": "Phonetics, Q codes and abbreviations", "grades": ["RESTRICTED","GENERAL"], "minutes": 30,
+        "syllabus": ["Phonetic alphabet and figure code (RR Appendix 14)", "Q codes: QRA–QUM", "Abbreviations: AA, AB, AR, AS, C, CFM, CL, CQ, DE, K, NIL, OK, R, TU, VA, WA, WB"] },
+      { "id": "b-call-signs", "title": "Call signs and identification", "grades": ["RESTRICTED","GENERAL"], "minutes": 15,
+        "syllabus": ["Identification of stations (RR Article 19)", "Call sign series allocated to India (RR Appendix 42)", "Mobile, portable and ship-borne stations"] },
+      { "id": "b-operating", "title": "Operating procedure and interference", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["RST system", "Interference, measures against interference and tests (RR Article 15)", "Distress, urgency and safety signals (RR Articles 30–33)", "Amateur stations (RR Article 25)"] },
+      { "id": "b-emissions-bands", "title": "Emissions, bands and power", "grades": ["RESTRICTED","GENERAL"], "minutes": 25,
+        "syllabus": ["Designation of emissions (RR Appendix 1)", "Nomenclature of frequency and wavelength (RR Article 2)", "Frequency allocations for amateur services (RR Article 5)", "Authorised bands, power and emissions by grade"] },
+      { "id": "b-station-records", "title": "Station operation and records", "grades": ["RESTRICTED","GENERAL"], "minutes": 15,
+        "syllabus": ["Establishing contact, QSL cards", "Log book and equipment register", "Messages permitted and prohibited"] },
+      { "id": "b-time-frequency", "title": "Standard time and frequency", "grades": ["RESTRICTED","GENERAL"], "minutes": 10,
+        "syllabus": ["Standard frequency and time signal services of the world", "UTC and IST"] }
+    ] },
+    { "id": "M1", "section": "M", "title": "Morse code", "topics": [
+      { "id": "m-morse", "title": "Morse code", "grades": ["GENERAL"], "minutes": 20,
+        "syllabus": ["Morse reception at 8 WPM", "Morse sending at 8 WPM"] }
+    ] }
+  ]
+}

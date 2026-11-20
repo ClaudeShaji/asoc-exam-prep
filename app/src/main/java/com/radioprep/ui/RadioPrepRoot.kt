@@ -17,6 +17,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.radioprep.ui.screens.ExamScreen
 import com.radioprep.ui.screens.HomeScreen
+import com.radioprep.ui.screens.InfoListScreen
+import com.radioprep.ui.screens.InfoPageScreen
+import com.radioprep.ui.screens.ReferenceScreen
+import com.radioprep.ui.screens.TopicScreen
 import com.radioprep.ui.screens.MorseScreen
 import com.radioprep.ui.screens.ProgressScreen
 import com.radioprep.ui.screens.SettingsScreen
@@ -56,7 +60,17 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             modifier = Modifier.padding(padding),
         ) {
             composable(Tab.HOME.route) { HomeScreen(onSettings = { nav.navigate(Routes.SETTINGS) }) }
-            composable(Tab.STUDY.route) { StudyScreen() }
+            composable(Tab.STUDY.route) {
+                StudyScreen(
+                    onTopic = { nav.navigate("topic/$it") },
+                    onInfo = { nav.navigate(Routes.INFO) },
+                    onReference = { nav.navigate(Routes.REFERENCE) },
+                )
+            }
+            composable("topic/{id}") { TopicScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }) }
+            composable(Routes.INFO) { InfoListScreen(onPage = { id -> nav.navigate("info/$id") }, onBack = { nav.popBackStack() }) }
+            composable("info/{id}") { InfoPageScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }) }
+            composable(Routes.REFERENCE) { ReferenceScreen(onBack = { nav.popBackStack() }) }
             composable(Tab.MORSE.route) { MorseScreen() }
             composable(Tab.EXAM.route) { ExamScreen() }
             composable(Tab.PROGRESS.route) { ProgressScreen() }

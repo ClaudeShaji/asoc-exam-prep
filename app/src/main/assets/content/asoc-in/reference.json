@@ -1,0 +1,449 @@
+{
+ "phonetics": [
+  {
+   "char": "A",
+   "word": "Alfa"
+  },
+  {
+   "char": "B",
+   "word": "Bravo"
+  },
+  {
+   "char": "C",
+   "word": "Charlie"
+  },
+  {
+   "char": "D",
+   "word": "Delta"
+  },
+  {
+   "char": "E",
+   "word": "Echo"
+  },
+  {
+   "char": "F",
+   "word": "Foxtrot"
+  },
+  {
+   "char": "G",
+   "word": "Golf"
+  },
+  {
+   "char": "H",
+   "word": "Hotel"
+  },
+  {
+   "char": "I",
+   "word": "India"
+  },
+  {
+   "char": "J",
+   "word": "Juliett"
+  },
+  {
+   "char": "K",
+   "word": "Kilo"
+  },
+  {
+   "char": "L",
+   "word": "Lima"
+  },
+  {
+   "char": "M",
+   "word": "Mike"
+  },
+  {
+   "char": "N",
+   "word": "November"
+  },
+  {
+   "char": "O",
+   "word": "Oscar"
+  },
+  {
+   "char": "P",
+   "word": "Papa"
+  },
+  {
+   "char": "Q",
+   "word": "Quebec"
+  },
+  {
+   "char": "R",
+   "word": "Romeo"
+  },
+  {
+   "char": "S",
+   "word": "Sierra"
+  },
+  {
+   "char": "T",
+   "word": "Tango"
+  },
+  {
+   "char": "U",
+   "word": "Uniform"
+  },
+  {
+   "char": "V",
+   "word": "Victor"
+  },
+  {
+   "char": "W",
+   "word": "Whiskey"
+  },
+  {
+   "char": "X",
+   "word": "X-ray"
+  },
+  {
+   "char": "Y",
+   "word": "Yankee"
+  },
+  {
+   "char": "Z",
+   "word": "Zulu"
+  }
+ ],
+ "figures": [
+  {
+   "char": "0",
+   "word": "Nadazero"
+  },
+  {
+   "char": "1",
+   "word": "Unaone"
+  },
+  {
+   "char": "2",
+   "word": "Bissotwo"
+  },
+  {
+   "char": "3",
+   "word": "Terrathree"
+  },
+  {
+   "char": "4",
+   "word": "Kartefour"
+  },
+  {
+   "char": "5",
+   "word": "Pantafive"
+  },
+  {
+   "char": "6",
+   "word": "Soxisix"
+  },
+  {
+   "char": "7",
+   "word": "Setteseven"
+  },
+  {
+   "char": "8",
+   "word": "Oktoeight"
+  },
+  {
+   "char": "9",
+   "word": "Novenine"
+  }
+ ],
+ "qcodes": [
+  {
+   "code": "QRA",
+   "question": "What is the name of your station?",
+   "answer": "The name of my station is …"
+  },
+  {
+   "code": "QRG",
+   "question": "Will you tell me my exact frequency?",
+   "answer": "Your exact frequency is … kHz"
+  },
+  {
+   "code": "QRH",
+   "question": "Does my frequency vary?",
+   "answer": "Your frequency varies"
+  },
+  {
+   "code": "QRI",
+   "question": "How is the tone of my transmission?",
+   "answer": "The tone is 1 good, 2 variable, 3 bad"
+  },
+  {
+   "code": "QRK",
+   "question": "What is the readability of my signals?",
+   "answer": "Readability is 1 bad … 5 excellent"
+  },
+  {
+   "code": "QRL",
+   "question": "Are you busy?",
+   "answer": "I am busy"
+  },
+  {
+   "code": "QRM",
+   "question": "Is my transmission being interfered with?",
+   "answer": "Your transmission is being interfered with (1 nil … 5 extreme)"
+  },
+  {
+   "code": "QRN",
+   "question": "Are you troubled by static?",
+   "answer": "I am troubled by static (1 nil … 5 extreme)"
+  },
+  {
+   "code": "QRO",
+   "question": "Shall I increase transmitter power?",
+   "answer": "Increase transmitter power"
+  },
+  {
+   "code": "QRS",
+   "question": "Shall I send more slowly?",
+   "answer": "Send more slowly"
+  },
+  {
+   "code": "QRT",
+   "question": "Shall I stop sending?",
+   "answer": "Stop sending"
+  },
+  {
+   "code": "QRU",
+   "question": "Have you anything for me?",
+   "answer": "I have nothing for you"
+  },
+  {
+   "code": "QRV",
+   "question": "Are you ready?",
+   "answer": "I am ready"
+  },
+  {
+   "code": "QRW",
+   "question": "Shall I inform … that you are calling him?",
+   "answer": "Please inform … that I am calling him"
+  },
+  {
+   "code": "QRX",
+   "question": "When will you call me again?",
+   "answer": "I will call you again at … hours"
+  },
+  {
+   "code": "QRZ",
+   "question": "Who is calling me?",
+   "answer": "You are being called by …"
+  },
+  {
+   "code": "QSA",
+   "question": "What is the strength of my signals?",
+   "answer": "Strength is 1 scarcely perceptible … 5 very good"
+  },
+  {
+   "code": "QSB",
+   "question": "Are my signals fading?",
+   "answer": "Your signals are fading"
+  },
+  {
+   "code": "QSL",
+   "question": "Can you acknowledge receipt?",
+   "answer": "I am acknowledging receipt"
+  },
+  {
+   "code": "QSO",
+   "question": "Can you communicate with … direct or by relay?",
+   "answer": "I can communicate with … direct (or by relay through …)"
+  },
+  {
+   "code": "QSU",
+   "question": "Shall I send or reply on this frequency?",
+   "answer": "Send or reply on this frequency (or on … kHz)"
+  },
+  {
+   "code": "QSV",
+   "question": "Shall I send a series of Vs on this frequency?",
+   "answer": "Send a series of Vs (test signal)"
+  },
+  {
+   "code": "QSW",
+   "question": "Will you send on this frequency?",
+   "answer": "I am going to send on this frequency"
+  },
+  {
+   "code": "QSX",
+   "question": "Will you listen to … on … kHz?",
+   "answer": "I am listening to … on … kHz"
+  },
+  {
+   "code": "QSY",
+   "question": "Shall I change to another frequency?",
+   "answer": "Change to transmission on another frequency (or … kHz)"
+  },
+  {
+   "code": "QSZ",
+   "question": "Shall I send each word or group more than once?",
+   "answer": "Send each word or group twice (or … times)"
+  },
+  {
+   "code": "QTC",
+   "question": "How many telegrams have you to send?",
+   "answer": "I have … telegrams for you"
+  },
+  {
+   "code": "QTH",
+   "question": "What is your position?",
+   "answer": "My position is …"
+  },
+  {
+   "code": "QTR",
+   "question": "What is the correct time?",
+   "answer": "The correct time is … hours"
+  },
+  {
+   "code": "QUM",
+   "question": "May I resume normal working?",
+   "answer": "Normal working may be resumed"
+  }
+ ],
+ "abbreviations": [
+  {
+   "code": "AA",
+   "meaning": "All after"
+  },
+  {
+   "code": "AB",
+   "meaning": "All before"
+  },
+  {
+   "code": "AR",
+   "meaning": "End of transmission"
+  },
+  {
+   "code": "AS",
+   "meaning": "Wait"
+  },
+  {
+   "code": "C",
+   "meaning": "Yes / correct"
+  },
+  {
+   "code": "CFM",
+   "meaning": "Confirm"
+  },
+  {
+   "code": "CL",
+   "meaning": "I am closing my station"
+  },
+  {
+   "code": "CQ",
+   "meaning": "General call to all stations"
+  },
+  {
+   "code": "DE",
+   "meaning": "From (precedes the call sign)"
+  },
+  {
+   "code": "K",
+   "meaning": "Invitation to transmit"
+  },
+  {
+   "code": "NIL",
+   "meaning": "I have nothing to send you"
+  },
+  {
+   "code": "OK",
+   "meaning": "We agree / it is correct"
+  },
+  {
+   "code": "R",
+   "meaning": "Received"
+  },
+  {
+   "code": "TU",
+   "meaning": "Thank you"
+  },
+  {
+   "code": "VA",
+   "meaning": "End of work"
+  },
+  {
+   "code": "WA",
+   "meaning": "Word after"
+  },
+  {
+   "code": "WB",
+   "meaning": "Word before"
+  }
+ ],
+ "bands": {
+  "source": "niar-2021",
+  "page": 128,
+  "power": "HF: 50 W DC input (Restricted), 400 W (General). VHF/UHF: 10 W (Restricted), 25 W (General).",
+  "rows": [
+   {
+    "band": "160 m",
+    "range": "1800–1825 kHz",
+    "note": ""
+   },
+   {
+    "band": "80 m",
+    "range": "3500–3700 kHz",
+    "note": "Primary shared"
+   },
+   {
+    "band": "75 m",
+    "range": "3890–3900 kHz",
+    "note": "Primary shared"
+   },
+   {
+    "band": "40 m",
+    "range": "7000–7200 kHz",
+    "note": ""
+   },
+   {
+    "band": "30 m",
+    "range": "10100–10150 kHz",
+    "note": "Non-interference, non-protection"
+   },
+   {
+    "band": "20 m",
+    "range": "14000–14350 kHz",
+    "note": ""
+   },
+   {
+    "band": "17 m",
+    "range": "18068–18168 kHz",
+    "note": "Non-interference, non-protection"
+   },
+   {
+    "band": "15 m",
+    "range": "21000–21450 kHz",
+    "note": "Non-interference, non-protection"
+   },
+   {
+    "band": "12 m",
+    "range": "24890–24990 kHz",
+    "note": ""
+   },
+   {
+    "band": "10 m",
+    "range": "28000–29700 kHz",
+    "note": ""
+   },
+   {
+    "band": "6 m",
+    "range": "50–52 MHz",
+    "note": ""
+   },
+   {
+    "band": "2 m",
+    "range": "144–146 MHz",
+    "note": ""
+   },
+   {
+    "band": "70 cm",
+    "range": "434–438 MHz",
+    "note": "Secondary"
+   },
+   {
+    "band": "5 cm",
+    "range": "5725–5840 MHz",
+    "note": "Secondary"
+   }
+  ]
+ }
+}

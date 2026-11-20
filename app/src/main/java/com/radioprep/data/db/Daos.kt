@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface ProgressDao {
     @Upsert suspend fun upsertTopic(p: TopicProgress)
     @Query("SELECT * FROM topic_progress") fun topics(): Flow<List<TopicProgress>>
+    @Query("SELECT * FROM topic_progress WHERE topicId = :id") fun topic(id: String): Flow<TopicProgress?>
 
     @Upsert suspend fun upsertPdf(p: PdfProgress)
     @Query("SELECT * FROM pdf_progress WHERE sourceId = :id") suspend fun pdf(id: String): PdfProgress?

@@ -1,0 +1,8 @@
+[
+  { "id": "eligibility", "title": "Who can apply", "icon": "person", "verified": "2026-11-20", "source": "rules-2024" },
+  { "id": "exam-pattern", "title": "Exam pattern and pass marks", "icon": "quiz", "verified": "2026-11-20", "source": "niar-2021" },
+  { "id": "how-to-apply", "title": "How to apply", "icon": "assignment", "verified": "2026-11-20", "source": "asoc-portal-manual" },
+  { "id": "fees", "title": "Fees", "icon": "payments", "verified": "2026-11-20", "source": "rules-2024" },
+  { "id": "after-passing", "title": "After passing", "icon": "badge", "verified": "2026-11-20", "source": "rules-2024" },
+  { "id": "station-rules", "title": "Operating your station", "icon": "radio", "verified": "2026-11-20", "source": "rules-2024" }
+]
