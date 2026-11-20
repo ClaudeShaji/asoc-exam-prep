@@ -89,6 +89,8 @@ fun StudyScreen(onTopic: (String) -> Unit, onInfo: () -> Unit, onReference: () -
             LinearProgressIndicator(
                 progress = { if (all.isEmpty()) 0f else all.count { it.id in studied } / all.size.toFloat() },
                 modifier = Modifier.fillMaxWidth(),
+                trackColor = MaterialTheme.colorScheme.surfaceVariant,
+                drawStopIndicator = {},
             )
         }
         var lastSection: String? = null
