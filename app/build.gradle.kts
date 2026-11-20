@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.radioprep"
+    namespace = "com.asocexamprep"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.radioprep"
+        applicationId = "com.asocexamprep"
         minSdk = 26
         targetSdk = 37
         versionCode = 1
