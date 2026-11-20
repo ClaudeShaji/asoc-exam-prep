@@ -19,6 +19,8 @@ data class Settings(
     val toneHz: Int = 600,
     val charWpm: Int = 20,
     val effectiveWpm: Int = 8,
+    /** Highest unlocked step of the Morse learning ladder (see morse.Trainer). */
+    val trainerStep: Int = 0,
 )
 
 private val Context.dataStore by preferencesDataStore("settings")
@@ -31,6 +33,7 @@ class SettingsStore(private val context: Context) {
         val toneHz = intPreferencesKey("tone_hz")
         val charWpm = intPreferencesKey("char_wpm")
         val effectiveWpm = intPreferencesKey("effective_wpm")
+        val trainerStep = intPreferencesKey("trainer_step")
     }
 
     val settings: Flow<Settings> = context.dataStore.data.map { p ->
@@ -42,12 +45,25 @@ class SettingsStore(private val context: Context) {
             toneHz = p[Keys.toneHz] ?: d.toneHz,
             charWpm = p[Keys.charWpm] ?: d.charWpm,
             effectiveWpm = p[Keys.effectiveWpm] ?: d.effectiveWpm,
+            trainerStep = p[Keys.trainerStep] ?: d.trainerStep,
         )
     }
 
     suspend fun setGrade(g: Grade) = context.dataStore.edit { it[Keys.grade] = g.name }
     suspend fun setExamDay(day: Long?) = context.dataStore.edit {
         if (day == null) it.remove(Keys.examDay) else it[Keys.examDay] = day
+    }
+    suspend fun setCharWpm(w: Int) = context.dataStore.edit {
+        val c = w.coerceIn(5, 40)
+        it[Keys.charWpm] = c
+        if ((it[Keys.effectiveWpm] ?: Settings().effectiveWpm) > c) it[Keys.effectiveWpm] = c
+    }
+    suspend fun setEffectiveWpm(w: Int) = context.dataStore.edit {
+        it[Keys.effectiveWpm] = w.coerceIn(3, it[Keys.charWpm] ?: Settings().charWpm)
+    }
+    suspend fun setToneHz(hz: Int) = context.dataStore.edit { it[Keys.toneHz] = hz.coerceIn(400, 1000) }
+    suspend fun setTrainerStep(step: Int) = context.dataStore.edit {
+        it[Keys.trainerStep] = step.coerceIn(0, com.asocexamprep.morse.Trainer.steps.lastIndex)
     }
     suspend fun setDailyMinutes(m: Int) = context.dataStore.edit { it[Keys.dailyMinutes] = m.coerceIn(5, 240) }
 }

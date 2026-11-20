@@ -92,6 +92,10 @@ data class Reference(
 @Serializable data class Bands(val source: String, val page: Int, val power: String, val rows: List<BandRow>)
 @Serializable data class BandRow(val band: String, val range: String, val note: String)
 
+/** Study notes for a topic, converted from one source's pages. */
+@Serializable
+data class NoteRef(val topic: String, val source: String, val file: String, val pages: String)
+
 /** A topic's pointer into one source: what to read for it. */
 data class Reading(val source: Source, val range: IntRange)
 
@@ -103,7 +107,21 @@ class ContentPack(
     val info: List<InfoPage>,
     private val infoText: Map<String, String>,
     val reference: Reference,
+    val notes: List<NoteRef> = emptyList(),
+    val training: com.asocexamprep.morse.TrainingData? = null,
+    private val read: (String) -> String = { error("no reader") },
 ) {
+    private val noteCache = HashMap<String, String>()
+
+    /** Notes for a topic, official sources first. */
+    fun notesFor(topicId: String): List<NoteRef> = notes.filter { it.topic == topicId }
+        .sortedByDescending { n -> sources.firstOrNull { it.id == n.source }?.official == true }
+
+    @Synchronized
+    fun noteText(ref: NoteRef): String = noteCache.getOrPut(ref.file) { read(ref.file) }
+
+    fun source(id: String): Source? = sources.firstOrNull { it.id == id }
+
     val topics: List<Topic> = curriculum.units.flatMap { it.topics }
     private val topicById = topics.associateBy { it.id }
     private val unitByTopic = curriculum.units.flatMap { u -> u.topics.map { it.id to u } }.toMap()
@@ -135,6 +153,9 @@ class ContentPack(
                 info = info,
                 infoText = info.associate { it.id to read("info/${it.id}.md") },
                 reference = json.decodeFromString(read("reference.json")),
+                notes = json.decodeFromString(read("notes.json")),
+                training = runCatching { json.decodeFromString<com.asocexamprep.morse.TrainingData>(read("morse/training.json")) }.getOrNull(),
+                read = read,
             )
         }
     }

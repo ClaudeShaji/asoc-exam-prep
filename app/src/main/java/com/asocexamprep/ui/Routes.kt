@@ -20,5 +20,5 @@ object Routes {
     const val SETTINGS = "settings"
     const val INFO = "info"
     const val REFERENCE = "reference"
-    val all: Set<String> = Tab.entries.map { it.route }.toSet() + SETTINGS + INFO + REFERENCE
+    val all: Set<String> = Tab.entries.map { it.route }.toSet() + SETTINGS + INFO + REFERENCE + listOf("morse/learn", "morse/copy", "morse/send", "morse/alphabet")
 }

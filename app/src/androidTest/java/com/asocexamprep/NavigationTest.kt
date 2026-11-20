@@ -1,6 +1,7 @@
 package com.asocexamprep
 
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.hasTestTag
@@ -17,6 +18,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class NavigationTest {
     @get:Rule val rule = createAndroidComposeRule<MainActivity>()
+
+    @org.junit.Before fun setUp() { resetForTest() }
 
     @Test fun everyTabOpensItsScreen() {
         rule.onNodeWithTag("screen_home").assertIsDisplayed()
@@ -38,7 +41,7 @@ class NavigationTest {
         rule.onNodeWithTag("tab_study").performClick()
         rule.onNodeWithTag("topic_a-resistors").performClick()
         rule.onNodeWithTag("screen_topic").assertIsDisplayed()
-        rule.onNodeWithText("NIAR Study Manual (2021 edition)").assertIsDisplayed()
+        rule.onNodeWithTag("note_attribution").assertTextContains("NIAR Study Manual (2021 edition)", substring = true)
         rule.onNodeWithTag("toggle_studied").performClick()
         rule.onNodeWithText("Studied ✓").assertIsDisplayed()
         rule.onNodeWithTag("toggle_studied").performClick()

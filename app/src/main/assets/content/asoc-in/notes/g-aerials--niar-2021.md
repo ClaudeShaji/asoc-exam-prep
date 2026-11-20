@@ -1,0 +1,23 @@
+## 24. AERIALS
+
+### PRINCIPLES OF ANTENNA RADIATION
+
+A tremendous amount of knowledge and information has been gained about the design of antennas and radio-wave propagation. Still, many old-time technicians will tell you that when it comes to designing the length of an antenna, the best procedure is to perform all calculations and try out the antenna. If it doesn't work right, use a cut-and-try method until it does. Fortunately, enough information has been collected over the last few decades that it is now possible to predict the behavior of antennas. This chapter will discuss and explain the basic design and operation of antennas
+
+After an RF signal has been generated in a transmitter, some means must be used to radiate this signal through space to a receiver. The device that does this job is the antenna. The transmitter signal energy is sent into space by a TRANSMITTING ANTENNA; the RF signal is then picked up from space by a RECEIVING ANTENNA. The RF energy is transmitted into space in the form of an electromagnetic field. As the traveling electromagnetic field arrives at the receiving antenna, a voltage is induced into the antenna (a conductor). The RF voltages induced into the receiving antenna are then passed into the receiver and converted back into the transmitted RF information. The design of the antenna system is very important in a transmitting station. The antenna must be able to radiate efficiently so the power supplied by the transmitter is not wasted. An efficient transmitting antenna must have exact dimensions. The dimensions are determined by the transmitting frequencies. The dimensions of the receiving antenna are not critical for relatively low radio frequencies. However, as the frequency of the signal being received increases, the design and installation of the receiving antenna become more critical. An example of this is a television receiving antenna. If you raise it a few more inches from the ground or give a slight turn in direction, you can change a snowy blur into a clear picture.
+
+Antennas are devices used to radiate electromagnetic energy into space. The characteristics of transmitting and receiving antennas are similar, so a good transmitting antenna is often a good receiving antenna. A single antenna performs both functions in many modern applications.
+
+### ANTENNA CHARACTERISTICS
+
+Since the operating principles of low-frequency and microwave antennas are essentially the same, the electrical characteristics are also very similar. You will need a fundamental knowledge of radar and communications antenna electrical theory in your shipboard antenna maintenance work. Antenna theory is primarily a design consideration of antenna size and shape requirements that depend on the frequency used. A brief description of antenna electrical characteristics is sufficient for the needs of most students of electronics.
+
+### Antenna Efficiency
+
+The effectiveness of an antenna depends upon its ability to couple or radiate energy into the air. An efficient antenna is one which wastes very little energy during the radiation process. The efficiency of an antenna is usually referred to as the POWER GAIN or POWER RATIO as compared to a standard reference antenna. The power gain of an antenna is a ratio of the radiated power to that of the reference antenna, which is usually a basic dipole. Both antennas must be fed RF energy in the same manner and must be in the same position when the energy is radiated. The power gain of a single dipole without a reflector is unity (one). An array of several dipoles in the same position as the single dipole, and fed with the same line, has a power gain of more than one.
+
+The effectiveness of an entire transmitting/ receiving system depends largely on impedance matching between the elements of the system. Impedance matching is particularly critical at the antenna connection. If a good impedance match is maintained between the system and the antenna
+
+throughout the operating frequency band, power transfer to and from the antenna is always maximum. The transmission line or waveguide used to transport energy to and from the antenna should have characteristic impedance equal to that of the antenna. A proper impedance match allows all available power to be absorbed and radiated by the antenna without reflections back down the line.
+
+If you have a transmission line or waveguide with impedance mismatch at the termination, standing waves are set up by the reflections. Standing waves cause losses in the form of unwanted radiations, heat losses in transmission lines, and arcing in waveguides.

@@ -21,7 +21,11 @@ import com.asocexamprep.ui.screens.InfoListScreen
 import com.asocexamprep.ui.screens.InfoPageScreen
 import com.asocexamprep.ui.screens.ReferenceScreen
 import com.asocexamprep.ui.screens.TopicScreen
-import com.asocexamprep.ui.screens.MorseScreen
+import com.asocexamprep.ui.morse.AlphabetScreen
+import com.asocexamprep.ui.morse.CopyScreen
+import com.asocexamprep.ui.morse.LearnScreen
+import com.asocexamprep.ui.morse.MorseScreen
+import com.asocexamprep.ui.morse.SendScreen
 import com.asocexamprep.ui.screens.ProgressScreen
 import com.asocexamprep.ui.screens.SettingsScreen
 import com.asocexamprep.ui.screens.StudyScreen
@@ -71,7 +75,11 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             composable(Routes.INFO) { InfoListScreen(onPage = { id -> nav.navigate("info/$id") }, onBack = { nav.popBackStack() }) }
             composable("info/{id}") { InfoPageScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }) }
             composable(Routes.REFERENCE) { ReferenceScreen(onBack = { nav.popBackStack() }) }
-            composable(Tab.MORSE.route) { MorseScreen() }
+            composable(Tab.MORSE.route) { MorseScreen(onOpen = { nav.navigate("morse/$it") }) }
+            composable("morse/learn") { LearnScreen(onBack = { nav.popBackStack() }) }
+            composable("morse/copy") { CopyScreen(onBack = { nav.popBackStack() }) }
+            composable("morse/send") { SendScreen(onBack = { nav.popBackStack() }) }
+            composable("morse/alphabet") { AlphabetScreen(onBack = { nav.popBackStack() }) }
             composable(Tab.EXAM.route) { ExamScreen() }
             composable(Tab.PROGRESS.route) { ProgressScreen() }
             composable(Routes.SETTINGS) { SettingsScreen(onBack = { nav.popBackStack() }) }
@@ -79,7 +87,7 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
     }
 
     // Debug shortcut: jump to a route once the graph exists.
-    if (startRoute != Tab.HOME.route && startRoute in Routes.all) {
+    if (startRoute != Tab.HOME.route && (startRoute in Routes.all || startRoute.startsWith("topic/"))) {
         androidx.compose.runtime.LaunchedEffect(startRoute) {
             Tab.entries.firstOrNull { it.route == startRoute }?.let { goTab(it) } ?: nav.navigate(startRoute)
         }

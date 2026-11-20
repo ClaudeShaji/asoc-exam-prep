@@ -1,0 +1,17 @@
+## 22. TRANSMITTERS AND RECEIVERS
+
+(Principles of Transmission and reception)
+
+### Facsimile
+
+Facsimile (făksĭm`əlē) or fax, in communications, system for transmitting pictures or other graphic matter by wire or radio. Facsimile is used to transmit such materials as documents, telegrams, drawings, pictures taken from satellites, and even entire newspapers. The surface of the material to be sent is traversed by a light-beam and a photodiode that translates the light and dark areas of the material thus scanned into electric signals for transmission. A receiving station reproduces the transmitted material by a variety of means. Newspapers and television stations have long transmitted and recorded news photographs using a process in which the received electric signals activate a variable lamp that is used to scan a photographic film.
+
+A modern office fax machine scans a page to make an electronic representation of its text or graphics, compresses the data to save transmission time, and transmits it to another fax machine (or computer emulating a fax machine). The receiving machine decrypts the signal and uses a printer (usually built in) to make a facsimile of the original page. Facsimile machines that produce higher- resolution images or color and gray-scale images are also available.
+
+Western Union began a "Facsimile Telegraphy" service in 1935.
+
+### Television
+
+In a method of transmitting and receiving Multiplexed Analog Component (MAC) television signals by producing first chrominance component and luminance component signals representing lines of a television signal capable of reconstruction in a conventional MAC television receiver to produce a first television picture having a first aspect ratio and a first number of lines and wherein the component signals for each line are time-compressed and placed sequentially at times appropriate to allow reconstruction of the television picture but occupying less than the whole line time, the improvement whereby further luminance component and chrominance component signals are generated and added to portions of the television signal not containing the first signals such that the further component signals are capable of being reproduced together with the first signals to produce an extended definition picture with the further component signals not interfering with the picture reproduction from the first chrominance and luminance component signals of a television picture having the first aspect ratio and first number of lines.
+
+Television signal transmission and reception system includes a broadcasting centre, a transmission network and many reception terminals. In the broadcasting centre, plural television signals corresponding to individual channels are modulated into transmittable form, and a synthesis circuit synthesizes the television signals to produce a synthesis image signal for a multi – screen display comprising plural small screens. Both the ordinary television signal and the synthesis image signal is transmitted with control information to the reception terminals through the transmission network On the reception terminal, for selecting a desired channel out of the individual channels, the synthesis image signal is used for displaying a multi-screen, a moveable cursor image is superimposed on the multi-screen for designating one small screen corresponding to the desired channel. The channel designated by the cursor image is detected based on the control information, and the television signal of the designated channel is demodulated.

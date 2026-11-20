@@ -1,0 +1,218 @@
+[
+ {
+  "topic": "a-atomic",
+  "source": "niar-2021",
+  "file": "notes/a-atomic--niar-2021.md",
+  "pages": "15-16"
+ },
+ {
+  "topic": "a-resistors",
+  "source": "niar-2021",
+  "file": "notes/a-resistors--niar-2021.md",
+  "pages": "17-20"
+ },
+ {
+  "topic": "a-capacitors",
+  "source": "niar-2021",
+  "file": "notes/a-capacitors--niar-2021.md",
+  "pages": "21-22"
+ },
+ {
+  "topic": "a-magnetism",
+  "source": "niar-2021",
+  "file": "notes/a-magnetism--niar-2021.md",
+  "pages": "23-24"
+ },
+ {
+  "topic": "a-inductors",
+  "source": "niar-2021",
+  "file": "notes/a-inductors--niar-2021.md",
+  "pages": "25-26"
+ },
+ {
+  "topic": "a-transformers",
+  "source": "niar-2021",
+  "file": "notes/a-transformers--niar-2021.md",
+  "pages": "27-30"
+ },
+ {
+  "topic": "a-ac",
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "pages": "31-37"
+ },
+ {
+  "topic": "a-semiconductors",
+  "source": "niar-2021",
+  "file": "notes/a-semiconductors--niar-2021.md",
+  "pages": "38-42"
+ },
+ {
+  "topic": "a-rectifiers",
+  "source": "niar-2021",
+  "file": "notes/a-rectifiers--niar-2021.md",
+  "pages": "43-49"
+ },
+ {
+  "topic": "a-transistors",
+  "source": "niar-2021",
+  "file": "notes/a-transistors--niar-2021.md",
+  "pages": "50-53"
+ },
+ {
+  "topic": "a-amplifiers",
+  "source": "niar-2021",
+  "file": "notes/a-amplifiers--niar-2021.md",
+  "pages": "54-58"
+ },
+ {
+  "topic": "a-oscillators",
+  "source": "niar-2021",
+  "file": "notes/a-oscillators--niar-2021.md",
+  "pages": "59-64"
+ },
+ {
+  "topic": "a-modulation",
+  "source": "niar-2021",
+  "file": "notes/a-modulation--niar-2021.md",
+  "pages": "65-67"
+ },
+ {
+  "topic": "a-receivers",
+  "source": "niar-2021",
+  "file": "notes/a-receivers--niar-2021.md",
+  "pages": "68-73"
+ },
+ {
+  "topic": "a-transmitters",
+  "source": "niar-2021",
+  "file": "notes/a-transmitters--niar-2021.md",
+  "pages": "74-76"
+ },
+ {
+  "topic": "a-propagation",
+  "source": "niar-2021",
+  "file": "notes/a-propagation--niar-2021.md",
+  "pages": "77-78"
+ },
+ {
+  "topic": "a-aerials",
+  "source": "niar-2021",
+  "file": "notes/a-aerials--niar-2021.md",
+  "pages": "79-89"
+ },
+ {
+  "topic": "a-frequency-measurement",
+  "source": "niar-2021",
+  "file": "notes/a-frequency-measurement--niar-2021.md",
+  "pages": "128-128"
+ },
+ {
+  "topic": "g-communication",
+  "source": "niar-2021",
+  "file": "notes/g-communication--niar-2021.md",
+  "pages": "90-93"
+ },
+ {
+  "topic": "g-transformers",
+  "source": "niar-2021",
+  "file": "notes/g-transformers--niar-2021.md",
+  "pages": "94-96"
+ },
+ {
+  "topic": "g-semiconductors",
+  "source": "niar-2021",
+  "file": "notes/g-semiconductors--niar-2021.md",
+  "pages": "97-101"
+ },
+ {
+  "topic": "g-power-supplies",
+  "source": "niar-2021",
+  "file": "notes/g-power-supplies--niar-2021.md",
+  "pages": "102-102"
+ },
+ {
+  "topic": "g-fax-tv",
+  "source": "niar-2021",
+  "file": "notes/g-fax-tv--niar-2021.md",
+  "pages": "103-103"
+ },
+ {
+  "topic": "g-ionosphere",
+  "source": "niar-2021",
+  "file": "notes/g-ionosphere--niar-2021.md",
+  "pages": "104-104"
+ },
+ {
+  "topic": "g-aerials",
+  "source": "niar-2021",
+  "file": "notes/g-aerials--niar-2021.md",
+  "pages": "105-106"
+ },
+ {
+  "topic": "g-space",
+  "source": "niar-2021",
+  "file": "notes/g-space--niar-2021.md",
+  "pages": "107-114"
+ },
+ {
+  "topic": "b-licensing",
+  "source": "niar-2021",
+  "file": "notes/b-licensing--niar-2021.md",
+  "pages": "116-119"
+ },
+ {
+  "topic": "b-phonetics-codes",
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "pages": "120-122"
+ },
+ {
+  "topic": "b-call-signs",
+  "source": "niar-2021",
+  "file": "notes/b-call-signs--niar-2021.md",
+  "pages": "122-123"
+ },
+ {
+  "topic": "b-operating",
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "pages": "123-126"
+ },
+ {
+  "topic": "b-emissions-bands",
+  "source": "niar-2021",
+  "file": "notes/b-emissions-bands--niar-2021.md",
+  "pages": "126-129"
+ },
+ {
+  "topic": "b-station-records",
+  "source": "niar-2021",
+  "file": "notes/b-station-records--niar-2021.md",
+  "pages": "129-134"
+ },
+ {
+  "topic": "b-time-frequency",
+  "source": "niar-2021",
+  "file": "notes/b-time-frequency--niar-2021.md",
+  "pages": "131-131"
+ },
+ {
+  "topic": "m-morse",
+  "source": "niar-2021",
+  "file": "notes/m-morse--niar-2021.md",
+  "pages": "134-144"
+ },
+ {
+  "topic": "b-licensing",
+  "source": "rules-2024",
+  "file": "notes/b-licensing--rules-2024.md",
+  "pages": "9-12"
+ },
+ {
+  "topic": "b-station-records",
+  "source": "rules-2024",
+  "file": "notes/b-station-records--rules-2024.md",
+  "pages": "12-15"
+ }
+]

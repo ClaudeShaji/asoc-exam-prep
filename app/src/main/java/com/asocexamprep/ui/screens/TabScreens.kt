@@ -5,15 +5,11 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
-import androidx.compose.material.icons.outlined.Badge
 import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.Hearing
 import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.Keyboard
 import androidx.compose.material.icons.outlined.Repeat
-import androidx.compose.material.icons.outlined.School
 import androidx.compose.material.icons.outlined.Timer
-import androidx.compose.material.icons.outlined.TouchApp
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -23,14 +19,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.asocexamprep.container
 import com.asocexamprep.domain.currentStreak
-
-@Composable
-fun MorseScreen() = ScreenScaffold("Morse", "morse") {
-    PlannedRow(Icons.Outlined.School, "Learn (Koch)", "M3")
-    PlannedRow(Icons.Outlined.Hearing, "Copy", "M3")
-    PlannedRow(Icons.Outlined.TouchApp, "Send", "M4")
-    PlannedRow(Icons.Outlined.Badge, "Morse test", "M4")
-}
 
 @Composable
 fun ExamScreen() = ScreenScaffold("Exam", "exam") {

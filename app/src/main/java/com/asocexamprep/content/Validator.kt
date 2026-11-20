@@ -38,6 +38,13 @@ fun validate(pack: ContentPack): List<String> = buildList {
     }
     if (pack.reference.bands.source !in sourceIds) add("reference bands: unknown source")
 
+    pack.notes.forEach { n ->
+        if (n.topic !in topicIds) add("note ${n.file}: unknown topic ${n.topic}")
+        if (n.source !in sourceIds) add("note ${n.file}: unknown source ${n.source}")
+        if (runCatching { pack.noteText(n) }.getOrNull().isNullOrBlank()) add("note ${n.file}: missing or empty")
+    }
+    pack.topics.filter { t -> pack.notesFor(t.id).isEmpty() }.forEach { add("topic ${it.id}: no notes") }
+
     // Every Section A/B topic should point to at least one reading.
     pack.topics.filter { pack.readings(it.id).isEmpty() }.forEach { add("topic ${it.id}: no reading") }
 }

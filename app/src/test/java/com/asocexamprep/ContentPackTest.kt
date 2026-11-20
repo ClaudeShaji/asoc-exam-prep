@@ -34,6 +34,19 @@ class ContentPackTest {
         assertEquals(9..12, r.first().range)
     }
 
+    @Test fun everyNoteFigureExists() {
+        val root = File("src/main/assets/content/asoc-in/notes")
+        val refs = pack.notes.flatMap { n -> Regex("""!\[[^\]]*]\(([^)]+)\)""").findAll(pack.noteText(n)).map { it.groupValues[1] }.toList() }
+        assertTrue(refs.size > 50)
+        refs.forEach { assertTrue("missing $it", File(root, it).isFile) }
+    }
+
+    @Test fun licensingNotesStartWithTheRules() {
+        val n = pack.notesFor("b-licensing")
+        assertEquals(listOf("rules-2024", "niar-2021"), n.map { it.source })
+        assertTrue(pack.noteText(n[0]).contains("Short title and commencement"))
+    }
+
     @Test fun referenceIsComplete() {
         assertEquals(26, pack.reference.phonetics.size)
         assertEquals(10, pack.reference.figures.size)

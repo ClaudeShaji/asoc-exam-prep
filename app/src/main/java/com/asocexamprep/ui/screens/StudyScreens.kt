@@ -34,6 +34,12 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.material3.SegmentedButton
+import androidx.compose.material3.SegmentedButtonDefaults
+import androidx.compose.material3.SingleChoiceSegmentedButtonRow
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -135,7 +141,7 @@ fun StudyScreen(onTopic: (String) -> Unit, onInfo: () -> Unit, onReference: () -
                 }
             }
         }
-        Text("Library", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
+        Text("Sources", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
         pack.sources.forEach { s ->
             Row(Modifier.fillMaxWidth().padding(vertical = 6.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 Icon(Icons.AutoMirrored.Outlined.MenuBook, null, tint = MaterialTheme.colorScheme.outline)
@@ -163,6 +169,17 @@ private fun ShortcutCard(title: String, icon: ImageVector, modifier: Modifier, o
     }
 }
 
+private fun shortTitle(sourceId: String) = when (sourceId) {
+    "rules-2024" -> "Rules 2024"
+    "niar-2021" -> "NIAR manual"
+    else -> sourceId
+}
+
+private fun pagesLabel(pages: String): String? {
+    val (a, b) = pages.split("-").takeIf { it.size == 2 } ?: return null
+    return if (a == b) "p. $a" else "pp. $a–$b"
+}
+
 @Composable
 private fun BackButton(onBack: () -> Unit) =
     IconButton(onClick = onBack, modifier = Modifier.testTag("back")) { Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Back") }
@@ -184,25 +201,6 @@ fun TopicScreen(topicId: String, onBack: () -> Unit) {
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         if (topic.grades.size == 1) AssistChip(onClick = {}, label = { Text("${pack.grade(topic.grades[0])?.title} only") })
-
-        Text("Syllabus", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-        Markdown(topic.syllabus.joinToString("\n") { "- $it" })
-
-        Text("Read", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
-        pack.readings(topicId).forEach { r ->
-            Row(Modifier.fillMaxWidth().padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                Icon(if (r.source.official) Icons.Outlined.Verified else Icons.AutoMirrored.Outlined.MenuBook, null,
-                    tint = if (r.source.official) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.outline)
-                Text(r.source.title, Modifier.weight(1f))
-                Text(
-                    if (r.range.first == r.range.last) "p. ${r.range.first}" else "pp. ${r.range.first}–${r.range.last}",
-                    style = MaterialTheme.typography.labelLarge,
-                )
-            }
-            HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
-        }
-
-        Spacer(Modifier.size(8.dp))
         val toggle: () -> Unit = {
             scope.launch {
                 val now = System.currentTimeMillis()
@@ -213,6 +211,49 @@ fun TopicScreen(topicId: String, onBack: () -> Unit) {
         }
         if (studied) OutlinedButton(onClick = toggle, modifier = Modifier.fillMaxWidth().testTag("toggle_studied")) { Text("Studied ✓") }
         else FilledTonalButton(onClick = toggle, modifier = Modifier.fillMaxWidth().testTag("toggle_studied")) { Text("Mark as studied") }
+
+        Text("Syllabus", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+        Markdown(topic.syllabus.joinToString("\n") { "- $it" })
+
+        val notes = remember(topicId) { pack.notesFor(topicId) }
+        if (notes.isNotEmpty()) {
+            var selected by rememberSaveable(topicId) { mutableIntStateOf(0) }
+            Text("Notes", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
+            if (notes.size > 1) {
+                SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                    notes.forEachIndexed { i, n ->
+                        SegmentedButton(
+                            selected = selected == i,
+                            onClick = { selected = i },
+                            shape = SegmentedButtonDefaults.itemShape(i, notes.size),
+                            modifier = Modifier.testTag("note_source_${n.source}"),
+                        ) { Text(pack.source(n.source)?.let { shortTitle(it.id) } ?: n.source) }
+                    }
+                }
+            }
+            val note = notes[selected.coerceIn(0, notes.lastIndex)]
+            val src = pack.source(note.source)
+            Text(
+                listOfNotNull(src?.title, pagesLabel(note.pages)).joinToString(" · "),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.testTag("note_attribution"),
+            )
+            if (src?.official == false && unit?.section == "B") {
+                Text(
+                    "Written for the 1978 rules. Current rules and fees are in Licence info.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.secondary,
+                )
+            }
+            Markdown(
+                pack.noteText(note),
+                modifier = Modifier.testTag("notes_${note.source}"),
+                skipTitle = false,
+                image = { c.content.noteImage(it) },
+            )
+        }
+
     }
 }
 
