@@ -15,6 +15,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.ui.res.stringResource
+import com.radioprep.R
 import com.radioprep.container
 import com.radioprep.data.settings.Settings
 import com.radioprep.domain.currentStreak
@@ -30,7 +32,7 @@ fun HomeScreen(onSettings: () -> Unit) {
     val due by remember { c.db.progress().dueCount(System.currentTimeMillis()) }.collectAsStateWithLifecycle(0)
 
     ScreenScaffold(
-        title = "Radio Prep",
+        title = stringResource(R.string.app_name),
         tag = "home",
         actions = {
             IconButton(onClick = onSettings, modifier = Modifier.testTag("open_settings")) {

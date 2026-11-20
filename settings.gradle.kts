@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "RadioPrep"
+rootProject.name = "AsocExamPrep"
 include(":app")
