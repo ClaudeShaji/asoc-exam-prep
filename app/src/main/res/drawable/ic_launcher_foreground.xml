@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Antenna mast with radiating arcs, 108dp adaptive canvas (safe zone 66dp). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFF2B544"
+        android:pathData="M54,46m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+    <path android:fillColor="#FFF8F6F1"
+        android:pathData="M52,52h4l8,24h-4l-2,-6h-8l-2,6h-4zM51.3,66h5.4l-2.7,-8z" />
+    <path android:strokeColor="#FFF8F6F1" android:strokeWidth="3"
+        android:strokeLineCap="round" android:fillColor="#00000000"
+        android:pathData="M44,38a14,14 0,0 0,0 16M64,38a14,14 0,0 1,0 16M38,32a22,22 0,0 0,0 28M70,32a22,22 0,0 1,0 28" />
+</vector>
