@@ -27,6 +27,8 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("debug")
+            testProguardFiles("proguard-test-rules.pro")
+            if (project.hasProperty("releaseTests")) proguardFiles("proguard-release-tests.pro")
         }
     }
     compileOptions {
@@ -37,6 +39,8 @@ android {
         compose = true
         buildConfig = true
     }
+    // gradle -PreleaseTests :app:assembleReleaseAndroidTest runs the device tests against the shrunk release build.
+    if (project.hasProperty("releaseTests")) testBuildType = "release"
     testOptions {
         unitTests.isReturnDefaultValues = true
     }
