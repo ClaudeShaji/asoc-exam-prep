@@ -40,6 +40,7 @@ fun resetForTest(): FakeMorsePlayer = runBlocking {
     s.setTrainerStep(0)
     s.setCharWpm(20)
     s.setEffectiveWpm(8)
+    s.setLiveResults(false)
     app.container.voicePlayer = FakeVoicePlayer()
     FakeMorsePlayer().also { app.container.morsePlayer = it }
 }

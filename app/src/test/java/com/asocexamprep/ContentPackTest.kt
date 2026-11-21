@@ -12,6 +12,11 @@ class ContentPackTest {
 
     @Test fun packIsValid() = assertEquals(emptyList<String>(), validate(pack))
 
+    @Test fun questionTextHasNoStrayEscapes() {
+        val bad = pack.questions.filter { q -> (listOf(q.stem) + q.options).any { '\\' in it } }.map { it.id }
+        assertEquals(emptyList<String>(), bad)
+    }
+
     @Test fun examRulesMatchSyllabus() {
         val general = pack.grade("GENERAL")!!
         val restricted = pack.grade("RESTRICTED")!!

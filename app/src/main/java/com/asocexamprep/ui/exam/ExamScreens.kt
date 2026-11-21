@@ -524,7 +524,8 @@ fun PaperScreen(kindKey: String, onTopic: (String) -> Unit, onMorse: () -> Unit,
                                     modifier = Modifier.testTag("mq_flag_$n"),
                                 )
                             }
-                            HintPanel(q, "mq_hint_$n", onTopic, onOpen = { hinted[q.id] = true })
+                            // Opened hints stay open when the question scrolls off screen and back.
+                            HintPanel(q, "mq_hint_$n", onTopic, startOpen = hinted[q.id] == true, onOpen = { hinted[q.id] = true })
                             HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
                         }
                     }

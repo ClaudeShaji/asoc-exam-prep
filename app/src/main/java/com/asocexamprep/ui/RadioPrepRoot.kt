@@ -8,6 +8,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.only
+import androidx.compose.foundation.layout.systemBars
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -52,6 +56,8 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
 
     Box(Modifier.fillMaxSize()) {
     Scaffold(
+        // Each screen's top app bar pads for the status bar itself; padding here too left an empty band.
+        contentWindowInsets = WindowInsets.systemBars.only(WindowInsetsSides.Horizontal + WindowInsetsSides.Bottom),
         bottomBar = {
             if (showBar) NavigationBar {
                 Tab.entries.forEach { tab ->

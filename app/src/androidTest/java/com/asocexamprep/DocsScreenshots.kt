@@ -44,8 +44,7 @@ class DocsScreenshots {
         val full = rule.onRoot().captureToImage().asAndroidBitmap()
         val top = rule.activity.window.decorView.rootWindowInsets?.getInsets(WindowInsets.Type.statusBars())?.top ?: 0
         val bottom = rule.activity.window.decorView.rootWindowInsets?.getInsets(WindowInsets.Type.navigationBars())?.bottom ?: 0
-        // The top app bar sits below an empty band as tall as the status bar: crop both.
-        val cropped = Bitmap.createBitmap(full, 0, 2 * top, full.width, full.height - 2 * top - bottom)
+        val cropped = Bitmap.createBitmap(full, 0, top, full.width, full.height - top - bottom)
         val scaled = Bitmap.createScaledBitmap(cropped, 540, cropped.height * 540 / cropped.width, true)
         val dir = File(app.filesDir, "docs-shots").apply { mkdirs() }
         File(dir, "$name.png").outputStream().use { scaled.compress(Bitmap.CompressFormat.PNG, 100, it) }

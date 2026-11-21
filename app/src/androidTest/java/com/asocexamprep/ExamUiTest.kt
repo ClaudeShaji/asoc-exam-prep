@@ -181,6 +181,10 @@ class ExamUiTest {
         rule.onNodeWithTag("paper_list").performScrollToNode(hasTestTag("mq_hint_2"))
         rule.onNodeWithTag("mq_hint_2").performClick()
         rule.onNodeWithTag("mq_hint_2_panel").assertExists()
+        // Scrolled far away and back, the hint is still open.
+        rule.onNodeWithTag("paper_list").performScrollToNode(hasTestTag("mq_stem_30"))
+        rule.onNodeWithTag("paper_list").performScrollToNode(hasTestTag("mq_hint_2_panel"))
+        rule.onNodeWithTag("mq_hint_2_panel").assertExists()
         rule.onNodeWithTag("live_toggle").performClick() // back off for later tests
         rule.waitUntil(5_000) { !runBlocking { app.container.settings.settings.first().liveResults } }
         rule.onNodeWithTag("mock_submit").performClick()
