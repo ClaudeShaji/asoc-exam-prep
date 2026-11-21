@@ -2,7 +2,6 @@ package com.asocexamprep
 
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertTextContains
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -124,12 +123,39 @@ class MorseUiTest {
         rule.onNodeWithTag("learn_continue").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Groups of 3 letters" }
 
-        // Earlier stages stay open for review; later ones are locked.
-        rule.onNodeWithTag("learn_stage_WORDS").assertIsNotEnabled()
+        // Later stages can be practised but say they are locked; earlier ones open for review.
+        rule.onNodeWithTag("learn_stage_WORDS").performScrollTo().performClick()
+        rule.waitUntil(5_000) { text("learn_step") == "Short words" }
+        rule.onNodeWithTag("learn_locked").assertTextContains("finish Groups of 3 letters first", substring = true)
+        rule.onNodeWithTag("learn_start").performClick()
+        waitForTag("learn_check")
+        val words = player.played.last()
+        rule.onNodeWithTag("learn_input").performTextInput(words)
+        rule.onNodeWithTag("learn_check").performClick()
+        rule.onNodeWithTag("learn_accuracy").assertTextContains("100%")
+        assertEquals(0, rule.onAllNodesWithTag("learn_unlocked").fetchSemanticsNodes().size)
+        assertEquals(Trainer.firstOf(Stage.GROUPS).index + 1, runBlocking { app.container.settings.settings.first().trainerStep })
         rule.onNodeWithTag("learn_stage_CHARACTERS").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Character 43 of 43" }
         rule.onNodeWithTag("learn_stage_GROUPS").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Groups of 3 letters" }
+    }
+
+    @Test fun lockedStepsOnTheMapCanBePractised() {
+        rule.onNodeWithTag("morse_learn").performClick()
+        rule.onNodeWithTag("step_map").performScrollToNode(hasTestTag("map_5"))
+        rule.onNodeWithTag("map_5").performClick()
+        rule.waitUntil(5_000) { text("learn_step") == "Character 6 of 43" }
+        rule.onNodeWithTag("learn_locked").assertExists()
+        rule.onNodeWithTag("char_new").assertTextContains("S")
+        rule.onNodeWithTag("char_start").performClick()
+        rule.waitUntil(5_000) { player.played.isNotEmpty() }
+        assertEquals("S", player.played.last())
+        rule.onNodeWithTag("learn_stage_SENTENCES").performScrollTo().performClick()
+        rule.waitUntil(5_000) { text("learn_step") == "Sentences" }
+        rule.onNodeWithTag("learn_stage_CHARACTERS").performScrollTo().performClick()
+        rule.waitUntil(5_000) { text("learn_step") == "Character 1 of 43" }
+        assertEquals(0, rule.onAllNodesWithTag("learn_locked").fetchSemanticsNodes().size)
     }
 
     @Test fun wordsAndSentencesAreTheLastStages() {

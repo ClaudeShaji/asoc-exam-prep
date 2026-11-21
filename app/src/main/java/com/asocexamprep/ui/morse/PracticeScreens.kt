@@ -5,6 +5,9 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Lock
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.draw.alpha
 import androidx.compose.foundation.layout.size
@@ -117,12 +120,16 @@ fun LearnScreen(onBack: () -> Unit) {
                 val open = stageSteps.first().index <= current
                 FilterChip(
                     selected = step.stage == st,
-                    enabled = open,
                     onClick = {
                         unlocked = null
                         reward = null
-                        pinned = if (current in stageSteps.first().index..stageSteps.last().index) -1 else stageSteps.last().index
+                        pinned = when {
+                            current in stageSteps.first().index..stageSteps.last().index -> -1
+                            open -> stageSteps.last().index // review the last step of a finished stage
+                            else -> stageSteps.first().index // preview a locked stage
+                        }
                     },
+                    leadingIcon = if (open) null else { { Icon(Icons.Outlined.Lock, null, Modifier.size(16.dp)) } },
                     label = { Text(st.label) },
                     modifier = Modifier.testTag("learn_stage_${st.name}"),
                 )
@@ -141,6 +148,14 @@ fun LearnScreen(onBack: () -> Unit) {
         }
         if (step.index < current && pinned >= 0 && unlocked == null) {
             Text("Review", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        if (step.index > current) {
+            Text(
+                "Locked: finish ${Trainer.step(current).label} first. You can still practise it.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.secondary,
+                modifier = Modifier.testTag("learn_locked"),
+            )
         }
         val timing = MorseTiming(s.charWpm, s.effectiveWpm)
         key(step.index) {
@@ -398,7 +413,7 @@ private fun StepMap(step: Step, current: Int, best: Map<Int, Float>, onPick: (In
                             CircleShape,
                         )
                         .then(if (open && !selected) Modifier.border(1.dp, MaterialTheme.colorScheme.primary, CircleShape) else Modifier)
-                        .then(if (open) Modifier.clickable { onPick(s.index) } else Modifier)
+                        .clickable { onPick(s.index) }
                         .testTag("map_${s.index}"),
                     contentAlignment = Alignment.Center,
                 ) {
