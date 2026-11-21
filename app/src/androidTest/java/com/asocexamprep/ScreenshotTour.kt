@@ -10,6 +10,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToNode
+import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
@@ -55,5 +56,22 @@ class ScreenshotTour {
         rule.onNodeWithTag("paper_list").performScrollToNode(hasTestTag("mq_stem_$withHint"))
         shot("paper-hint")
         rule.onNodeWithTag("live_toggle").performClick()
+    }
+
+    @Test fun phonetics() {
+        resetForTest()
+        // Hold on the third word so the highlight shows.
+        app.container.voicePlayer = object : com.asocexamprep.voice.VoicePlayer {
+            override suspend fun say(items: List<com.asocexamprep.voice.Phonetics.Spoken>, onItem: (Int) -> Unit) {
+                onItem(2); kotlinx.coroutines.awaitCancellation()
+            }
+            override fun release() {}
+        }
+        rule.onNodeWithTag("tab_study").performClick()
+        rule.onNodeWithTag("open_reference").performClick()
+        rule.onNodeWithTag("phon_input").performTextInput("VU2ABC")
+        rule.onNodeWithTag("phon_spell").performClick()
+        shot("phonetics")
+        rule.onNodeWithTag("phon_spell").performClick()
     }
 }

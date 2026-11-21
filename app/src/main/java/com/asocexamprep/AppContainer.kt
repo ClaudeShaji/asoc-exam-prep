@@ -10,6 +10,7 @@ import com.asocexamprep.morse.MorsePlayer
 
 /** Manual dependency container, created once in [RadioPrepApp]. */
 class AppContainer(context: Context) {
+    private val appContext: Context = context.applicationContext
     val db: AppDatabase by lazy { AppDatabase.build(context) }
     val settings: SettingsStore by lazy { SettingsStore(context) }
     val content: ContentRepository by lazy { ContentRepository(context) }
@@ -21,4 +22,10 @@ class AppContainer(context: Context) {
     var morsePlayer: MorsePlayer
         get() = player ?: AudioTrackPlayer().also { player = it }
         set(value) { player = value }
+
+    private var voice: com.asocexamprep.voice.VoicePlayer? = null
+    /** Phonetic-alphabet voice clips; UI tests replace it with a silent recorder. */
+    var voicePlayer: com.asocexamprep.voice.VoicePlayer
+        get() = voice ?: com.asocexamprep.voice.ClipPlayer(appContext).also { voice = it }
+        set(value) { voice = value }
 }

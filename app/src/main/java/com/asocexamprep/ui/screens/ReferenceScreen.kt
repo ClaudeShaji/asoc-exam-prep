@@ -47,9 +47,7 @@ fun ReferenceScreen(onBack: () -> Unit) {
                 }
             }
             when (tab) {
-                0 -> {
-                    (ref.phonetics + ref.figures).forEach { KeyRow(it.char, it.word) }
-                }
+                0 -> PhoneticsTab(ref.phonetics + ref.figures)
                 1 -> ref.qcodes.forEach { q ->
                     Column(Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
                         Row(verticalAlignment = Alignment.Top) {

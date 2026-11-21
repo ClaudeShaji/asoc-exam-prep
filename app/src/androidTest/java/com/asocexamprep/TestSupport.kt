@@ -21,6 +21,15 @@ class FakeMorsePlayer : MorsePlayer {
     override fun release() {}
 }
 
+/** Records which phonetic clips would play, without sound. */
+class FakeVoicePlayer : com.asocexamprep.voice.VoicePlayer {
+    val said: MutableList<String> = Collections.synchronizedList(mutableListOf())
+    override suspend fun say(items: List<com.asocexamprep.voice.Phonetics.Spoken>, onItem: (Int) -> Unit) {
+        items.forEachIndexed { i, it -> onItem(i); it.clip?.let { c -> said += c }; delay(30) }
+    }
+    override fun release() {}
+}
+
 val app: RadioPrepApp get() = ApplicationProvider.getApplicationContext()
 
 /** Known starting state: empty progress, General grade, first Learn step, 20/8 WPM, silent audio. */
@@ -31,5 +40,6 @@ fun resetForTest(): FakeMorsePlayer = runBlocking {
     s.setTrainerStep(0)
     s.setCharWpm(20)
     s.setEffectiveWpm(8)
+    app.container.voicePlayer = FakeVoicePlayer()
     FakeMorsePlayer().also { app.container.morsePlayer = it }
 }

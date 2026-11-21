@@ -22,4 +22,15 @@ class AudioPlaybackTest {
         player.keyDown(700); Thread.sleep(80); player.keyUp()
         player.release()
     }
+
+    @Test fun playsPhoneticClips() = runBlocking(kotlinx.coroutines.Dispatchers.Main) {
+        val player = com.asocexamprep.voice.ClipPlayer(app)
+        val started = mutableListOf<Int>()
+        val t0 = System.nanoTime()
+        player.say(com.asocexamprep.voice.Phonetics.spell("N5")) { started += it }
+        val ms = (System.nanoTime() - t0) / 1_000_000
+        assertTrue(started == listOf(0, 1))
+        // "November" is about a second and "five" about half; a failed clip would return at once.
+        assertTrue("played for $ms ms", ms in 1000..4000)
+    }
 }
