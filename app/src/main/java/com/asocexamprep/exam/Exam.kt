@@ -27,8 +27,8 @@ object Exam {
      * A mock paper in the real format: each section's question count from exam.json, spread
      * across that section's topics (round-robin over shuffled topics, so no topic dominates).
      */
-    fun mock(pack: ContentPack, grade: String, rnd: Random = Random.Default): List<Question> =
-        pack.exam.sections.flatMap { sec ->
+    fun mock(pack: ContentPack, grade: String, rnd: Random = Random.Default, sections: Set<String>? = null): List<Question> =
+        pack.exam.sections.filter { sections == null || it.id in sections }.flatMap { sec ->
             val byTopic = pool(pack, grade).filter { it.section == sec.id }.groupBy { it.topic }
                 .mapValues { it.value.shuffled(rnd).toMutableList() }.toList().shuffled(rnd)
             val picked = mutableListOf<Question>()
@@ -37,6 +37,10 @@ object Exam {
             }
             picked.shuffled(rnd)
         }
+
+    /** Time allowed for a paper of [questions] questions, in proportion to the full paper. */
+    fun minutesFor(pack: ContentPack, grade: ExamGrade, questions: Int): Int =
+        Math.round(grade.minutes.toFloat() * questions / pack.exam.sections.sumOf { it.questions })
 
     /** Practice set: up to [count] questions for a topic id, or a whole section ("A"/"B"). */
     fun practice(pack: ContentPack, grade: String, key: String, count: Int = 10, rnd: Random = Random.Default): List<Question> =

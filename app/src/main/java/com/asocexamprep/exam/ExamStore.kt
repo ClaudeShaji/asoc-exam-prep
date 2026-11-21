@@ -29,9 +29,9 @@ class ExamStore(private val db: AppDatabase) {
         }
     }
 
-    suspend fun saveMock(grade: String, score: ExamScore, startedAt: Long): Long {
+    suspend fun saveMock(grade: String, score: ExamScore, startedAt: Long, examId: String = "asoc-in:full"): Long {
         val json = Json.encodeToString(score.sections.associate { it.section to listOf(it.correct, it.total) })
-        return dao.insertExam(ExamAttempt(examId = "asoc-in", grade = grade, sectionScores = json, passed = score.passed, durationMillis = System.currentTimeMillis() - startedAt, startedAt = startedAt))
+        return dao.insertExam(ExamAttempt(examId = examId, grade = grade, sectionScores = json, passed = score.passed, durationMillis = System.currentTimeMillis() - startedAt, startedAt = startedAt))
     }
 
     /** Mistakes due for review now, as questions (newest-due first is fine; capped at [limit]). */

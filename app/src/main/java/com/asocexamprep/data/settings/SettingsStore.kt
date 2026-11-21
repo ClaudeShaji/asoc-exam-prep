@@ -21,6 +21,8 @@ data class Settings(
     val effectiveWpm: Int = 8,
     /** Highest unlocked step of the Morse learning ladder (see morse.Trainer). */
     val trainerStep: Int = 0,
+    /** Exam papers: show right/wrong as soon as an answer is picked. */
+    val liveResults: Boolean = false,
 )
 
 private val Context.dataStore by preferencesDataStore("settings")
@@ -34,6 +36,7 @@ class SettingsStore(private val context: Context) {
         val charWpm = intPreferencesKey("char_wpm")
         val effectiveWpm = intPreferencesKey("effective_wpm")
         val trainerStep = intPreferencesKey("trainer_step")
+        val liveResults = androidx.datastore.preferences.core.booleanPreferencesKey("live_results")
     }
 
     val settings: Flow<Settings> = context.dataStore.data.map { p ->
@@ -46,6 +49,7 @@ class SettingsStore(private val context: Context) {
             charWpm = p[Keys.charWpm] ?: d.charWpm,
             effectiveWpm = p[Keys.effectiveWpm] ?: d.effectiveWpm,
             trainerStep = p[Keys.trainerStep] ?: d.trainerStep,
+            liveResults = p[Keys.liveResults] ?: d.liveResults,
         )
     }
 
@@ -65,5 +69,6 @@ class SettingsStore(private val context: Context) {
     suspend fun setTrainerStep(step: Int) = context.dataStore.edit {
         it[Keys.trainerStep] = step.coerceIn(0, com.asocexamprep.morse.Trainer.steps.lastIndex)
     }
+    suspend fun setLiveResults(on: Boolean) = context.dataStore.edit { it[Keys.liveResults] = on }
     suspend fun setDailyMinutes(m: Int) = context.dataStore.edit { it[Keys.dailyMinutes] = m.coerceIn(5, 240) }
 }

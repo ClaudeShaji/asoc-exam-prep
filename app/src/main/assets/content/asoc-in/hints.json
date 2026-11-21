@@ -1,0 +1,272 @@
+{
+ "vu2mue-rules-16": {
+  "source": "niar-2021",
+  "file": "notes/a-propagation--niar-2021.md",
+  "heading": "Refraction in the ionosphere bends sky-wave signals back to earth.",
+  "text": "D LAYER: - It is the lowest, existing at an average height of 70 Km. This layer disappears at night is the least important layer from the point of HF propagation. It reflects some VLF and LF waves and absorbs MF and HF waves to certain extent."
+ },
+ "vu2mue-rules-31": {
+  "source": "niar-2021",
+  "file": "notes/b-licensing--niar-2021.md",
+  "heading": "BY RADIO AMATEURS",
+  "text": "Reproduction of broadcast programs, tape recordings, transmissions of entertainment value, music, false or misleading calls, news, advertisements, business communications, topics on political or industrial controversy, indecent language, topics that can arouse racial, religious or communal feelings, messages for monetary benefit and third party messages are forbidden. We are also forbidden to contact stations of any other countries whose administrations have informed the International Telecommunication Union (ITU) of their objection to such radio communications."
+ },
+ "vu2mue-rules-41": {
+  "source": "niar-2021",
+  "file": "notes/b-emissions-bands--niar-2021.md",
+  "heading": "upper limit inclusive)",
+  "text": "| UHF | Ultra High Frequency | 300 to 3000 MHz | Deci metric waves |"
+ },
+ "vu2mue-rules-44": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "13. ABBREVATIONS",
+  "text": "| OM | Old Man (Male operator of any |  | YL | Young | Lady | (Lady |"
+ },
+ "vu2mue-rules-47": {
+  "source": "rules-2024",
+  "file": "notes/b-station-records--rules-2024.md",
+  "heading": "Terms and conditions for the installation and operation of amateur station\n1. Use of the amateur station. - The amateur station may be used for the purpose of receiving transmissions in the Standard Frequency and Time Signal Service to facilitate operation of the amateur station within the authorised frequency bands.\n2. Messages. - (1) (a) Radio communications may be exchanged with other authorised amateur stations. The amateur stations shall not communicate with amateur stations of countries whose administrations have notified the International Telecommunication Convention of their objection to such radio communications;",
+  "text": "(4) ASOC holder shall preserve the log for a period of one year from the date of last entry therein before it"
+ },
+ "vu2mue-rules-49": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "d. Test Signal",
+  "text": "Test signals are sent either for the adjustment of a transmitter or a receiver. It shall be sent not more than 30 seconds. In Morse Code it shall consist of three series of VVV and in voice the figures 1,2,3,4,5 followed by the callsign of the station. The Q code for sending test signal is QSV."
+ },
+ "vu2mue-rules-59": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "a. Distress Signal",
+  "text": "It indicates that a ship, aircraft or any other vehicle is threatened by grave and imminent danger and requests immediate assistance. The distress call in Morse Code consists of the letters SOS sent three times, the word DE and the callsign of the station in distress three times. In voice it is MAYDAY pronounced as the French expression ‘maider’, spoken three times, the words THIS IS and the callsign of the station three times. The distress message must consist of the callsign, exact location, type of distress, type of assistance required and any other information helpful for the rescue."
+ },
+ "vu2mue-basic-2": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "FREQUENCY (F)",
+  "text": "The unit of the frequency is called hertz (Hz)."
+ },
+ "vu2mue-basic-8": {
+  "source": "niar-2021",
+  "file": "notes/a-aerials--niar-2021.md",
+  "heading": "WAVE LENGTH",
+  "text": "An important characteristic of a radio wave is its wavelength, which you recall, is the distance traveled by the wave in the time required for one cycle. To find the wave length, you divide the speed of the wave by its frequency."
+ },
+ "vu2mue-basic-50": {
+  "source": "niar-2021",
+  "file": "notes/g-power-supplies--niar-2021.md",
+  "heading": "The Smoothing Capacitor",
+  "text": "The smoothing capacitor converts the full-wave rippled output of the rectifier into a smooth DC output voltage. Generally for DC power supply circuits the smoothing capacitor is an Aluminum Electrolytic type that has a capacitance value of 100uF or more with repeated DC voltage pulses from the rectifier charging up the capacitor to peak voltage."
+ },
+ "vu2mue-basic-64": {
+  "source": "niar-2021",
+  "file": "notes/a-semiconductors--niar-2021.md",
+  "heading": "The crystal PN Junction called Diode",
+  "text": "If a diode is forward biased as in Figure above, current will increase slightly as voltage is increased from 0 V. In the case of a silicon diode a measurable current flows when the voltage approaches 0.6 V at. As the voltage increases past 0.6 V, current increases considerably after the knee. Increasing the voltage well beyond 0.7 V may result in high enough current to destroy the diode. The forward voltage, VF, is a characteristic of the semiconductor: 0.6 to 0.7 V for silicon, 0.2 V for germanium, a few volts for Light Emitting Diodes (LED). The forward current ranges from a few mA for point contact diodes to 100 mA for small signal diodes to tens or thousands of amperes for power diodes."
+ },
+ "vu2mue-basic-66": {
+  "source": "niar-2021",
+  "file": "notes/a-semiconductors--niar-2021.md",
+  "heading": "The crystal PN Junction called Diode",
+  "text": "If a diode is forward biased as in Figure above, current will increase slightly as voltage is increased from 0 V. In the case of a silicon diode a measurable current flows when the voltage approaches 0.6 V at. As the voltage increases past 0.6 V, current increases considerably after the knee. Increasing the voltage well beyond 0.7 V may result in high enough current to destroy the diode. The forward voltage, VF, is a characteristic of the semiconductor: 0.6 to 0.7 V for silicon, 0.2 V for germanium, a few volts for Light Emitting Diodes (LED). The forward current ranges from a few mA for point contact diodes to 100 mA for small signal diodes to tens or thousands of amperes for power diodes."
+ },
+ "vu2mue-basic-78": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "INDUCTIVE REACTANCE",
+  "text": "When ac current flows through an inductance a back emf or voltage develops opposing any change in the initial current. This opposition or impedance to a change in current flow is measured in terms of inductive reactance. Inductive reactance is determined by the formula: 2πfL [or says 2 * pi * f * L]"
+ },
+ "vu2mue-basic-80": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "REACTANCE",
+  "text": "Reactance is the property of resisting or impeding the flow of ac current or ac voltage in inductors and capacitors. Note particularly we speak of alternating current only ac, which expression includes audio af and radio frequencies rf. NOT direct current dc."
+ },
+ "vu2mue-basic-81": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "REACTANCE",
+  "text": "Reactance is the property of resisting or impeding the flow of ac current or ac voltage in inductors and capacitors. Note particularly we speak of alternating current only ac, which expression includes audio af and radio frequencies rf. NOT direct current dc."
+ },
+ "vu2mue-basic-85": {
+  "source": "niar-2021",
+  "file": "notes/a-transformers--niar-2021.md",
+  "heading": "IMPEDANCE MATCHING",
+  "text": "power (1 watt) is equal to the secondary power, the transformer has matched a 400-ohm load to a 10,000ohm source with maximum transfer of power. We can say that the source sees the primary impedance as matching impedance, and the secondary which by transformer action receives the primary power, sees the load impedance as matching impedance."
+ },
+ "vu2mue-basic-89": {
+  "source": "niar-2021",
+  "file": "notes/g-transformers--niar-2021.md",
+  "heading": "Complex conjugate matching",
+  "text": "This is used in cases in which the source and load are reactive. This form of impedance matching can only maximize the power transfer between a reactive source and a reactive load at a single frequency."
+ },
+ "vu2mue-basic-94": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "RESONANCE",
+  "text": "inductance in Henries and C = capacitance in Farads"
+ },
+ "vu2mue-basic-95": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "FREQUENCY (F)",
+  "text": "The number of cycles per second is the Frequency."
+ },
+ "vu2mue-basic-98": {
+  "source": "niar-2021",
+  "file": "notes/a-rectifiers--niar-2021.md",
+  "heading": "SWITCHING REGULATORS",
+  "text": "VOLTAGE STABILIZATION (Zener Diode Regulation)"
+ },
+ "vu2mue-basic-102": {
+  "source": "niar-2021",
+  "file": "notes/b-emissions-bands--niar-2021.md",
+  "heading": "upper limit inclusive)",
+  "text": "| HF | High Frequency | 3 to 30 MHz | Deca metric waves |"
+ },
+ "vu2mue-basic-104": {
+  "source": "niar-2021",
+  "file": "notes/a-transformers--niar-2021.md",
+  "heading": "EDDY CURRENT LOSS",
+  "text": "Ferromagnetic Materials are also good conductors, and a core made from such a material also constitutes a single short-circuited turn throughout its entire length. Eddy currents therefore circulate within the core in al plane normal to the flux, and are responsible for resistive heating of the core material. The eddy current loss is a complex function of the square of supply frequency and Inverse Square of the material thickness. Eddy current losses can be reduced by making the core of a stack of plates electrically insulated from each other, rather than a solid block; all transformers operating at low frequencies use laminated cores."
+ },
+ "vu2mue-basic-105": {
+  "source": "niar-2021",
+  "file": "notes/a-ac--niar-2021.md",
+  "heading": "RESONANCE",
+  "text": "In series A.C. circuit, inductive reactance leads the zero reference angle of resistance by 90 degrees while capacitive reactance lags by 90 degrees. Therefore XL and XC are 180 degrees out of phase which means they are opposite and get cancelled. Then the only opposition to the current is the coil resistance. At resonance impedance is minimum and resistive. The current at resonant frequency is maximum. The formula for resonance is: 2πfL = 1/(2πfC)"
+ },
+ "vu2mue-basic-108": {
+  "source": "niar-2021",
+  "file": "notes/a-oscillators--niar-2021.md",
+  "heading": "12. OSCILLATOR",
+  "text": "The frequency at which an oscillator works is usually determined by a quartz crystal. When a direct current is applied to such a crystal, it vibrates at a frequency that depends on its thickness, and on the manner in which it is cut from the original mineral rock. Some oscillators employ combinations of inductors, resistors, and/or capacitors to determine the frequency. However, the best stability (constancy of frequency) is obtained in oscillators that use quartz crystals."
+ },
+ "rpc-2": {
+  "source": "niar-2021",
+  "file": "notes/b-licensing--niar-2021.md",
+  "heading": "BY RADIO AMATEURS",
+  "text": "Reproduction of broadcast programs, tape recordings, transmissions of entertainment value, music, false or misleading calls, news, advertisements, business communications, topics on political or industrial controversy, indecent language, topics that can arouse racial, religious or communal feelings, messages for monetary benefit and third party messages are forbidden. We are also forbidden to contact stations of any other countries whose administrations have informed the International Telecommunication Union (ITU) of their objection to such radio communications."
+ },
+ "rpc-4": {
+  "source": "niar-2021",
+  "file": "notes/b-station-records--niar-2021.md",
+  "heading": "34. LOG BOOK",
+  "text": "A chronological record of all transmissions must be kept in a bound book (not loose sheet) showing the following:"
+ },
+ "rpc-14": {
+  "source": "niar-2021",
+  "file": "notes/b-call-signs--niar-2021.md",
+  "heading": "19. MOBILE/PORTABLE STATION",
+  "text": "The suffix “MO’ must be added to the callsign followed by the location of the station. The licencee’s amateur station at the fixed location and the mobile station must not communicate with"
+ },
+ "rpc-16": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "14. Q CODES",
+  "text": "|  | QSB? | Is my signal fading? |  | QSB | Your signal is fading. |"
+ },
+ "rpc-18": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "Alphabet Phonetics Number Phonetics",
+  "text": "| L | Lima |  |  |"
+ },
+ "rpc-25": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "14. Q CODES",
+  "text": "| QRV? | Are you ready? | QRV | I am ready. |"
+ },
+ "rpc-28": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "Alphabet Phonetics Number Phonetics",
+  "text": "| Y | Yankee |  |  |"
+ },
+ "rpc-29": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "Alphabet Phonetics Number Phonetics",
+  "text": "| I | India | 9 | Nove nine |"
+ },
+ "rpc-47": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "Alphabet Phonetics Number Phonetics",
+  "text": "| W | Whiskey |  |  |"
+ },
+ "rpc-58": {
+  "source": "rules-2024",
+  "file": "notes/b-station-records--rules-2024.md",
+  "heading": "Terms and conditions for the installation and operation of amateur station\n1. Use of the amateur station. - The amateur station may be used for the purpose of receiving transmissions in the Standard Frequency and Time Signal Service to facilitate operation of the amateur station within the authorised frequency bands.\n2. Messages. - (1) (a) Radio communications may be exchanged with other authorised amateur stations. The amateur stations shall not communicate with amateur stations of countries whose administrations have notified the International Telecommunication Convention of their objection to such radio communications;",
+  "text": "(4) ASOC holder shall preserve the log for a period of one year from the date of last entry therein before it"
+ },
+ "rpc-75": {
+  "source": "niar-2021",
+  "file": "notes/b-licensing--niar-2021.md",
+  "heading": "3. WHO ISSUES THE AMATEUR WIRELESS LICENCES IN INDIA?",
+  "text": "The Wireless Planning & Co-ordination Wing (W.P.C. Wing) of the Ministry of Communications, Department of Telecommunications, New Delhi."
+ },
+ "rpc-87": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "Alphabet Phonetics Number Phonetics",
+  "text": "| R | Romeo |  |  |"
+ },
+ "rpc-89": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "14. Q CODES",
+  "text": "| QTH? | What is your location (latitude and QTH |  | My location is … latitude and … |"
+ },
+ "rpc-91": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "a. Distress Signal",
+  "text": "It indicates that a ship, aircraft or any other vehicle is threatened by grave and imminent danger and requests immediate assistance. The distress call in Morse Code consists of the letters SOS sent three times, the word DE and the callsign of the station in distress three times. In voice it is MAYDAY pronounced as the French expression ‘maider’, spoken three times, the words THIS IS and the callsign of the station three times. The distress message must consist of the callsign, exact location, type of distress, type of assistance required and any other information helpful for the rescue."
+ },
+ "rpc-92": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "b. Urgency Signal",
+  "text": "It indicates that the calling station has a very urgent message regarding the safety of a ship, aircraft or any other vehicle, or the safety of a person. In Morse Code (Radio Telegraphy) it consists of three repetitions of the group XXX and in voice (Radio Telephony) the words PAN PAN pronounced as the French word “panne” followed by the urgency message. The urgency signal shall have priority over other communications except distress. Stations which hear it shall take care not to interfere with that transmission."
+ },
+ "rpc-94": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "d. Test Signal",
+  "text": "Test signals are sent either for the adjustment of a transmitter or a receiver. It shall be sent not more than 30 seconds. In Morse Code it shall consist of three series of VVV and in voice the figures 1,2,3,4,5 followed by the callsign of the station. The Q code for sending test signal is QSV."
+ },
+ "rpc-96": {
+  "source": "niar-2021",
+  "file": "notes/b-phonetics-codes--niar-2021.md",
+  "heading": "13. ABBREVATIONS",
+  "text": "| CQ | General call for all stations |  | WB | Word Before |  |  |"
+ },
+ "rpc-97": {
+  "source": "niar-2021",
+  "file": "notes/b-operating--niar-2021.md",
+  "heading": "a. Distress Signal",
+  "text": "It indicates that a ship, aircraft or any other vehicle is threatened by grave and imminent danger and requests immediate assistance. The distress call in Morse Code consists of the letters SOS sent three times, the word DE and the callsign of the station in distress three times. In voice it is MAYDAY pronounced as the French expression ‘maider’, spoken three times, the words THIS IS and the callsign of the station three times. The distress message must consist of the callsign, exact location, type of distress, type of assistance required and any other information helpful for the rescue."
+ },
+ "rpc-103": {
+  "source": "niar-2021",
+  "file": "notes/b-emissions-bands--niar-2021.md",
+  "heading": "Description Emission First Symbol Second Symbol Third Symbol",
+  "text": "| Suppressed | J3E |  |  | (including sound |"
+ },
+ "rpc-105": {
+  "source": "niar-2021",
+  "file": "notes/b-emissions-bands--niar-2021.md",
+  "heading": "upper limit inclusive)",
+  "text": "| VHF | Very High Frequency | 30 to 300 MHz | Metric waves |"
+ },
+ "rpc-106": {
+  "source": "niar-2021",
+  "file": "notes/b-station-records--niar-2021.md",
+  "heading": "AMATEUR WIRELESS STATION",
+  "text": "b. Log Book for the period of one year from the date of last entry."
+ }
+}

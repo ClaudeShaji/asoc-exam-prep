@@ -51,6 +51,14 @@ fun validate(pack: ContentPack): List<String> = buildList {
         if (q.answer !in 0..3) add("question ${q.id}: bad answer")
         if (q.source !in sourceIds) add("question ${q.id}: unknown source")
     }
+    val questionIds = pack.questions.map { it.id }.toSet()
+    val squash = { s: String -> s.replace(Regex("\\s+"), " ") }
+    pack.hints.forEach { (id, h) ->
+        if (id !in questionIds) add("hint for unknown question $id")
+        val note = pack.notes.firstOrNull { it.file == h.file }
+        if (note == null) add("hint $id: unknown notes file ${h.file}")
+        else if (!squash(pack.noteText(note)).contains(squash(h.text).take(200))) add("hint $id: text is not copied from ${h.file}")
+    }
     pack.topics.filter { t -> pack.notesFor(t.id).isEmpty() }.forEach { add("topic ${it.id}: no notes") }
 
     // Every Section A/B topic should point to at least one reading.

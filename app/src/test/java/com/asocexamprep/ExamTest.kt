@@ -25,6 +25,14 @@ class ExamTest {
         assertTrue(pack.questions.count { it.section == "B" } >= 50)
     }
 
+    @Test fun hintsAreCopiedFromTheNotes() {
+        assertTrue(pack.hints.size >= 30)
+        // The validator (packIsValid) fails if any hint is not verbatim notes text; double-check one.
+        val (id, h) = pack.hints.entries.first { it.key == "vu2mue-rules-49" }
+        assertTrue(h.text.contains("30 seconds"))
+        assertTrue(pack.questions.any { it.id == id })
+    }
+
     @Test fun mockPaperHasTheRealShape() {
         for (grade in listOf("GENERAL", "RESTRICTED")) {
             val paper = Exam.mock(pack, grade, Random(1))
@@ -73,5 +81,13 @@ class ExamTest {
         assertEquals(now + 3 * Srs.DAY, r2.dueAt)
         assertTrue(Srs.mastered(r2))
         assertEquals(0, Srs.next(r2, false, now).repetitions)
+    }
+
+    @Test fun sectionPapers() {
+        val b = Exam.mock(pack, "GENERAL", Random(7), setOf("B"))
+        assertEquals(50, b.size)
+        assertTrue(b.all { it.section == "B" })
+        assertEquals(60, Exam.minutesFor(pack, pack.grade("GENERAL")!!, 50))
+        assertEquals(30, Exam.minutesFor(pack, pack.grade("RESTRICTED")!!, 50))
     }
 }

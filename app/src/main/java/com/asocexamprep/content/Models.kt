@@ -110,6 +110,10 @@ data class Question(
     val alsoIn: List<String> = emptyList(),
 )
 
+/** A hint: a paragraph copied verbatim from a topic's notes. */
+@Serializable
+data class Hint(val source: String, val file: String, val heading: String, val text: String)
+
 /** Study notes for a topic, converted from one source's pages. */
 @Serializable
 data class NoteRef(val topic: String, val source: String, val file: String, val pages: String)
@@ -128,6 +132,7 @@ class ContentPack(
     val notes: List<NoteRef> = emptyList(),
     val training: com.asocexamprep.morse.TrainingData? = null,
     val questions: List<Question> = emptyList(),
+    val hints: Map<String, Hint> = emptyMap(),
     private val read: (String) -> String = { error("no reader") },
 ) {
     private val noteCache = HashMap<String, String>()
@@ -173,6 +178,7 @@ class ContentPack(
                 infoText = info.associate { it.id to read("info/${it.id}.md") },
                 reference = json.decodeFromString(read("reference.json")),
                 notes = json.decodeFromString(read("notes.json")),
+                hints = runCatching { json.decodeFromString<Map<String, Hint>>(read("hints.json")) }.getOrDefault(emptyMap()),
                 questions = runCatching { json.decodeFromString<List<Question>>(read("questions.json")) }.getOrDefault(emptyList()),
                 training = runCatching { json.decodeFromString<com.asocexamprep.morse.TrainingData>(read("morse/training.json")) }.getOrNull(),
                 read = read,

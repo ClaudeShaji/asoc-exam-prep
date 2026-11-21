@@ -19,7 +19,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.asocexamprep.ui.exam.ExamScreen
-import com.asocexamprep.ui.exam.MockScreen
+import com.asocexamprep.ui.exam.MorseTestScreen
+import com.asocexamprep.ui.exam.PaperScreen
 import com.asocexamprep.ui.exam.PracticeTopicsScreen
 import com.asocexamprep.ui.exam.QuizScreen
 import com.asocexamprep.ui.screens.HomeScreen
@@ -92,7 +93,15 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             composable("morse/send") { SendScreen(onBack = { nav.popBackStack() }) }
             composable("morse/alphabet") { AlphabetScreen(onBack = { nav.popBackStack() }) }
             composable(Tab.EXAM.route) { ExamScreen(onOpen = { nav.navigate("exam/$it") }) }
-            composable("exam/mock") { MockScreen(onTopic = { nav.navigate("topic/$it") }, onBack = { nav.popBackStack() }) }
+            composable("exam/mock/{kind}") {
+                PaperScreen(
+                    it.arguments?.getString("kind").orEmpty(),
+                    onTopic = { t -> nav.navigate("topic/$t") },
+                    onMorse = { nav.navigate("exam/morse") },
+                    onBack = { nav.popBackStack() },
+                )
+            }
+            composable("exam/morse") { MorseTestScreen(onBack = { nav.popBackStack() }) }
             composable("exam/topics") { PracticeTopicsScreen(onPick = { nav.navigate("exam/practice/$it") }, onBack = { nav.popBackStack() }) }
             composable("exam/review") { QuizScreen("review", onTopic = { nav.navigate("topic/$it") }, onBack = { nav.popBackStack() }) }
             composable("exam/practice/{key}") {

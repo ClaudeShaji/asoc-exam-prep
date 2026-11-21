@@ -2,25 +2,27 @@ package com.asocexamprep.ui.exam
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ArrowBack
 import androidx.compose.material.icons.automirrored.outlined.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
+import androidx.compose.material.icons.outlined.Bolt
 import androidx.compose.material.icons.outlined.Flag
+import androidx.compose.material.icons.outlined.Gavel
+import androidx.compose.material.icons.outlined.GraphicEq
+import androidx.compose.material.icons.outlined.Lightbulb
 import androidx.compose.material.icons.outlined.Quiz
 import androidx.compose.material.icons.outlined.Replay
 import androidx.compose.material.icons.outlined.Timer
@@ -28,6 +30,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -35,8 +38,11 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -46,6 +52,7 @@ import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -60,6 +67,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.asocexamprep.container
 import com.asocexamprep.content.Question
+import com.asocexamprep.data.settings.Grade
 import com.asocexamprep.data.settings.Settings
 import com.asocexamprep.exam.Exam
 import com.asocexamprep.exam.ExamScore
@@ -73,11 +81,11 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
 @Composable
-private fun Back(onBack: () -> Unit) =
+internal fun Back(onBack: () -> Unit) =
     IconButton(onClick = onBack, modifier = Modifier.testTag("back")) { Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Back") }
 
 @Composable
-private fun NavCard(icon: ImageVector, title: String, subtitle: String, tag: String, onClick: () -> Unit) {
+internal fun NavCard(icon: ImageVector, title: String, subtitle: String, tag: String, onClick: () -> Unit) {
     Card(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth().testTag(tag),
@@ -94,7 +102,24 @@ private fun NavCard(icon: ImageVector, title: String, subtitle: String, tag: Str
     }
 }
 
-/** The Exam tab: mock exam, practice by topic, mistakes to review, past mocks. */
+/** Which paper: the full written exam, or one section of it. */
+enum class PaperKind(val key: String, val sections: Set<String>?, val title: String) {
+    FULL("full", null, "Mock exam"),
+    THEORY("A", setOf("A"), "Radio Theory paper"),
+    RULES("B", setOf("B"), "Rules & Regulations paper");
+
+    companion object {
+        fun of(key: String) = entries.firstOrNull { it.key == key } ?: FULL
+    }
+}
+
+private fun paperLabel(examId: String) = when (examId.substringAfter(':', "full")) {
+    "A" -> "Theory"
+    "B" -> "Rules"
+    else -> "Full"
+}
+
+/** The Exam tab: papers, the Morse test, practice by topic, mistakes to review, past papers. */
 @Composable
 fun ExamScreen(onOpen: (String) -> Unit) {
     val c = LocalContext.current.container
@@ -104,6 +129,7 @@ fun ExamScreen(onOpen: (String) -> Unit) {
     val mocks by c.db.progress().exams().collectAsStateWithLifecycle(emptyList())
     val mistakes by c.db.progress().openMistakes().collectAsStateWithLifecycle(emptyList())
     val due = mistakes.count { it.dueAt <= System.currentTimeMillis() }
+    val morse = grade?.let { pack.grade("GENERAL")?.morse }
 
     ScreenScaffold("Exam", "exam") {
         GradeSwitch(tagPrefix = "exam_grade")
@@ -116,14 +142,21 @@ fun ExamScreen(onOpen: (String) -> Unit) {
         }
         mocks.firstOrNull()?.let { m ->
             Text(
-                "Last mock: ${mockPercent(m.sectionScores)}% · ${if (m.passed) "Pass" else "Fail"}",
+                "Last paper (${paperLabel(m.examId)}): ${mockPercent(m.sectionScores)}% · ${if (m.passed) "Pass" else "Fail"}",
                 style = MaterialTheme.typography.titleMedium,
                 color = if (m.passed) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
                 modifier = Modifier.testTag("exam_last"),
             )
         }
-        NavCard(Icons.Outlined.Timer, "Mock exam", "Full timed paper, scored like the real one", "exam_mock") { onOpen("mock") }
-        NavCard(Icons.Outlined.Quiz, "Practice by topic", "${Exam.pool(pack, s.grade.name).size} questions · answers explained", "exam_practice") { onOpen("topics") }
+        NavCard(Icons.Outlined.Timer, "Mock exam", "Sections A and B, timed and scored like the real paper", "exam_mock") { onOpen("mock/full") }
+        NavCard(Icons.Outlined.Bolt, "Radio Theory", "Section A paper · 50 questions", "exam_paper_A") { onOpen("mock/A") }
+        NavCard(Icons.Outlined.Gavel, "Rules & Regulations", "Section B paper · 50 questions", "exam_paper_B") { onOpen("mock/B") }
+        NavCard(
+            Icons.Outlined.GraphicEq, "Morse code test",
+            (morse?.let { "Receive and send at ${it.wpm} WPM" } ?: "Receive and send") + if (s.grade == Grade.RESTRICTED) " · General grade only" else "",
+            "exam_morse",
+        ) { onOpen("morse") }
+        NavCard(Icons.Outlined.Quiz, "Practice by topic", "${Exam.pool(pack, s.grade.name).size} questions · hints from the study notes", "exam_practice") { onOpen("topics") }
         NavCard(
             Icons.Outlined.Replay, "Review mistakes",
             when {
@@ -135,12 +168,12 @@ fun ExamScreen(onOpen: (String) -> Unit) {
         ) { onOpen("review") }
 
         if (mocks.isNotEmpty()) {
-            Text("Past mocks", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
+            Text("Past papers", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary, modifier = Modifier.padding(top = 8.dp))
             val fmt = remember { DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT).withZone(ZoneId.systemDefault()) }
             mocks.take(8).forEach { m ->
                 Row(Modifier.fillMaxWidth().padding(vertical = 6.dp).testTag("exam_history_${m.id}")) {
                     Text(fmt.format(Instant.ofEpochMilli(m.startedAt)), Modifier.weight(1f), color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Text(m.grade.lowercase().replaceFirstChar { it.uppercase() }, Modifier.padding(end = 12.dp), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(paperLabel(m.examId) + " · " + m.grade.lowercase().replaceFirstChar { it.uppercase() }, Modifier.padding(end = 12.dp), color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Text("${mockPercent(m.sectionScores)}%", Modifier.padding(end = 12.dp))
                     Text(if (m.passed) "Pass" else "Fail", color = if (m.passed) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error)
                 }
@@ -183,57 +216,120 @@ fun PracticeTopicsScreen(onPick: (String) -> Unit, onBack: () -> Unit) {
     }
 }
 
-/** Answer options; [reveal] colours the right one and the learner's wrong pick. */
+/** Answer options; [reveal] colours the right one green and a wrong pick red, and stops changes. */
 @Composable
-private fun Options(q: Question, chosen: Int?, reveal: Boolean, onChoose: (Int) -> Unit) {
+internal fun Options(q: Question, chosen: Int?, reveal: Boolean, tagPrefix: String = "opt_", onChoose: (Int) -> Unit) {
+    val dark = androidx.compose.foundation.isSystemInDarkTheme()
+    val green = if (dark) androidx.compose.ui.graphics.Color(0xFF81C784) else androidx.compose.ui.graphics.Color(0xFF2E7D32)
+    val greenFill = if (dark) androidx.compose.ui.graphics.Color(0xFF1E4620) else androidx.compose.ui.graphics.Color(0xFFDCEFDC)
+    val red = if (dark) androidx.compose.ui.graphics.Color(0xFFEF9A9A) else androidx.compose.ui.graphics.Color(0xFFC62828)
+    val redFill = if (dark) androidx.compose.ui.graphics.Color(0xFF5C1F1F) else androidx.compose.ui.graphics.Color(0xFFF9DEDC)
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         q.options.forEachIndexed { i, text ->
             val isRight = reveal && i == q.answer
             val isWrong = reveal && i == chosen && i != q.answer
             val border = when {
-                isRight -> MaterialTheme.colorScheme.primary
-                isWrong -> MaterialTheme.colorScheme.error
+                isRight -> green
+                isWrong -> red
                 chosen == i -> MaterialTheme.colorScheme.secondary
                 else -> MaterialTheme.colorScheme.outlineVariant
             }
+            val fill = when {
+                isRight -> greenFill
+                isWrong -> redFill
+                chosen == i -> MaterialTheme.colorScheme.secondaryContainer
+                else -> MaterialTheme.colorScheme.surface
+            }
+            // Stays enabled (full-contrast text); once revealed, taps are ignored.
             Card(
-                onClick = { onChoose(i) },
-                enabled = !reveal,
+                onClick = { if (!reveal) onChoose(i) },
                 border = BorderStroke(if (chosen == i || isRight) 2.dp else 1.dp, border),
-                colors = CardDefaults.cardColors(
-                    containerColor = when {
-                        isRight -> MaterialTheme.colorScheme.primaryContainer
-                        isWrong -> MaterialTheme.colorScheme.errorContainer
-                        chosen == i -> MaterialTheme.colorScheme.secondaryContainer
-                        else -> MaterialTheme.colorScheme.surface
-                    },
-                    disabledContainerColor = when {
-                        isRight -> MaterialTheme.colorScheme.primaryContainer
-                        isWrong -> MaterialTheme.colorScheme.errorContainer
-                        else -> MaterialTheme.colorScheme.surface
-                    },
-                ),
-                modifier = Modifier.fillMaxWidth().testTag("opt_$i").semantics {
+                colors = CardDefaults.cardColors(containerColor = fill),
+                modifier = Modifier.fillMaxWidth().testTag("$tagPrefix$i").semantics {
                     selected = chosen == i
                     if (reveal) stateDescription = when { isRight -> "Correct answer"; isWrong -> "Your answer, wrong"; else -> "" }
                 },
             ) {
-                Row(Modifier.padding(14.dp), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                Row(Modifier.padding(14.dp), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
                     Text("${'A' + i}", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
-                    Text(text, style = MaterialTheme.typography.bodyLarge)
+                    Text(text, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                    if (isRight) Text("✓", color = green, fontWeight = FontWeight.Bold)
+                    if (isWrong) Text("✗", color = red, fontWeight = FontWeight.Bold)
                 }
             }
         }
     }
 }
 
+/**
+ * Hint: the passage from the study notes that explains this question (copied verbatim, with its
+ * source), plus the question source's own note if it has one. [onOpen] reports the first opening.
+ */
 @Composable
-private fun Stem(q: Question) {
-    Text(q.stem, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("quiz_stem").semantics { stateDescription = q.id })
+internal fun HintPanel(q: Question, tag: String, onTopic: (String) -> Unit, startOpen: Boolean = false, onOpen: () -> Unit = {}) {
+    val pack = LocalContext.current.container.content.pack
+    var open by rememberSaveable(q.id, startOpen) { mutableStateOf(startOpen) }
+    val hint = pack.hints[q.id]
+    if (!open) {
+        TextButton(onClick = { open = true; onOpen() }, modifier = Modifier.testTag(tag)) {
+            Icon(Icons.Outlined.Lightbulb, null, Modifier.size(18.dp))
+            Text("  Hint")
+        }
+        return
+    }
+    Surface(
+        color = MaterialTheme.colorScheme.secondaryContainer.copy(alpha = 0.5f),
+        shape = MaterialTheme.shapes.medium,
+        modifier = Modifier.fillMaxWidth().testTag("${tag}_panel"),
+    ) {
+        Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            if (hint != null) {
+                val src = pack.source(hint.source)?.title ?: hint.source
+                Text("From $src · ${hint.heading}", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("${tag}_source"))
+                // Table rows are kept exactly as in the notes; show their cells side by side.
+                val text = if (hint.text.trimStart().startsWith("|")) hint.text.trim().trim('|').split('|').map { it.trim() }.filter { it.isNotEmpty() }.joinToString("   ·   ") else hint.text
+                Text(text, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.testTag("${tag}_text"))
+            }
+            q.explanation?.let { Text("Note in the source: $it", style = MaterialTheme.typography.bodyMedium) }
+            if (hint == null && q.explanation == null) {
+                Text("No hint for this question.", style = MaterialTheme.typography.bodyMedium, modifier = Modifier.testTag("${tag}_none"))
+            }
+            TextButton(onClick = { onTopic(q.topic) }) {
+                Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(16.dp))
+                Text("  Notes: ${pack.topic(q.topic)?.title}")
+            }
+        }
+    }
+}
+
+@Composable
+private fun Stem(q: Question, tag: String = "quiz_stem", number: Int? = null) {
+    Text(
+        (number?.let { "$it. " } ?: "") + q.stem,
+        style = MaterialTheme.typography.titleMedium,
+        modifier = Modifier.testTag(tag).semantics { stateDescription = q.id },
+    )
+}
+
+/** Where the question and its answer come from: the published bank, and any confirming source. */
+@Composable
+private fun SourceLine(q: Question) {
+    val pack = LocalContext.current.container.content.pack
+    val parts = buildList {
+        add((pack.source(q.source)?.title ?: q.source) + (q.page?.let { ", p. $it" } ?: ""))
+        if (q.alsoIn.any { it.startsWith("rpc-") } && q.source != "rpc-asoc-b") add("same answer in the RPC Ham Radio Club paper")
+        q.verified.firstOrNull()?.let { add("answer matches the official US question pool (${it.substringAfter(':')})") }
+    }
+    Text(
+        "Source: " + parts.joinToString(" · "),
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.testTag("quiz_source"),
+    )
 }
 
 /**
- * Practice or review: one question at a time with the answer and explanation shown at once.
+ * Practice or review: one question at a time with the answer shown at once.
  * [key] is a topic id, a section ("A"/"B"), or "review" for due mistakes.
  */
 @Composable
@@ -286,6 +382,8 @@ fun QuizScreen(key: String, onTopic: (String) -> Unit, onBack: () -> Unit) {
             if (pick == q.answer) right++
             scope.launch { c.exams.answer(q, pick, if (review) "review" else "practice", System.currentTimeMillis() - shownAt) }
         }
+        // Before answering the hint is on request; afterwards it opens to explain the answer.
+        HintPanel(q, "quiz_hint", onTopic, startOpen = chosen != null)
         chosen?.let { pick ->
             val ok = pick == q.answer
             Text(
@@ -294,12 +392,7 @@ fun QuizScreen(key: String, onTopic: (String) -> Unit, onBack: () -> Unit) {
                 color = if (ok) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error,
                 modifier = Modifier.testTag("quiz_feedback"),
             )
-            q.explanation?.let { Text(it, modifier = Modifier.testTag("quiz_explanation")) }
             SourceLine(q)
-            TextButton(onClick = { onTopic(q.topic) }, modifier = Modifier.testTag("quiz_notes")) {
-                Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(18.dp))
-                Text("  Notes: ${pack.topic(q.topic)?.title}")
-            }
             Button(
                 onClick = {
                     if (i + 1 >= qs.size) scope.launch { c.game.quizResult(right.toFloat() / qs.size) }
@@ -311,17 +404,22 @@ fun QuizScreen(key: String, onTopic: (String) -> Unit, onBack: () -> Unit) {
     }
 }
 
-/** A full timed mock exam, scored by the grade's pass rules at the end. */
+/**
+ * A timed paper on one scrollable page: the full written exam or one section. With live results on,
+ * each pick is marked right or wrong at once; hints are available and counted.
+ */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
+fun PaperScreen(kindKey: String, onTopic: (String) -> Unit, onMorse: () -> Unit, onBack: () -> Unit) {
     val c = LocalContext.current.container
     val s by c.settings.settings.collectAsStateWithLifecycle(Settings())
     val pack = c.content.pack
+    val kind = PaperKind.of(kindKey)
     val scope = rememberCoroutineScope()
     var paper by remember { mutableStateOf<List<Question>?>(null) }
     val answers = remember { mutableStateMapOf<String, Int>() }
     val flagged = remember { mutableStateMapOf<String, Boolean>() }
-    var i by remember { mutableIntStateOf(0) }
+    val hinted = remember { mutableStateMapOf<String, Boolean>() }
     var startedAt by remember { mutableLongStateOf(0L) }
     var secondsLeft by remember { mutableIntStateOf(0) }
     var result by remember { mutableStateOf<ExamScore?>(null) }
@@ -329,6 +427,9 @@ fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
     var confirmLeave by remember { mutableStateOf(false) }
     val grade = pack.grade(s.grade.name)
     val running = paper != null && result == null
+    val questionCount = pack.exam.sections.filter { kind.sections == null || it.id in kind.sections }.sumOf { it.questions }
+    val minutes = grade?.let { Exam.minutesFor(pack, it, questionCount) } ?: 0
+    val live = s.liveResults
 
     fun submit() {
         val p = paper ?: return
@@ -336,9 +437,9 @@ fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
         val sc = Exam.score(pack, g, p, answers)
         result = sc
         scope.launch {
-            val id = c.exams.saveMock(g.id, sc, startedAt)
-            p.forEach { q -> answers[q.id]?.let { c.exams.answer(q, it, "mock", examId = id) } ?: c.exams.answer(q, -1, "mock", examId = id) }
-            c.game.mockResult(sc.percent / 100f, sc.passed)
+            val id = c.exams.saveMock(g.id, sc, startedAt, "asoc-in:${kind.key}")
+            p.forEach { q -> c.exams.answer(q, answers[q.id] ?: -1, "mock", examId = id) }
+            c.game.mockResult(sc.percent / 100f, sc.passed && kind == PaperKind.FULL)
         }
     }
 
@@ -351,60 +452,101 @@ fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
     }
     BackHandler(enabled = running) { confirmLeave = true }
 
-    ScreenScaffold("Mock exam", "mock", navigationIcon = { Back { if (running) confirmLeave = true else onBack() } }) {
-        val g = grade ?: return@ScreenScaffold
+    Column(Modifier.fillMaxSize().testTag("screen_mock")) {
+        TopAppBar(title = { Text(kind.title) }, navigationIcon = { Back { if (running) confirmLeave = true else onBack() } })
+        val g = grade ?: return@Column
         val p = paper
         val r = result
         when {
-            p == null -> {
+            p == null -> ScrollBody("mock_intro") {
                 Text("${g.title} grade", style = MaterialTheme.typography.titleLarge)
-                pack.exam.sections.forEach { sec -> Text("Section ${sec.id} · ${sec.title}: ${sec.questions} questions") }
-                Text("Time: ${g.minutes} minutes")
+                pack.exam.sections.filter { kind.sections == null || it.id in kind.sections }.forEach { sec ->
+                    Text("Section ${sec.id} · ${sec.title}: ${sec.questions} questions")
+                }
+                Text("Time: $minutes minutes")
                 Text("Pass: at least ${g.minSectionPercent}% in each section and ${g.minAggregatePercent}% overall.")
-                Text("Answers are shown at the end. You can move between questions and flag ones to check.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Text("All questions are on one page. Turn on live results to see each answer marked right or wrong as you go.", color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Button(
                     onClick = {
-                        paper = Exam.mock(pack, g.id)
-                        answers.clear(); flagged.clear(); i = 0
-                        startedAt = System.currentTimeMillis(); secondsLeft = g.minutes * 60
+                        paper = Exam.mock(pack, g.id, sections = kind.sections)
+                        answers.clear(); flagged.clear(); hinted.clear()
+                        startedAt = System.currentTimeMillis(); secondsLeft = minutes * 60
                     },
                     modifier = Modifier.fillMaxWidth().testTag("mock_start"),
                 ) { Text("Start") }
             }
-            r != null -> MockResult(r, p, answers, onTopic, onDone = onBack, onAgain = { paper = null; result = null })
+            r != null -> ScrollBody("mock_results") {
+                MockResult(r, p, answers, hinted.size, onTopic, onDone = onBack, onAgain = { paper = null; result = null })
+                if (kind == PaperKind.FULL && g.morse != null) {
+                    Button(onClick = onMorse, modifier = Modifier.fillMaxWidth().testTag("mock_morse")) { Text("Part II: Morse code test") }
+                }
+            }
             else -> {
-                val q = p[i]
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("${i + 1} / ${p.size} · Section ${q.section}", Modifier.weight(1f).testTag("mock_count"), color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Icon(Icons.Outlined.Timer, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Text(" %d:%02d:%02d".format(secondsLeft / 3600, secondsLeft / 60 % 60, secondsLeft % 60), modifier = Modifier.testTag("mock_timer"))
+                // Header that stays put: time, progress, live results switch, submit.
+                Surface(color = MaterialTheme.colorScheme.surfaceContainer, modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(horizontal = 16.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(Icons.Outlined.Timer, null, Modifier.size(18.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text(" %d:%02d:%02d".format(secondsLeft / 3600, secondsLeft / 60 % 60, secondsLeft % 60), Modifier.testTag("mock_timer"))
+                            Text("   ${answers.size} / ${p.size} answered", Modifier.weight(1f).testTag("mock_answered"), color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Button(onClick = { confirmSubmit = true }, modifier = Modifier.testTag("mock_submit")) { Text("Submit") }
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text("Live results", Modifier.weight(1f))
+                            Switch(checked = live, onCheckedChange = { on -> scope.launch { c.settings.setLiveResults(on) } }, modifier = Modifier.testTag("live_toggle"))
+                        }
+                    }
                 }
-                Navigator(p, i, answers, flagged) { i = it }
-                Stem(q)
-                Options(q, answers[q.id], reveal = false) { answers[q.id] = it }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                    OutlinedButton(onClick = { if (i > 0) i-- }, enabled = i > 0, modifier = Modifier.testTag("mock_prev")) { Text("Back") }
-                    FilterChip(
-                        selected = flagged[q.id] == true,
-                        onClick = { flagged[q.id] = flagged[q.id] != true },
-                        label = { Text("Flag") },
-                        leadingIcon = { Icon(Icons.Outlined.Flag, null, Modifier.size(16.dp)) },
-                        modifier = Modifier.testTag("mock_flag"),
-                    )
-                    if (i + 1 < p.size) Button(onClick = { i++ }, modifier = Modifier.testTag("mock_next")) { Text("Next") }
+                LazyColumn(
+                    Modifier.fillMaxSize().testTag("paper_list"),
+                    contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(14.dp),
+                ) {
+                    itemsIndexed(p, key = { _, q -> q.id }) { n, q ->
+                        val sectionStart = n == 0 || p[n - 1].section != q.section
+                        Column(Modifier.testTag("mq_$n"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                            if (sectionStart) {
+                                Text(
+                                    "Section ${q.section} · ${pack.exam.sections.first { it.id == q.section }.title}",
+                                    style = MaterialTheme.typography.titleSmall,
+                                    color = MaterialTheme.colorScheme.primary,
+                                )
+                            }
+                            Stem(q, tag = "mq_stem_$n", number = n + 1)
+                            val chosen = answers[q.id]
+                            Options(q, chosen, reveal = live && chosen != null, tagPrefix = "mq_${n}_opt_") { answers[q.id] = it }
+                            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                FilterChip(
+                                    selected = flagged[q.id] == true,
+                                    onClick = { flagged[q.id] = flagged[q.id] != true },
+                                    label = { Text("Flag") },
+                                    leadingIcon = { Icon(Icons.Outlined.Flag, null, Modifier.size(16.dp)) },
+                                    modifier = Modifier.testTag("mq_flag_$n"),
+                                )
+                            }
+                            HintPanel(q, "mq_hint_$n", onTopic, onOpen = { hinted[q.id] = true })
+                            HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
+                        }
+                    }
                 }
-                Text("${answers.size} of ${p.size} answered", color = MaterialTheme.colorScheme.onSurfaceVariant)
-                Button(onClick = { confirmSubmit = true }, modifier = Modifier.fillMaxWidth().testTag("mock_submit")) { Text("Submit") }
             }
         }
     }
 
     if (confirmSubmit) {
         val missing = (paper?.size ?: 0) - answers.size
+        val flags = flagged.count { it.value }
         AlertDialog(
             onDismissRequest = { confirmSubmit = false },
             title = { Text("Submit the paper?") },
-            text = { Text(if (missing > 0) "$missing questions are unanswered and will count as wrong." else "All questions are answered.") },
+            text = {
+                Text(
+                    listOfNotNull(
+                        if (missing > 0) "$missing questions are unanswered and will count as wrong." else "All questions are answered.",
+                        if (flags > 0) "$flags flagged to check." else null,
+                    ).joinToString(" "),
+                )
+            },
             confirmButton = { TextButton(onClick = { confirmSubmit = false; submit() }, modifier = Modifier.testTag("mock_confirm")) { Text("Submit") } },
             dismissButton = { TextButton(onClick = { confirmSubmit = false }) { Text("Keep going") } },
         )
@@ -412,7 +554,7 @@ fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
     if (confirmLeave) {
         AlertDialog(
             onDismissRequest = { confirmLeave = false },
-            title = { Text("Leave the mock exam?") },
+            title = { Text("Leave the paper?") },
             text = { Text("Your answers will be lost.") },
             confirmButton = { TextButton(onClick = { confirmLeave = false; onBack() }, modifier = Modifier.testTag("mock_leave")) { Text("Leave") } },
             dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text("Stay") } },
@@ -420,38 +562,8 @@ fun MockScreen(onTopic: (String) -> Unit, onBack: () -> Unit) {
     }
 }
 
-/** Numbered strip of all questions: filled = answered, amber ring = flagged. */
 @Composable
-private fun Navigator(paper: List<Question>, current: Int, answers: Map<String, Int>, flagged: Map<String, Boolean>, onGo: (Int) -> Unit) {
-    val state = rememberLazyListState()
-    LaunchedEffect(current) { state.animateScrollToItem((current - 3).coerceAtLeast(0)) }
-    LazyRow(state = state, horizontalArrangement = Arrangement.spacedBy(6.dp), modifier = Modifier.fillMaxWidth().testTag("mock_nav")) {
-        items(paper.size) { n ->
-            val q = paper[n]
-            val answered = answers.containsKey(q.id)
-            Box(
-                Modifier.size(34.dp)
-                    .background(
-                        when {
-                            n == current -> MaterialTheme.colorScheme.primary
-                            answered -> MaterialTheme.colorScheme.primaryContainer
-                            else -> MaterialTheme.colorScheme.surfaceContainer
-                        },
-                        CircleShape,
-                    )
-                    .then(if (flagged[q.id] == true) Modifier.border(2.dp, MaterialTheme.colorScheme.secondary, CircleShape) else Modifier)
-                    .clickable { onGo(n) }
-                    .testTag("nav_$n"),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text("${n + 1}", style = MaterialTheme.typography.labelMedium, color = if (n == current) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface)
-            }
-        }
-    }
-}
-
-@Composable
-private fun MockResult(r: ExamScore, paper: List<Question>, answers: Map<String, Int>, onTopic: (String) -> Unit, onDone: () -> Unit, onAgain: () -> Unit) {
+private fun MockResult(r: ExamScore, paper: List<Question>, answers: Map<String, Int>, hints: Int, onTopic: (String) -> Unit, onDone: () -> Unit, onAgain: () -> Unit) {
     val pack = LocalContext.current.container.content.pack
     Text(
         if (r.passed) "Pass" else "Not yet",
@@ -468,7 +580,7 @@ private fun MockResult(r: ExamScore, paper: List<Question>, answers: Map<String,
             modifier = Modifier.testTag("mock_section_${sec.section}"),
         )
     }
-    // Weakest topics first, so the learner knows what to study.
+    Text(if (hints == 0) "No hints used" else "Hints used: $hints", color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("mock_hints"))
     val wrong = paper.filter { answers[it.id] != it.answer }
     if (wrong.isNotEmpty()) {
         val weakTopics = wrong.groupingBy { it.topic }.eachCount().entries.sortedByDescending { it.value }.take(4)
@@ -496,19 +608,11 @@ private fun MockResult(r: ExamScore, paper: List<Question>, answers: Map<String,
     }
 }
 
-/** Where the question and its answer come from: the published bank, and any confirming source. */
+/** Scrolling page body under a screen's own top bar. */
 @Composable
-private fun SourceLine(q: Question) {
-    val pack = LocalContext.current.container.content.pack
-    val parts = buildList {
-        add((pack.source(q.source)?.title ?: q.source) + (q.page?.let { ", p. $it" } ?: ""))
-        if (q.alsoIn.any { it.startsWith("rpc-") } && q.source != "rpc-asoc-b") add("same answer in the RPC Ham Radio Club paper")
-        q.verified.firstOrNull()?.let { add("answer matches the official US question pool (${it.substringAfter(':')})") }
-    }
-    Text(
-        "Source: " + parts.joinToString(" · "),
-        style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant,
-        modifier = Modifier.testTag("quiz_source"),
-    )
+internal fun ScrollBody(tag: String, content: @Composable () -> Unit) {
+    Column(
+        Modifier.fillMaxSize().testTag(tag).verticalScroll(rememberScrollState()).padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+    ) { content() }
 }
