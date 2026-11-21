@@ -63,6 +63,9 @@ class ExamUiTest {
                 wrongId = q.id
                 choose((q.answer + 1) % 4)
                 rule.onNodeWithTag("quiz_feedback").assertTextContains("The answer is ${'A' + q.answer}", substring = true)
+                // Every answer names the published bank it comes from.
+                val src = pack.source(q.source)!!.title
+                rule.onNodeWithTag("quiz_source").assertTextContains("Source: $src", substring = true)
                 rule.onNodeWithTag("opt_${q.answer}").assertExists()
             } else {
                 choose(q.answer)

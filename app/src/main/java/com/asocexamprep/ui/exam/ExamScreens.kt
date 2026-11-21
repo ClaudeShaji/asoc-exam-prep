@@ -295,6 +295,7 @@ fun QuizScreen(key: String, onTopic: (String) -> Unit, onBack: () -> Unit) {
                 modifier = Modifier.testTag("quiz_feedback"),
             )
             q.explanation?.let { Text(it, modifier = Modifier.testTag("quiz_explanation")) }
+            SourceLine(q)
             TextButton(onClick = { onTopic(q.topic) }, modifier = Modifier.testTag("quiz_notes")) {
                 Icon(Icons.AutoMirrored.Outlined.MenuBook, null, Modifier.size(18.dp))
                 Text("  Notes: ${pack.topic(q.topic)?.title}")
@@ -493,4 +494,21 @@ private fun MockResult(r: ExamScore, paper: List<Question>, answers: Map<String,
         Button(onClick = onAgain, modifier = Modifier.testTag("mock_again")) { Text("New paper") }
         OutlinedButton(onClick = onDone, modifier = Modifier.testTag("mock_done")) { Text("Done") }
     }
+}
+
+/** Where the question and its answer come from: the published bank, and any confirming source. */
+@Composable
+private fun SourceLine(q: Question) {
+    val pack = LocalContext.current.container.content.pack
+    val parts = buildList {
+        add((pack.source(q.source)?.title ?: q.source) + (q.page?.let { ", p. $it" } ?: ""))
+        if (q.alsoIn.any { it.startsWith("rpc-") } && q.source != "rpc-asoc-b") add("same answer in the RPC Ham Radio Club paper")
+        q.verified.firstOrNull()?.let { add("answer matches the official US question pool (${it.substringAfter(':')})") }
+    }
+    Text(
+        "Source: " + parts.joinToString(" · "),
+        style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.testTag("quiz_source"),
+    )
 }

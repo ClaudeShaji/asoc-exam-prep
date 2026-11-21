@@ -1,70 +1,361 @@
 [
-  { "id": "rules-2024", "title": "Telecommunications (Amateur Services) Rules, 2024",
-    "publisher": "Department of Telecommunications, Gazette of India", "year": 2024, "pages": 15,
-    "url": "https://eservices.dot.gov.in/sites/default/files/circular-notifications/ASOC%20Service%20rules%2024.pdf",
-    "sha256": "37e60deca3d8adf9961e8f0ad70bce1b16fe7e38b8044fdecdbd6b27e023f1c3",
-    "licence": "govt-public", "official": true,
-    "map": [
-      { "topic": "b-licensing", "pages": "9-12" },
-      { "topic": "b-station-records", "pages": "13-15" },
-      { "topic": "b-emissions-bands", "pages": "13-13" }
-    ] },
-  { "id": "asoc-portal-manual", "title": "ASOC User Manual (application portal)",
-    "publisher": "Department of Telecommunications eServices", "year": 2025, "pages": 39,
-    "url": "https://eservices.dot.gov.in/sites/default/files/user-mannual/ASOC%20Manual%20%282%29.pdf",
-    "sha256": "bf9a3d80b852a8fc491e50b93270a053572a86eeac3dc992b6e2c3eb6c5d3f1f",
-    "licence": "download", "official": true, "map": [] },
-  { "id": "niar-2021", "title": "NIAR Study Manual (2021 edition)",
-    "publisher": "National Institute of Amateur Radio, Hyderabad", "year": 2021, "pages": 147,
-    "url": "http://www.niar.org/downloads/Study-Manual-Restricted-Grade.pdf",
-    "sha256": "abc85b429914abbaa4c762ac337a54f94a74b7f7247b1efd9e58d6a60f1dcc31",
-    "licence": "download", "official": false,
-    "map": [
-      { "topic": "a-atomic", "pages": "15-16" }, { "topic": "a-resistors", "pages": "17-20" },
-      { "topic": "a-capacitors", "pages": "21-22" }, { "topic": "a-magnetism", "pages": "23-24" },
-      { "topic": "a-inductors", "pages": "25-26" }, { "topic": "a-transformers", "pages": "27-30" },
-      { "topic": "a-ac", "pages": "31-37" }, { "topic": "a-semiconductors", "pages": "38-42" },
-      { "topic": "a-rectifiers", "pages": "43-49" }, { "topic": "a-transistors", "pages": "50-53" },
-      { "topic": "a-amplifiers", "pages": "54-58" }, { "topic": "a-oscillators", "pages": "59-64" },
-      { "topic": "a-modulation", "pages": "65-67" }, { "topic": "a-receivers", "pages": "68-73" },
-      { "topic": "a-transmitters", "pages": "74-76" }, { "topic": "a-propagation", "pages": "77-78" },
-      { "topic": "a-aerials", "pages": "79-89" }, { "topic": "a-frequency-measurement", "pages": "79-89" },
-      { "topic": "g-communication", "pages": "90-93" }, { "topic": "g-transformers", "pages": "94-96" },
-      { "topic": "g-semiconductors", "pages": "97-101" }, { "topic": "g-power-supplies", "pages": "102-102" },
-      { "topic": "g-fax-tv", "pages": "103-103" }, { "topic": "g-ionosphere", "pages": "104-104" },
-      { "topic": "g-aerials", "pages": "105-106" }, { "topic": "g-space", "pages": "107-114" },
-      { "topic": "b-licensing", "pages": "116-119" }, { "topic": "b-phonetics-codes", "pages": "120-121" },
-      { "topic": "b-call-signs", "pages": "122-123" }, { "topic": "b-operating", "pages": "124-126" },
-      { "topic": "b-emissions-bands", "pages": "127-128" }, { "topic": "b-station-records", "pages": "129-130" },
-      { "topic": "b-time-frequency", "pages": "131-133" }, { "topic": "m-morse", "pages": "134-144" }
-    ] },
-  { "id": "niar-2016", "title": "NIAR Study Manual (2016 edition)",
-    "publisher": "National Institute of Amateur Radio, Hyderabad", "year": 2016, "pages": 158,
-    "url": "http://www.niar.org/downloads/ham-downloads/Study-Manual.pdf",
-    "sha256": "b98b7a16d611acb414e43229a1ea8e7e2595f660d3f5530d8eeb00924197d34a",
-    "licence": "download", "official": false,
-    "map": [
-      { "topic": "a-atomic", "pages": "13-14" }, { "topic": "a-resistors", "pages": "15-18" },
-      { "topic": "a-capacitors", "pages": "19-20" }, { "topic": "a-magnetism", "pages": "21-22" },
-      { "topic": "a-inductors", "pages": "23-24" }, { "topic": "a-transformers", "pages": "25-28" },
-      { "topic": "a-ac", "pages": "29-35" }, { "topic": "a-semiconductors", "pages": "36-40" },
-      { "topic": "a-rectifiers", "pages": "41-47" }, { "topic": "a-transistors", "pages": "48-51" },
-      { "topic": "a-amplifiers", "pages": "52-56" }, { "topic": "a-oscillators", "pages": "57-62" },
-      { "topic": "a-modulation", "pages": "63-65" }, { "topic": "a-receivers", "pages": "66-71" },
-      { "topic": "a-transmitters", "pages": "72-74" }, { "topic": "a-propagation", "pages": "75-76" },
-      { "topic": "a-aerials", "pages": "77-88" }, { "topic": "a-frequency-measurement", "pages": "77-88" },
-      { "topic": "g-communication", "pages": "89-92" }, { "topic": "g-transformers", "pages": "93-95" },
-      { "topic": "g-semiconductors", "pages": "96-100" }, { "topic": "g-power-supplies", "pages": "101-101" },
-      { "topic": "g-fax-tv", "pages": "102-102" }, { "topic": "g-ionosphere", "pages": "103-103" },
-      { "topic": "g-aerials", "pages": "104-105" }, { "topic": "g-space", "pages": "106-114" },
-      { "topic": "b-licensing", "pages": "117-120" }, { "topic": "b-phonetics-codes", "pages": "121-122" },
-      { "topic": "b-call-signs", "pages": "123-124" }, { "topic": "b-operating", "pages": "125-127" },
-      { "topic": "b-emissions-bands", "pages": "128-129" }, { "topic": "b-station-records", "pages": "130-131" },
-      { "topic": "b-time-frequency", "pages": "132-134" }, { "topic": "m-morse", "pages": "135-139" }
-    ] },
-  { "id": "vu2mue-2020", "title": "Amateur Radio Study Material (VU2MUE)",
-    "publisher": "Sandeep Baruah, VU2MUE", "year": 2020, "pages": 201,
-    "url": "https://www.qsl.net/v/vu2msy/ASOC_EXAM/Amateur_Radio_Study_Material_VU2MUE_2020.pdf",
-    "sha256": "c81d6fd4a4e3ad854b1081f00fd60fe3093b8879b2f0c14c8a5454acc98b8f90",
-    "licence": "download", "official": false, "map": [] }
+ {
+  "id": "rules-2024",
+  "title": "Telecommunications (Amateur Services) Rules, 2024",
+  "publisher": "Department of Telecommunications, Gazette of India",
+  "year": 2024,
+  "pages": 15,
+  "url": "https://eservices.dot.gov.in/sites/default/files/circular-notifications/ASOC%20Service%20rules%2024.pdf",
+  "sha256": "37e60deca3d8adf9961e8f0ad70bce1b16fe7e38b8044fdecdbd6b27e023f1c3",
+  "licence": "govt-public",
+  "official": true,
+  "map": [
+   {
+    "topic": "b-licensing",
+    "pages": "9-12"
+   },
+   {
+    "topic": "b-station-records",
+    "pages": "13-15"
+   },
+   {
+    "topic": "b-emissions-bands",
+    "pages": "13-13"
+   }
+  ]
+ },
+ {
+  "id": "asoc-portal-manual",
+  "title": "ASOC User Manual (application portal)",
+  "publisher": "Department of Telecommunications eServices",
+  "year": 2025,
+  "pages": 39,
+  "url": "https://eservices.dot.gov.in/sites/default/files/user-mannual/ASOC%20Manual%20%282%29.pdf",
+  "sha256": "bf9a3d80b852a8fc491e50b93270a053572a86eeac3dc992b6e2c3eb6c5d3f1f",
+  "licence": "download",
+  "official": true,
+  "map": []
+ },
+ {
+  "id": "niar-2021",
+  "title": "NIAR Study Manual (2021 edition)",
+  "publisher": "National Institute of Amateur Radio, Hyderabad",
+  "year": 2021,
+  "pages": 147,
+  "url": "http://www.niar.org/downloads/Study-Manual-Restricted-Grade.pdf",
+  "sha256": "abc85b429914abbaa4c762ac337a54f94a74b7f7247b1efd9e58d6a60f1dcc31",
+  "licence": "download",
+  "official": false,
+  "map": [
+   {
+    "topic": "a-atomic",
+    "pages": "15-16"
+   },
+   {
+    "topic": "a-resistors",
+    "pages": "17-20"
+   },
+   {
+    "topic": "a-capacitors",
+    "pages": "21-22"
+   },
+   {
+    "topic": "a-magnetism",
+    "pages": "23-24"
+   },
+   {
+    "topic": "a-inductors",
+    "pages": "25-26"
+   },
+   {
+    "topic": "a-transformers",
+    "pages": "27-30"
+   },
+   {
+    "topic": "a-ac",
+    "pages": "31-37"
+   },
+   {
+    "topic": "a-semiconductors",
+    "pages": "38-42"
+   },
+   {
+    "topic": "a-rectifiers",
+    "pages": "43-49"
+   },
+   {
+    "topic": "a-transistors",
+    "pages": "50-53"
+   },
+   {
+    "topic": "a-amplifiers",
+    "pages": "54-58"
+   },
+   {
+    "topic": "a-oscillators",
+    "pages": "59-64"
+   },
+   {
+    "topic": "a-modulation",
+    "pages": "65-67"
+   },
+   {
+    "topic": "a-receivers",
+    "pages": "68-73"
+   },
+   {
+    "topic": "a-transmitters",
+    "pages": "74-76"
+   },
+   {
+    "topic": "a-propagation",
+    "pages": "77-78"
+   },
+   {
+    "topic": "a-aerials",
+    "pages": "79-89"
+   },
+   {
+    "topic": "a-frequency-measurement",
+    "pages": "79-89"
+   },
+   {
+    "topic": "g-communication",
+    "pages": "90-93"
+   },
+   {
+    "topic": "g-transformers",
+    "pages": "94-96"
+   },
+   {
+    "topic": "g-semiconductors",
+    "pages": "97-101"
+   },
+   {
+    "topic": "g-power-supplies",
+    "pages": "102-102"
+   },
+   {
+    "topic": "g-fax-tv",
+    "pages": "103-103"
+   },
+   {
+    "topic": "g-ionosphere",
+    "pages": "104-104"
+   },
+   {
+    "topic": "g-aerials",
+    "pages": "105-106"
+   },
+   {
+    "topic": "g-space",
+    "pages": "107-114"
+   },
+   {
+    "topic": "b-licensing",
+    "pages": "116-119"
+   },
+   {
+    "topic": "b-phonetics-codes",
+    "pages": "120-121"
+   },
+   {
+    "topic": "b-call-signs",
+    "pages": "122-123"
+   },
+   {
+    "topic": "b-operating",
+    "pages": "124-126"
+   },
+   {
+    "topic": "b-emissions-bands",
+    "pages": "127-128"
+   },
+   {
+    "topic": "b-station-records",
+    "pages": "129-130"
+   },
+   {
+    "topic": "b-time-frequency",
+    "pages": "131-133"
+   },
+   {
+    "topic": "m-morse",
+    "pages": "134-144"
+   }
+  ]
+ },
+ {
+  "id": "niar-2016",
+  "title": "NIAR Study Manual (2016 edition)",
+  "publisher": "National Institute of Amateur Radio, Hyderabad",
+  "year": 2016,
+  "pages": 158,
+  "url": "http://www.niar.org/downloads/ham-downloads/Study-Manual.pdf",
+  "sha256": "b98b7a16d611acb414e43229a1ea8e7e2595f660d3f5530d8eeb00924197d34a",
+  "licence": "download",
+  "official": false,
+  "map": [
+   {
+    "topic": "a-atomic",
+    "pages": "13-14"
+   },
+   {
+    "topic": "a-resistors",
+    "pages": "15-18"
+   },
+   {
+    "topic": "a-capacitors",
+    "pages": "19-20"
+   },
+   {
+    "topic": "a-magnetism",
+    "pages": "21-22"
+   },
+   {
+    "topic": "a-inductors",
+    "pages": "23-24"
+   },
+   {
+    "topic": "a-transformers",
+    "pages": "25-28"
+   },
+   {
+    "topic": "a-ac",
+    "pages": "29-35"
+   },
+   {
+    "topic": "a-semiconductors",
+    "pages": "36-40"
+   },
+   {
+    "topic": "a-rectifiers",
+    "pages": "41-47"
+   },
+   {
+    "topic": "a-transistors",
+    "pages": "48-51"
+   },
+   {
+    "topic": "a-amplifiers",
+    "pages": "52-56"
+   },
+   {
+    "topic": "a-oscillators",
+    "pages": "57-62"
+   },
+   {
+    "topic": "a-modulation",
+    "pages": "63-65"
+   },
+   {
+    "topic": "a-receivers",
+    "pages": "66-71"
+   },
+   {
+    "topic": "a-transmitters",
+    "pages": "72-74"
+   },
+   {
+    "topic": "a-propagation",
+    "pages": "75-76"
+   },
+   {
+    "topic": "a-aerials",
+    "pages": "77-88"
+   },
+   {
+    "topic": "a-frequency-measurement",
+    "pages": "77-88"
+   },
+   {
+    "topic": "g-communication",
+    "pages": "89-92"
+   },
+   {
+    "topic": "g-transformers",
+    "pages": "93-95"
+   },
+   {
+    "topic": "g-semiconductors",
+    "pages": "96-100"
+   },
+   {
+    "topic": "g-power-supplies",
+    "pages": "101-101"
+   },
+   {
+    "topic": "g-fax-tv",
+    "pages": "102-102"
+   },
+   {
+    "topic": "g-ionosphere",
+    "pages": "103-103"
+   },
+   {
+    "topic": "g-aerials",
+    "pages": "104-105"
+   },
+   {
+    "topic": "g-space",
+    "pages": "106-114"
+   },
+   {
+    "topic": "b-licensing",
+    "pages": "117-120"
+   },
+   {
+    "topic": "b-phonetics-codes",
+    "pages": "121-122"
+   },
+   {
+    "topic": "b-call-signs",
+    "pages": "123-124"
+   },
+   {
+    "topic": "b-operating",
+    "pages": "125-127"
+   },
+   {
+    "topic": "b-emissions-bands",
+    "pages": "128-129"
+   },
+   {
+    "topic": "b-station-records",
+    "pages": "130-131"
+   },
+   {
+    "topic": "b-time-frequency",
+    "pages": "132-134"
+   },
+   {
+    "topic": "m-morse",
+    "pages": "135-139"
+   }
+  ]
+ },
+ {
+  "id": "vu2mue-2020",
+  "title": "Amateur Radio Study Material (VU2MUE)",
+  "publisher": "Sandeep Baruah, VU2MUE",
+  "year": 2020,
+  "pages": 201,
+  "url": "https://www.qsl.net/v/vu2msy/ASOC_EXAM/Amateur_Radio_Study_Material_VU2MUE_2020.pdf",
+  "sha256": "c81d6fd4a4e3ad854b1081f00fd60fe3093b8879b2f0c14c8a5454acc98b8f90",
+  "licence": "download",
+  "official": false,
+  "map": []
+ },
+ {
+  "id": "rpc-asoc-b",
+  "title": "ASOC Exam Question Paper with Answers, Section B",
+  "publisher": "RPC Ham Radio Club, Ranganathan Polytechnic College, Coimbatore",
+  "year": 2024,
+  "pages": 20,
+  "url": "https://manjifera.in/project/ham/exam-question-bank/asoc_exam_question_pool_-_part_b_amateur-radio-rules-and-regulations.pdf",
+  "sha256": "11a13f5f3c0bfaa15e748e57021400e91c24d2f684d01abba709d823883980d8",
+  "licence": "download",
+  "official": false,
+  "map": []
+ }
 ]

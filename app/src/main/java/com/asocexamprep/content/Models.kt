@@ -104,6 +104,10 @@ data class Question(
     val explanation: String? = null,
     val source: String,
     val page: Int? = null,
+    /** Official NCVEC pool questions whose key gives the same answer ("pool:ID"). */
+    val verified: List<String> = emptyList(),
+    /** The same question, with the same answer, in other sources. */
+    val alsoIn: List<String> = emptyList(),
 )
 
 /** Study notes for a topic, converted from one source's pages. */

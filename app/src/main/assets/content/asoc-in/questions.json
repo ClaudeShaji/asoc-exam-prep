@@ -1,7 +1,7 @@
 [
  {
   "id": "vu2mue-rules-1",
-  "topic": "b-operating",
+  "topic": "b-emissions-bands",
   "section": "B",
   "stem": "Which emission mode must be used to obtain assistance during a disaster?",
   "options": [
@@ -42,11 +42,14 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 153
+  "page": 153,
+  "verified": [
+   "general-2023-2027:G2A08"
+  ]
  },
  {
   "id": "vu2mue-rules-4",
-  "topic": "b-emissions-bands",
+  "topic": "b-licensing",
   "section": "B",
   "stem": "Which of the following 20 meter band segments is most often used for most data transmissions?",
   "options": [
@@ -87,7 +90,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 153
+  "page": 153,
+  "verified": [
+   "general-2019-2023:G2A06"
+  ]
  },
  {
   "id": "vu2mue-rules-7",
@@ -106,7 +112,7 @@
  },
  {
   "id": "vu2mue-rules-8",
-  "topic": "b-operating",
+  "topic": "b-call-signs",
   "section": "B",
   "stem": "How do you call another station on a repeater if you know the station\\'s call sign?",
   "options": [
@@ -117,11 +123,14 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 153
+  "page": 153,
+  "alsoIn": [
+   "vu2mue-rules-18"
+  ]
  },
  {
   "id": "vu2mue-rules-9",
-  "topic": "b-emissions-bands",
+  "topic": "b-licensing",
   "section": "B",
   "stem": "The frequency of 40 Meter band in MHz is",
   "options": [
@@ -136,7 +145,7 @@
  },
  {
   "id": "vu2mue-rules-10",
-  "topic": "a-modulation",
+  "topic": "a-propagation",
   "section": "A",
   "stem": "Which sideband is commonly used in the VHF and UHF bands?",
   "options": [
@@ -147,22 +156,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 153
- },
- {
-  "id": "vu2mue-rules-11",
-  "topic": "b-operating",
-  "section": "B",
-  "stem": "When are you prohibited from helping a station in distress?",
-  "options": [
-   "When that station is not transmitting on amateur frequencies",
-   "When the station in distress offers no call sign",
-   "You are never prohibited from helping any station in distress",
-   "When the station is not another amateur station"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 153
+  "page": 153,
+  "verified": [
+   "general-2023-2027:G2A03"
+  ]
  },
  {
   "id": "vu2mue-rules-12",
@@ -177,7 +174,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "general-2019-2023:G2B06"
+  ]
  },
  {
   "id": "vu2mue-rules-13",
@@ -192,7 +192,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "general-2019-2023:G2C03"
+  ]
  },
  {
   "id": "vu2mue-rules-14",
@@ -207,7 +210,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "technician-2026-2030:T1F10"
+  ]
  },
  {
   "id": "vu2mue-rules-15",
@@ -222,7 +228,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "general-2019-2023:G2A07"
+  ]
  },
  {
   "id": "vu2mue-rules-16",
@@ -252,7 +261,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "general-2019-2023:G2C07"
+  ]
  },
  {
   "id": "vu2mue-rules-19",
@@ -282,11 +294,14 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 154
+  "page": 154,
+  "verified": [
+   "general-2019-2023:G2B02"
+  ]
  },
  {
   "id": "vu2mue-rules-21",
-  "topic": "b-operating",
+  "topic": "b-call-signs",
   "section": "B",
   "stem": "How do you indicate you are looking for any station with which to make contact?",
   "options": [
@@ -342,7 +357,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 155
+  "page": 155,
+  "verified": [
+   "technician-2026-2030:T2A08"
+  ]
  },
  {
   "id": "vu2mue-rules-25",
@@ -375,17 +393,17 @@
   "page": 155
  },
  {
-  "id": "vu2mue-rules-28",
+  "id": "vu2mue-rules-27",
   "topic": "b-operating",
   "section": "B",
-  "stem": "What is the main purpose of repeater coordination?",
+  "stem": "Who is in charge of the repeater frequency band plan in your local area?",
   "options": [
-   "To reduce interference and promote proper use of spectrum",
-   "To coordinate as many repeaters as possible in a small area",
-   "To coordinate all possible frequencies available for repeater use",
-   "To promote and encourage use of simplex frequencies"
+   "The local WPC monitoring office",
+   "Only WPC HO New Delhi",
+   "The recognized frequency coordination body",
+   "Amateur Radio society of India"
   ],
-  "answer": 0,
+  "answer": 1,
   "source": "vu2mue-2020",
   "page": 155
  },
@@ -417,7 +435,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 155
+  "page": 155,
+  "verified": [
+   "general-2023-2027:G2A08"
+  ]
  },
  {
   "id": "vu2mue-rules-31",
@@ -432,22 +453,25 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 155
+  "page": 155,
+  "alsoIn": [
+   "rpc-60"
+  ]
  },
  {
-  "id": "vu2mue-rules-32",
-  "topic": "b-time-frequency",
+  "id": "vu2mue-rules-33",
+  "topic": "b-operating",
   "section": "B",
-  "stem": "Standard time and frequency is transmitted on",
+  "stem": "What is considered to be proper repeater operating practice?",
   "options": [
-   "7050 KHz",
-   "14050 KHz",
-   "21050 KHz",
-   "10000 Khz"
+   "Monitor before transmitting and keep transmissions short",
+   "Identify legally",
+   "Use the minimum amount of transmitter power necessary",
+   "All of these answers are correct"
   ],
-  "answer": 3,
+  "answer": 0,
   "source": "vu2mue-2020",
-  "page": 155
+  "page": 156
  },
  {
   "id": "vu2mue-rules-34",
@@ -570,22 +594,6 @@
   "page": 156
  },
  {
-  "id": "vu2mue-rules-42",
-  "topic": "b-licensing",
-  "section": "B",
-  "stem": "Indian amateurs can communicate with other amateurs in",
-  "options": [
-   "All countries",
-   "Countries permitted by ITU",
-   "Countries permitted by Indian Government",
-   "Countries permitted by Indian Amateur society"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 157,
-  "explanation": "Amateurs may not contact stations of countries whose administrations have objected under the ITU Convention."
- },
- {
   "id": "vu2mue-rules-43",
   "topic": "b-emissions-bands",
   "section": "B",
@@ -613,27 +621,14 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 157
- },
- {
-  "id": "vu2mue-rules-45",
-  "topic": "b-licensing",
-  "section": "B",
-  "stem": "Minimum age to become an amateur is",
-  "options": [
-   "18 years",
-   "14 years",
-   "12 years",
-   "16 years"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
   "page": 157,
-  "explanation": "The Telecommunications (Amateur Services) Rules, 2024 set the minimum age at 12."
+  "alsoIn": [
+   "rpc-65"
+  ]
  },
  {
   "id": "vu2mue-rules-46",
-  "topic": "b-station-records",
+  "topic": "b-time-frequency",
   "section": "B",
   "stem": "All timing in the Log book should be in",
   "options": [
@@ -644,7 +639,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 157
+  "page": 157,
+  "alsoIn": [
+   "rpc-67"
+  ]
  },
  {
   "id": "vu2mue-rules-47",
@@ -659,7 +657,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 157
+  "page": 157,
+  "alsoIn": [
+   "rpc-68"
+  ]
  },
  {
   "id": "vu2mue-rules-48",
@@ -674,7 +675,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 157
+  "page": 157,
+  "alsoIn": [
+   "rpc-69"
+  ]
  },
  {
   "id": "vu2mue-rules-49",
@@ -704,7 +708,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 157
+  "page": 157,
+  "alsoIn": [
+   "rpc-71"
+  ]
  },
  {
   "id": "vu2mue-rules-51",
@@ -719,7 +726,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 157
+  "page": 157,
+  "alsoIn": [
+   "rpc-72"
+  ]
  },
  {
   "id": "vu2mue-rules-52",
@@ -734,7 +744,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 158
+  "page": 158,
+  "alsoIn": [
+   "rpc-73"
+  ]
  },
  {
   "id": "vu2mue-rules-53",
@@ -809,7 +822,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 158
+  "page": 158,
+  "alsoIn": [
+   "rpc-54"
+  ]
  },
  {
   "id": "vu2mue-rules-58",
@@ -824,7 +840,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 158
+  "page": 158,
+  "alsoIn": [
+   "rpc-55"
+  ]
  },
  {
   "id": "vu2mue-rules-59",
@@ -839,7 +858,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 158
+  "page": 158,
+  "alsoIn": [
+   "rpc-56"
+  ]
  },
  {
   "id": "vu2mue-basic-1",
@@ -854,7 +876,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 159
+  "page": 159,
+  "verified": [
+   "technician-2018-2022:T5A04"
+  ]
  },
  {
   "id": "vu2mue-basic-2",
@@ -869,7 +894,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 159
+  "page": 159,
+  "verified": [
+   "technician-2026-2030:T5A06"
+  ]
  },
  {
   "id": "vu2mue-basic-3",
@@ -899,7 +927,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 159
+  "page": 159,
+  "verified": [
+   "technician-2018-2022:T5A09"
+  ]
  },
  {
   "id": "vu2mue-basic-5",
@@ -959,7 +990,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 159
+  "page": 159,
+  "verified": [
+   "technician-2018-2022:T3B01"
+  ]
  },
  {
   "id": "vu2mue-basic-9",
@@ -1019,7 +1053,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 160
+  "page": 160,
+  "verified": [
+   "technician-2018-2022:T3B04"
+  ]
  },
  {
   "id": "vu2mue-basic-13",
@@ -1034,7 +1071,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 160
+  "page": 160,
+  "verified": [
+   "technician-2018-2022:T3B05"
+  ]
  },
  {
   "id": "vu2mue-basic-14",
@@ -1049,7 +1089,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 160
+  "page": 160,
+  "verified": [
+   "technician-2026-2030:T3B06"
+  ]
  },
  {
   "id": "vu2mue-basic-15",
@@ -1068,8 +1111,8 @@
  },
  {
   "id": "vu2mue-basic-16",
-  "topic": "a-propagation",
-  "section": "A",
+  "topic": "b-operating",
+  "section": "B",
   "stem": "What property of a radio wave is often used to identify the different bands amateur radio operators use?",
   "options": [
    "The physical length of the wave",
@@ -1083,7 +1126,7 @@
  },
  {
   "id": "vu2mue-basic-17",
-  "topic": "b-emissions-bands",
+  "topic": "b-licensing",
   "section": "B",
   "stem": "What is the frequency range of the 2 meter band in the India?",
   "options": [
@@ -1143,7 +1186,7 @@
  },
  {
   "id": "vu2mue-basic-21",
-  "topic": "a-rectifiers",
+  "topic": "a-ac",
   "section": "A",
   "stem": "What device is used to convert the alternating current from a wall outlet into low-voltage direct current?",
   "options": [
@@ -1158,7 +1201,7 @@
  },
  {
   "id": "vu2mue-basic-22",
-  "topic": "a-amplifiers",
+  "topic": "a-atomic",
   "section": "A",
   "stem": "What device is used to increase the output of a 10 watt radio to 100 watts?",
   "options": [
@@ -1260,7 +1303,10 @@
   "answer": 1,
   "source": "vu2mue-2020",
   "page": 161,
-  "explanation": "I=E/R Ohm's Law"
+  "explanation": "I=E/R Ohm's Law",
+  "verified": [
+   "technician-2026-2030:T5D01"
+  ]
  },
  {
   "id": "vu2mue-basic-29",
@@ -1276,7 +1322,10 @@
   "answer": 0,
   "source": "vu2mue-2020",
   "page": 161,
-  "explanation": "E=I*R Ohm's Law"
+  "explanation": "E=I*R Ohm's Law",
+  "verified": [
+   "technician-2026-2030:T5D02"
+  ]
  },
  {
   "id": "vu2mue-basic-30",
@@ -1292,7 +1341,10 @@
   "answer": 1,
   "source": "vu2mue-2020",
   "page": 161,
-  "explanation": "R=E/I Ohm's Law"
+  "explanation": "R=E/I Ohm's Law",
+  "verified": [
+   "technician-2026-2030:T5D03"
+  ]
  },
  {
   "id": "vu2mue-basic-31",
@@ -1308,7 +1360,10 @@
   "answer": 1,
   "source": "vu2mue-2020",
   "page": 161,
-  "explanation": "As per ohm's law R=E/I, Thus R = 90 Volts / 3 Ampere"
+  "explanation": "As per ohm's law R=E/I, Thus R = 90 Volts / 3 Ampere",
+  "verified": [
+   "technician-2018-2022:T5D04"
+  ]
  },
  {
   "id": "vu2mue-basic-32",
@@ -1323,7 +1378,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 161
+  "page": 161,
+  "verified": [
+   "technician-2018-2022:T5D05"
+  ]
  },
  {
   "id": "vu2mue-basic-33",
@@ -1338,7 +1396,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D07"
+  ]
  },
  {
   "id": "vu2mue-basic-34",
@@ -1353,7 +1414,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D10"
+  ]
  },
  {
   "id": "vu2mue-basic-35",
@@ -1368,7 +1432,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D11"
+  ]
  },
  {
   "id": "vu2mue-basic-36",
@@ -1383,7 +1450,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D12"
+  ]
  },
  {
   "id": "vu2mue-basic-37",
@@ -1398,7 +1468,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D08"
+  ]
  },
  {
   "id": "vu2mue-basic-38",
@@ -1413,7 +1486,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5D09"
+  ]
  },
  {
   "id": "vu2mue-basic-39",
@@ -1428,7 +1504,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2018-2022:T5C08"
+  ]
  },
  {
   "id": "vu2mue-basic-40",
@@ -1443,7 +1522,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2026-2030:T5C09"
+  ]
  },
  {
   "id": "vu2mue-basic-41",
@@ -1462,7 +1544,7 @@
  },
  {
   "id": "vu2mue-basic-42",
-  "topic": "a-atomic",
+  "topic": "a-transmitters",
   "section": "A",
   "stem": "How can you determine how many watts are being drawn by your transceiver when you are transmitting?",
   "options": [
@@ -1488,7 +1570,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 162
+  "page": 162,
+  "verified": [
+   "technician-2018-2022:T5C11"
+  ]
  },
  {
   "id": "vu2mue-basic-44",
@@ -1503,7 +1588,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 163
+  "page": 163,
+  "verified": [
+   "technician-2026-2030:T5B01"
+  ]
  },
  {
   "id": "vu2mue-basic-45",
@@ -1533,7 +1621,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 163
+  "page": 163,
+  "verified": [
+   "technician-2018-2022:T5B03"
+  ]
  },
  {
   "id": "vu2mue-basic-47",
@@ -1548,11 +1639,14 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 163
+  "page": 163,
+  "verified": [
+   "technician-2018-2022:T5B04"
+  ]
  },
  {
   "id": "vu2mue-basic-48",
-  "topic": "a-atomic",
+  "topic": "a-transmitters",
   "section": "A",
   "stem": "How many watts does a hand-held transceiver put out if the output power is 500 mill watts?",
   "options": [
@@ -1623,11 +1717,14 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 163
+  "page": 163,
+  "verified": [
+   "general-2019-2023:G6A04"
+  ]
  },
  {
   "id": "vu2mue-basic-53",
-  "topic": "a-capacitors",
+  "topic": "a-propagation",
   "section": "A",
   "stem": "Which of the following is one effect of lead inductance in a capacitor used at VHF and above?",
   "options": [
@@ -1642,7 +1739,7 @@
  },
  {
   "id": "vu2mue-basic-54",
-  "topic": "a-resistors",
+  "topic": "a-ac",
   "section": "A",
   "stem": "What is the main disadvantage of using a conventional wire-wound resistor in a resonant circuit?",
   "options": [
@@ -1668,7 +1765,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 164
+  "page": 164,
+  "verified": [
+   "general-2019-2023:G6A08"
+  ]
  },
  {
   "id": "vu2mue-basic-56",
@@ -1717,7 +1817,7 @@
  },
  {
   "id": "vu2mue-basic-59",
-  "topic": "a-capacitors",
+  "topic": "a-transformers",
   "section": "A",
   "stem": "What is the common name for a capacitor connected across a transformer secondary that is used to absorb transient voltage spikes?",
   "options": [
@@ -1728,7 +1828,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 164
+  "page": 164,
+  "verified": [
+   "extra-2016-2020:E6D16"
+  ]
  },
  {
   "id": "vu2mue-basic-60",
@@ -1803,7 +1906,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 164
+  "page": 164,
+  "verified": [
+   "general-2019-2023:G6A03"
+  ]
  },
  {
   "id": "vu2mue-basic-65",
@@ -1833,7 +1939,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A05"
+  ]
  },
  {
   "id": "vu2mue-basic-67",
@@ -1863,7 +1972,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A07"
+  ]
  },
  {
   "id": "vu2mue-basic-69",
@@ -1893,7 +2005,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A09"
+  ]
  },
  {
   "id": "vu2mue-basic-71",
@@ -1908,7 +2023,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A10"
+  ]
  },
  {
   "id": "vu2mue-basic-72",
@@ -1938,11 +2056,14 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A12"
+  ]
  },
  {
   "id": "vu2mue-basic-74",
-  "topic": "a-atomic",
+  "topic": "a-resistors",
   "section": "A",
   "stem": "What is an advantage of the low internal resistance of Nickel Cadmium batteries?",
   "options": [
@@ -1953,7 +2074,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A02"
+  ]
  },
  {
   "id": "vu2mue-basic-75",
@@ -1968,7 +2092,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 165
+  "page": 165,
+  "verified": [
+   "general-2019-2023:G6A01"
+  ]
  },
  {
   "id": "vu2mue-basic-76",
@@ -2013,7 +2140,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "technician-2026-2030:T5C12"
+  ]
  },
  {
   "id": "vu2mue-basic-79",
@@ -2028,7 +2158,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A02"
+  ]
  },
  {
   "id": "vu2mue-basic-80",
@@ -2043,7 +2176,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A03"
+  ]
  },
  {
   "id": "vu2mue-basic-81",
@@ -2058,7 +2194,10 @@
   ],
   "answer": 2,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A04"
+  ]
  },
  {
   "id": "vu2mue-basic-82",
@@ -2073,7 +2212,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A05"
+  ]
  },
  {
   "id": "vu2mue-basic-83",
@@ -2088,7 +2230,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A06"
+  ]
  },
  {
   "id": "vu2mue-basic-84",
@@ -2133,7 +2278,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 166
+  "page": 166,
+  "verified": [
+   "general-2019-2023:G5A09"
+  ]
  },
  {
   "id": "vu2mue-basic-87",
@@ -2148,7 +2296,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 167
+  "page": 167,
+  "verified": [
+   "general-2019-2023:G5A09"
+  ]
  },
  {
   "id": "vu2mue-basic-88",
@@ -2163,7 +2314,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 167
+  "page": 167,
+  "verified": [
+   "extra-2016-2020:E6D17"
+  ]
  },
  {
   "id": "vu2mue-basic-89",
@@ -2178,7 +2332,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 167
+  "page": 167,
+  "verified": [
+   "general-2019-2023:G5A08"
+  ]
  },
  {
   "id": "vu2mue-basic-90",
@@ -2193,7 +2350,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 167
+  "page": 167,
+  "verified": [
+   "general-2019-2023:G5A10"
+  ]
  },
  {
   "id": "vu2mue-basic-91",
@@ -2208,7 +2368,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 167
+  "page": 167,
+  "verified": [
+   "general-2019-2023:G5A11"
+  ]
  },
  {
   "id": "vu2mue-basic-92",
@@ -2239,11 +2402,14 @@
   "answer": 2,
   "source": "vu2mue-2020",
   "page": 167,
-  "explanation": "Kirchhoff’s Current Law"
+  "explanation": "Kirchhoff’s Current Law",
+  "verified": [
+   "general-2019-2023:G5B02"
+  ]
  },
  {
   "id": "vu2mue-basic-94",
-  "topic": "a-capacitors",
+  "topic": "a-atomic",
   "section": "A",
   "stem": "Capacitance is measured in",
   "options": [
@@ -2317,21 +2483,6 @@
   "page": 168
  },
  {
-  "id": "vu2mue-basic-99",
-  "topic": "a-semiconductors",
-  "section": "A",
-  "stem": "Plate current in a diode flows only when the plate is",
-  "options": [
-   "Negative with respect to cathode",
-   "positive with respect to cathode",
-   "when plate is at a lower voltage than cathode",
-   "both at same potential"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 168
- },
- {
   "id": "vu2mue-basic-100",
   "topic": "a-resistors",
   "section": "A",
@@ -2345,22 +2496,6 @@
   "answer": 2,
   "source": "vu2mue-2020",
   "page": 168
- },
- {
-  "id": "vu2mue-basic-101",
-  "topic": "a-receivers",
-  "section": "A",
-  "stem": "A superhetrodyne receiver is tuned to 555 KHz and its local oscillator at 1010 KHz . The image frequency will be",
-  "options": [
-   "1565 KHz",
-   "455 KHz",
-   "1465 KHz",
-   "none of these"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 168,
-  "explanation": "Image = signal + 2 × IF. The IF is 1010 − 555 = 455 kHz, so the image is 555 + 910 = 1465 kHz."
  },
  {
   "id": "vu2mue-basic-102",
@@ -2394,7 +2529,7 @@
  },
  {
   "id": "vu2mue-basic-104",
-  "topic": "a-transformers",
+  "topic": "a-rectifiers",
   "section": "A",
   "stem": "The core of power supply transformer is laminated to",
   "options": [
@@ -2438,21 +2573,6 @@
   "page": 168
  },
  {
-  "id": "vu2mue-basic-107",
-  "topic": "a-transistors",
-  "section": "A",
-  "stem": "The phase relationship between the input and output of a common emitter circuit in degrees is",
-  "options": [
-   "90",
-   "180",
-   "270",
-   "0"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 169
- },
- {
   "id": "vu2mue-basic-108",
   "topic": "a-oscillators",
   "section": "A",
@@ -2464,36 +2584,6 @@
    "flexibility"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 169
- },
- {
-  "id": "vu2mue-basic-109",
-  "topic": "a-amplifiers",
-  "section": "A",
-  "stem": "The effect of inter electrode capacitance of a triode is more predominant at",
-  "options": [
-   "HF",
-   "VHF",
-   "LF",
-   "none of these"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 169
- },
- {
-  "id": "vu2mue-basic-110",
-  "topic": "a-semiconductors",
-  "section": "A",
-  "stem": "Which of the following is a characteristic of a liquid crystal display?",
-  "options": [
-   "It requires ambient or back lighting",
-   "It offers a wide dynamic range",
-   "It has a wide viewing angle",
-   "All of these choices are correct"
-  ],
-  "answer": 0,
   "source": "vu2mue-2020",
   "page": 169
  },
@@ -2510,7 +2600,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 169
+  "page": 169,
+  "verified": [
+   "general-2019-2023:G6B02"
+  ]
  },
  {
   "id": "vu2mue-basic-112",
@@ -2540,7 +2633,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 169
+  "page": 169,
+  "verified": [
+   "general-2019-2023:G7A01"
+  ]
  },
  {
   "id": "vu2mue-basic-114",
@@ -2555,7 +2651,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 169
+  "page": 169,
+  "verified": [
+   "general-2019-2023:G7A02"
+  ]
  },
  {
   "id": "vu2mue-basic-115",
@@ -2600,7 +2699,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 170
+  "page": 170,
+  "verified": [
+   "general-2019-2023:G7C06"
+  ]
  },
  {
   "id": "vu2mue-basic-118",
@@ -2660,7 +2762,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 170
+  "page": 170,
+  "verified": [
+   "general-2019-2023:G7A05"
+  ]
  },
  {
   "id": "vu2mue-basic-122",
@@ -2675,7 +2780,10 @@
   ],
   "answer": 3,
   "source": "vu2mue-2020",
-  "page": 170
+  "page": 170,
+  "verified": [
+   "general-2019-2023:G7A06"
+  ]
  },
  {
   "id": "vu2mue-basic-123",
@@ -2690,7 +2798,10 @@
   ],
   "answer": 0,
   "source": "vu2mue-2020",
-  "page": 170
+  "page": 170,
+  "verified": [
+   "general-2019-2023:G7A07"
+  ]
  },
  {
   "id": "vu2mue-basic-124",
@@ -2750,7 +2861,10 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 171
+  "page": 171,
+  "verified": [
+   "general-2019-2023:G7B08"
+  ]
  },
  {
   "id": "vu2mue-basic-128",
@@ -2765,704 +2879,27 @@
   ],
   "answer": 1,
   "source": "vu2mue-2020",
-  "page": 171
+  "page": 171,
+  "verified": [
+   "general-2019-2023:G7B10"
+  ]
  },
  {
-  "id": "vu2mue-paper-1",
-  "topic": "a-receivers",
-  "section": "A",
-  "stem": "Parameter that determines lowest signal reception capability of a receiver is",
+  "id": "rpc-1",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Under Indian Wireless Telegraph rules, 1973, the minimum age to work on a radio transmitting apparatus is ______ years",
   "options": [
-   "Sensitivity",
-   "Fidelity",
-   "Selectivity",
-   "Squelch"
+   "12",
+   "15",
+   "18",
+   "21"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 172
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-2",
-  "topic": "a-receivers",
-  "section": "A",
-  "stem": "TRF stands for",
-  "options": [
-   "Turning radio frequency",
-   "Turning rod frequency",
-   "Tuned radio feed",
-   "Tuned radio frequency"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 172
- },
- {
-  "id": "vu2mue-paper-3",
-  "topic": "a-receivers",
-  "section": "A",
-  "stem": "If a super hetero dyne radio receiver is tuned to 1255 KHz & the IF frequency is 455KHz, then the frequency of the local oscillator of the receiver is",
-  "options": [
-   "1255 KHz",
-   "800 KHz",
-   "1710 KHz",
-   "455 KHz"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 172,
-  "explanation": "The local oscillator runs one IF above the signal: 1255 + 455 = 1710 kHz."
- },
- {
-  "id": "vu2mue-paper-4",
-  "topic": "a-atomic",
-  "section": "A",
-  "stem": "Kirchhoff’s voltage Law states that",
-  "options": [
-   "The sum of voltages in a loop is zero",
-   "The algebraic sum of voltages in a loop is zero",
-   "The sum of currents at a junction is zero",
-   "The algebraic sum of currents at a junction is zero"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 172
- },
- {
-  "id": "vu2mue-paper-5",
-  "topic": "a-semiconductors",
-  "section": "A",
-  "stem": "Among all these materials, which one has poor conductivity ?",
-  "options": [
-   "Copper",
-   "Aluminum",
-   "Silicon",
-   "Silver"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 172
- },
- {
-  "id": "vu2mue-paper-6",
-  "topic": "a-magnetism",
-  "section": "A",
-  "stem": "A magnet does not attract which one in the following",
-  "options": [
-   "Nickel",
-   "Aluminum",
-   "Iron",
-   "Cobalt"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 172
- },
- {
-  "id": "vu2mue-paper-7",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "The unit of resistance is",
-  "options": [
-   "Mho",
-   "Volts",
-   "Ampere",
-   "Ohm"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-8",
-  "topic": "a-semiconductors",
-  "section": "A",
-  "stem": "The expanded form for ‘LDR’ is",
-  "options": [
-   "Light Emitting Display",
-   "Low Dependent Reading",
-   "Light Emitting Diode",
-   "Light Dependent Resistor"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-9",
-  "topic": "a-transistors",
-  "section": "A",
-  "stem": "The three leads of a common transistor are",
-  "options": [
-   "Base Collector Case",
-   "Emitter Collector Bias",
-   "Collector Base Omitter",
-   "Collector Base Emitter"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-10",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "If R is resistance, I is current and V is voltage, then Ohms law states that",
-  "options": [
-   "R=V/I",
-   "I=R/V",
-   "V=R/I",
-   "V/(R/I)=1"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-11",
-  "topic": "a-capacitors",
-  "section": "A",
-  "stem": "If two capacitors are placed in series, is the final capacitance will be:",
-  "options": [
-   "Higher than the sum of the two capacitors",
-   "Lower than the least of the two capacitors",
-   "The sum of the two capacitors",
-   "Cannot be determined the given data."
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-12",
-  "topic": "a-atomic",
-  "section": "A",
-  "stem": "Which is the unit of energy in electronics?",
-  "options": [
-   "Ohm",
-   "Ampere",
-   "Joules",
-   "Watt"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-13",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "The high frequency band (HF) is",
-  "options": [
-   "3KHz to 30KHz",
-   "3MHz to 30MHz",
-   "30KHz to 300KHz",
-   "30MHz to300MHz"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-14",
-  "topic": "a-aerials",
-  "section": "A",
-  "stem": "Among the following which is not a directional antenna",
-  "options": [
-   "Whip antenna",
-   "Yagi-Uda antenna",
-   "Loop antenna",
-   "Dish antenna"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 173
- },
- {
-  "id": "vu2mue-paper-15",
-  "topic": "a-atomic",
-  "section": "A",
-  "stem": "The unit of current is",
-  "options": [
-   "Volts",
-   "Ampere",
-   "Watt",
-   "Hertz"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-16",
-  "topic": "a-inductors",
-  "section": "A",
-  "stem": "If a small value of inductance is connected in parallel with a large value, the combined inductance will be",
-  "options": [
-   "The same",
-   "Higher",
-   "Lower",
-   "Cannot be determined with the given data."
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-17",
-  "topic": "a-capacitors",
-  "section": "A",
-  "stem": "The equivalent capacitance when three capacitors of 150 micro farad are connected in series is",
-  "options": [
-   "450 micro farad capacitor",
-   "300 micro farad capacitor",
-   "150 micro farad capacitor",
-   "50 micro farad capacitor"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-18",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "A resistor with color bands: Red-Violet-Orange-Silver, has the value of",
-  "options": [
-   "23 kilo Ohm , 5% tolerance",
-   "27 kilo Ohm , 5% tolerance",
-   "2.7 kilo Ohm , l0%tolerance",
-   "27 kilo Ohm , 10% tolerance"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 174,
-  "explanation": "Red 2, violet 7, orange ×1000 = 27 kΩ; silver = ±10%."
- },
- {
-  "id": "vu2mue-paper-19",
-  "topic": "a-ac",
-  "section": "A",
-  "stem": "The abbreviation of RMS voltage is",
-  "options": [
-   "Railway Mail Service voltage",
-   "Real Mean Square voltage",
-   "Root Mean Square voltage",
-   "Root Mean Service voltage"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-20",
-  "topic": "a-ac",
-  "section": "A",
-  "stem": "If the peak voltage of a sinusoidal ac supply is 150 volts, the RMS value is",
-  "options": [
-   "Less than peak value",
-   "More than peak value",
-   "Equal to peak value",
-   "Not related to peak value of the voltage"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-21",
-  "topic": "a-ac",
-  "section": "A",
-  "stem": "A capacitor and inductor in series is called a",
-  "options": [
-   "Tuned Circuit",
-   "Timing Circuit",
-   "Delay Circuit",
-   "Schmitt Circuit"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 174
- },
- {
-  "id": "vu2mue-paper-22",
-  "topic": "a-rectifiers",
-  "section": "A",
-  "stem": "A domestic inverter",
-  "options": [
-   "Converts ac to ac",
-   "Converts ac to dc",
-   "Converts dc to ac",
-   "Converts dc to dc"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 175
- },
- {
-  "id": "vu2mue-paper-23",
-  "topic": "a-atomic",
-  "section": "A",
-  "stem": "The current in a circuit is 25mA, then the equivalent value is",
-  "options": [
-   "0.00025 Ampere",
-   "0.0025 Ampere",
-   "0.025 Ampere",
-   "0.25 Ampere"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 175
- },
- {
-  "id": "vu2mue-paper-24",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "If 2 mA current flows through a 100 Kohm resistor, then the voltage across it is",
-  "options": [
-   "2 volts",
-   "20 volts",
-   "200 volts",
-   "0.2 volts"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 175,
-  "explanation": "V = I × R = 0.002 A × 100,000 Ω = 200 V."
- },
- {
-  "id": "vu2mue-paper-25",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "The tolerance bands with colors gold, silver & brown represent",
-  "options": [
-   "5%, 10%, 2%",
-   "5%, 10%, 1%",
-   "10%, 5%, 1%",
-   "10%, 5%, 2%"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 175
- },
- {
-  "id": "vu2mue-paper-26",
-  "topic": "g-fax-tv",
-  "section": "A",
-  "stem": "India uses which encoding technique for commercial TV broad cast",
-  "options": [
-   "NTSC",
-   "SECAM",
-   "PAL",
-   "None of the above"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 175
- },
- {
-  "id": "vu2mue-paper-28",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "Sky wave propagation utilizes",
-  "options": [
-   "Troposphere",
-   "Stratosphere",
-   "Ionosphere",
-   "Exosphere"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 175
- },
- {
-  "id": "vu2mue-paper-29",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "Ionosphere does not have _______ layer.",
-  "options": [
-   "C",
-   "D",
-   "E",
-   "F"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-30",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "Which layer of ionosphere disappears during night time?",
-  "options": [
-   "C",
-   "D",
-   "E",
-   "F"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-31",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "In dealing with sky/ground wave propagation, the area of silence where no signals are received is the",
-  "options": [
-   "dead zone",
-   "skip distance",
-   "skip zone",
-   "propagation distance."
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-32",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "Frequencies lesser than the critical frequency are",
-  "options": [
-   "passed into space",
-   "the most desirable",
-   "returned to earth",
-   "refracted by the F2 layer"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-33",
-  "topic": "g-space",
-  "section": "A",
-  "stem": "For mobile communications, the up-link frequency is _____ down link frequency .",
-  "options": [
-   "Less than",
-   "More than",
-   "Equal to",
-   "Less or more than the"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-34",
-  "topic": "a-modulation",
-  "section": "A",
-  "stem": "All India Radio (AIR) does not broadcast",
-  "options": [
-   "Amplitude Modulation transmission",
-   "Frequency Modulation transmission",
-   "Pulse Modulation transmission",
-   "Both a and b"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-35",
-  "topic": "a-receivers",
-  "section": "A",
-  "stem": "A diode can be used in the following stages of a radio receiver",
-  "options": [
-   "Detector",
-   "Mixer",
-   "Rectification",
-   "All of the above"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 176
- },
- {
-  "id": "vu2mue-paper-37",
-  "topic": "a-aerials",
-  "section": "A",
-  "stem": "Which antenna is used for direction finding purpose?",
-  "options": [
-   "Loop antenna",
-   "Active Whip antenna",
-   "Whip antenna",
-   "Dipole antenna"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 177
- },
- {
-  "id": "vu2mue-paper-38",
-  "topic": "a-transformers",
-  "section": "A",
-  "stem": "A transformer converts",
-  "options": [
-   "AC voltage into DC voltage",
-   "DC voltage into AC voltage",
-   "AC voltage into different AC voltage",
-   "DC voltage into different DC voltage"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 177
- },
- {
-  "id": "vu2mue-paper-39",
-  "topic": "a-transformers",
-  "section": "A",
-  "stem": "A matching transformer (10:1 turns ratio) is used to match 200 ohms into ___ ohms.",
-  "options": [
-   "2",
-   "20",
-   "200",
-   "5"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 177,
-  "explanation": "Impedance ratio is the square of the turns ratio: 10² = 100, so 200 Ω ÷ 100 = 2 Ω."
- },
- {
-  "id": "vu2mue-paper-40",
-  "topic": "a-transformers",
-  "section": "A",
-  "stem": "The following are transformer losses",
-  "options": [
-   "Hysteresis losses",
-   "Eddy current losses",
-   "Copper losses",
-   "All of the above"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 177
- },
- {
-  "id": "vu2mue-paper-41",
-  "topic": "a-modulation",
-  "section": "A",
-  "stem": "Digital modulation techniques are",
-  "options": [
-   "Amplitude modulation",
-   "Frequency modulation",
-   "Phase shift keying",
-   "Phase modulation"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 177
- },
- {
-  "id": "vu2mue-paper-42",
-  "topic": "a-resistors",
-  "section": "A",
-  "stem": "The following idle component dissipates energy",
-  "options": [
-   "Capacitor",
-   "Inductor",
-   "Resistor",
-   "All of the above"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-43",
-  "topic": "a-amplifiers",
-  "section": "A",
-  "stem": "The most common stage used for amplifying an electrical signal is",
-  "options": [
-   "Common Base",
-   "Common collector",
-   "Common emitter",
-   "Emitter follower"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-44",
-  "topic": "a-transistors",
-  "section": "A",
-  "stem": "The biasing of a transistor is to",
-  "options": [
-   "To avoid thermal run away",
-   "To provide stable operation",
-   "To have a stable quiescent point",
-   "All of the above"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-45",
-  "topic": "a-rectifiers",
-  "section": "A",
-  "stem": "The ideal value of ripple factor should be",
-  "options": [
-   "0",
-   "1",
-   "0.707",
-   "1.414"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-47",
-  "topic": "a-rectifiers",
-  "section": "A",
-  "stem": "The following is used as a Voltage smoothing device",
-  "options": [
-   "Resistor",
-   "Capacitor",
-   "Inductor",
-   "Both a and b"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-48",
-  "topic": "g-fax-tv",
-  "section": "A",
-  "stem": "The following modulation is used for audio transmission in TV broadcast",
-  "options": [
-   "Amplitude modulation",
-   "Frequency modulation",
-   "Pulse modulation",
-   "None of the above"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-49",
-  "topic": "g-fax-tv",
-  "section": "A",
-  "stem": "NICAM technique is used in TV broadcast",
-  "options": [
-   "For transmitting video",
-   "For transmitting mono aural audio",
-   "For transmitting stereo audio",
-   "For transmitting timing signals"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 178
- },
- {
-  "id": "vu2mue-paper-52",
+  "id": "rpc-2",
   "topic": "b-licensing",
   "section": "B",
   "stem": "An amateur is forbidden to transmit",
@@ -3473,11 +2910,10 @@
    "all the above"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 179
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-53",
+  "id": "rpc-3",
   "topic": "b-station-records",
   "section": "B",
   "stem": "Log containing chronological record of all transmissions should be preserved for",
@@ -3488,41 +2924,24 @@
    "12 months"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 179
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-54",
+  "id": "rpc-4",
   "topic": "b-station-records",
   "section": "B",
   "stem": "Log containing chronological record of all transmissions should contain",
   "options": [
    "Date and time of all transmissions",
-   "Call sings intercepted",
+   "Call signs intercepted",
    "Summary of communications",
    "All of the above"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 179
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-55",
-  "topic": "b-operating",
-  "section": "B",
-  "stem": "Which of the following should be given top priority?",
-  "options": [
-   "Safety signal",
-   "Routine communication signal",
-   "Distress signal",
-   "Urgency signal"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 179
- },
- {
-  "id": "vu2mue-paper-56",
+  "id": "rpc-6",
   "topic": "b-call-signs",
   "section": "B",
   "stem": "The following is not an amateur call sign of India",
@@ -3533,11 +2952,10 @@
    "VU3RS"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-57",
+  "id": "rpc-7",
   "topic": "b-time-frequency",
   "section": "B",
   "stem": "The standard time & frequency signal in India is",
@@ -3548,11 +2966,10 @@
    "100 MHz"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-58",
+  "id": "rpc-8",
   "topic": "b-time-frequency",
   "section": "B",
   "stem": "The standard time & frequency signal in India call sign is",
@@ -3563,11 +2980,10 @@
    "ATU"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-59",
+  "id": "rpc-9",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The abbreviation for end of message in Morse code is",
@@ -3578,26 +2994,24 @@
    "EN"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-60",
+  "id": "rpc-10",
   "topic": "b-phonetics-codes",
   "section": "B",
-  "stem": "QTR stands for ?",
+  "stem": "QTR stands for?",
   "options": [
    "What is the correct time?",
    "What is your position in latitude and longitude?",
    "Thank you for sending",
-   "What is Time and Hour?"
+   "what is Time and Hour?"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-61",
+  "id": "rpc-11",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "The standard emission designation consists of",
@@ -3608,41 +3022,10 @@
    "2 letters/numerals"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 180
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-62",
-  "topic": "a-propagation",
-  "section": "A",
-  "stem": "Metric waves means",
-  "options": [
-   "3-30 MHz",
-   "3-30 KHz",
-   "30-300 KHz",
-   "30-300 MHz"
-  ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 181
- },
- {
-  "id": "vu2mue-paper-63",
-  "topic": "b-emissions-bands",
-  "section": "B",
-  "stem": "The standard bandwidth designation consistsof",
-  "options": [
-   "5 letters/numerals",
-   "3 letters/numerals",
-   "4 letters/numerals",
-   "2 letters/numerals"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 181
- },
- {
-  "id": "vu2mue-paper-64",
+  "id": "rpc-14",
   "topic": "b-call-signs",
   "section": "B",
   "stem": "Which should be used as a suffix in call sign for mobile amateur stations",
@@ -3653,11 +3036,10 @@
    "ML"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 181
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-65",
+  "id": "rpc-15",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The Q code for “What is the correct time” is",
@@ -3668,14 +3050,13 @@
    "QTR"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 181
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-66",
+  "id": "rpc-16",
   "topic": "b-phonetics-codes",
   "section": "B",
-  "stem": "The Q code for “ Are my signals fading? ” is",
+  "stem": "The Q code for “Are my signals fading?” is",
   "options": [
    "QSB",
    "QAM",
@@ -3683,11 +3064,10 @@
    "QSF"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 181
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-67",
+  "id": "rpc-17",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The Q code QRQ represents",
@@ -3695,44 +3075,27 @@
    "Shall I stop slowing?",
    "Shall I increase power?",
    "Shall I send faster?",
-   "Shall I decreasepower?"
+   "Shall I decrease power?"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 181
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-68",
+  "id": "rpc-18",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The Phonetic alphabet for L is",
   "options": [
    "Lilly",
    "Lima",
-   "Limca",
+   "Lima",
    "Lisa"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 181
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-69",
-  "topic": "b-phonetics-codes",
-  "section": "B",
-  "stem": "The Phonetic for ‘3’ is",
-  "options": [
-   "Terra Three",
-   "Tele Three",
-   "Tango Three",
-   "Tango Tree"
-  ],
-  "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 181
- },
- {
-  "id": "vu2mue-paper-71",
+  "id": "rpc-21",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The expanded form for TU in Morse code is",
@@ -3743,11 +3106,10 @@
    "None of the above"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 182
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-72",
+  "id": "rpc-22",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The expanded form for CQ in Morse code is",
@@ -3758,11 +3120,10 @@
    "Calling none"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 182
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-73",
+  "id": "rpc-23",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The abbreviation for ‘stand by’ in Morse code is",
@@ -3773,26 +3134,10 @@
    "AD"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 182
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-74",
-  "topic": "b-phonetics-codes",
-  "section": "B",
-  "stem": "The Q code for “What is the name of your station ?” is",
-  "options": [
-   "QNS",
-   "QRA",
-   "QYS",
-   "QNA"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 182
- },
- {
-  "id": "vu2mue-paper-75",
+  "id": "rpc-25",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The Q code for “Are you ready?” is",
@@ -3803,11 +3148,24 @@
    "QRE"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 182
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-77",
+  "id": "rpc-26",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "The expanded from of SOS is",
+  "options": [
+   "Save ourselves",
+   "Save one self",
+   "Save one souls",
+   "Save our souls"
+  ],
+  "answer": 3,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-27",
   "topic": "b-operating",
   "section": "B",
   "stem": "The distress signal in radio telephony is",
@@ -3818,11 +3176,10 @@
    "Save our souls"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 183
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-78",
+  "id": "rpc-28",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The phonetic for alphabet ‘Y’ is",
@@ -3833,11 +3190,10 @@
    "Yarn"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 183
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-79",
+  "id": "rpc-29",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The phonetic for ‘9’ is",
@@ -3848,11 +3204,10 @@
    "Nine"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 183
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-80",
+  "id": "rpc-30",
   "topic": "b-time-frequency",
   "section": "B",
   "stem": "Which one of this is not a standard frequency signal",
@@ -3863,11 +3218,24 @@
    "1 MHz"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 183
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-83",
+  "id": "rpc-31",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The renewal fee for General Grade Amateur license under new rules is",
+  "options": [
+   "Rs 1000",
+   "Rs 2000",
+   "Rs. 100",
+   "Rs.200"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-33",
   "topic": "b-licensing",
   "section": "B",
   "stem": "The maximum DC power permitted under new rules for Restricted grade amateurs under 144-146 MHz band is",
@@ -3878,11 +3246,10 @@
    "100 watts"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 183
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-84",
+  "id": "rpc-34",
   "topic": "b-licensing",
   "section": "B",
   "stem": "The maximum DC power permitted under new rules for General grade amateurs under 7000-7100 KHz band is",
@@ -3893,11 +3260,10 @@
    "400 watts"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-85",
+  "id": "rpc-35",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "The permitted emission under new rules for Restricted grade amateurs under 144-l46 MHz band is",
@@ -3908,11 +3274,10 @@
    "AlA"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-86",
+  "id": "rpc-36",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "The first symbol in the designation for classification of emission represents",
@@ -3923,11 +3288,10 @@
    "None of the above"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-87",
+  "id": "rpc-37",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "Emission designation of commercial FM broadcast transmission in India is",
@@ -3938,11 +3302,10 @@
    "R3E"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-88",
+  "id": "rpc-38",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "Conventional Morse code transmission can be represented by",
@@ -3950,45 +3313,41 @@
    "J3E",
    "F3E",
    "ME",
-   "AlA"
+   "A1A"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-89",
+  "id": "rpc-39",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "The second symbol in the designation of emission represents",
   "options": [
-   "Nature of signals modulating the main earner",
+   "Nature of signals modulating the main carrier",
    "Type of modulation of the main carrier",
    "Type of information to be transmitted",
    "None of the above"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 184
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-91",
-  "topic": "b-licensing",
+  "id": "rpc-40",
+  "topic": "b-emissions-bands",
   "section": "B",
-  "stem": "The fee for change of location new rules is",
+  "stem": "The following frequency band is permitted for general grade amateurs only",
   "options": [
-   "Rs. 100",
-   "Rs. 200",
-   "Rs. 500",
-   "Rs. 1000"
+   "1820 - 1860 KHz",
+   "3500 - 3700 KHz",
+   "5725 - 5840 MHz",
+   "21000 - 21450 KHz"
   ],
-  "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 185,
-  "explanation": "Rules 2024, rule 7(6): duplicate certificate or change of location costs ₹1,000."
+  "answer": 2,
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-92",
+  "id": "rpc-42",
   "topic": "b-licensing",
   "section": "B",
   "stem": "The maximum DC power permitted under new rules for General grade amateurs under 144-146 MHz band is",
@@ -3999,42 +3358,10 @@
    "100 watts"
   ],
   "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 185
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-93",
-  "topic": "b-emissions-bands",
-  "section": "B",
-  "stem": "The standard designation for a bandwidth of 4.8 KHz is",
-  "options": [
-   "4800 Hz",
-   "4K8",
-   "4K80",
-   "4800"
-  ],
-  "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 185,
-  "explanation": "Bandwidth is written with three numerals and a letter in place of the decimal point: 4.8 kHz = 4K80."
- },
- {
-  "id": "vu2mue-paper-94",
-  "topic": "b-emissions-bands",
-  "section": "B",
-  "stem": "A bandwidth of 402 M represents",
-  "options": [
-   "4000 MHz",
-   "402 MHz",
-   "4.2 MHz",
-   "420 MHz"
-  ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 185
- },
- {
-  "id": "vu2mue-paper-95",
+  "id": "rpc-45",
   "topic": "b-emissions-bands",
   "section": "B",
   "stem": "The emission C3F denotes",
@@ -4045,11 +3372,10 @@
    "Vestigial sideband digital TV emission"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 185
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-96",
+  "id": "rpc-46",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The expanded form for RST is",
@@ -4059,12 +3385,11 @@
    "Readability strength testing",
    "Readability signal strength tone"
   ],
-  "answer": 1,
-  "source": "vu2mue-2020",
-  "page": 186
+  "answer": 3,
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-97",
+  "id": "rpc-47",
   "topic": "b-phonetics-codes",
   "section": "B",
   "stem": "The phonetic for ‘W’ is",
@@ -4075,11 +3400,10 @@
    "Wheel"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 186
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-98",
+  "id": "rpc-48",
   "topic": "a-propagation",
   "section": "A",
   "stem": "The UHF band extends from",
@@ -4090,11 +3414,10 @@
    "300-3000 MHz"
   ],
   "answer": 3,
-  "source": "vu2mue-2020",
-  "page": 186
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-99",
+  "id": "rpc-49",
   "topic": "b-licensing",
   "section": "B",
   "stem": "Which of the frequency bands was not allocated for Amateur service",
@@ -4105,22 +3428,454 @@
    "28000 - 29700 KHz"
   ],
   "answer": 2,
-  "source": "vu2mue-2020",
-  "page": 186
+  "source": "rpc-asoc-b"
  },
  {
-  "id": "vu2mue-paper-100",
-  "topic": "b-licensing",
+  "id": "rpc-53",
+  "topic": "b-emissions-bands",
   "section": "B",
-  "stem": "‘WPC’ stands for",
+  "stem": "A3E emission is",
   "options": [
-   "Wireless Planning and Coordination",
-   "Wireless Placement cell",
-   "Wireless Planning cell",
-   "Wireless Placement and Coordination"
+   "DSB",
+   "SSB",
+   "CW",
+   "FSK"
   ],
   "answer": 0,
-  "source": "vu2mue-2020",
-  "page": 186
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-58",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "Amateurs are required to preserve their log for a period of ---- from the date of last entry",
+  "options": [
+   "1 year",
+   "2 year",
+   "6 months",
+   "permanently"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-66",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Minimum age to become an amateur is",
+  "options": [
+   "18 years",
+   "14 years",
+   "12 years",
+   "16 years"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-75",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Who issues Amateur Radio Licence in India?",
+  "options": [
+   "WPC wing of Ministry of Communications & IT",
+   "Department of Posts",
+   "Telephone Department",
+   "State Government"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-76",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "What is the minimum age to become a radio amateur in India?",
+  "options": [
+   "No age limit",
+   "18 years",
+   "12 years",
+   "21 years"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-77",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "How many types of Amateur Radio licences are there in India?",
+  "options": [
+   "Five",
+   "Two",
+   "One",
+   "Three"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-78",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "An Amateur Station is one which is",
+  "options": [
+   "Operated by me holder of a General Amateur Operator certificate of Competency on the amateur radio bands",
+   "Owned and operated by a person who is not engaged professionally in radio communications",
+   "Used exclusively to provide two-way communication in connection with activities of amateur sporting organization",
+   "Used primarily for emergency communications during floods, earthquakes and similar disasters"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-79",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "When are third party messages permitted?",
+  "options": [
+   "Always",
+   "Upon failure of normal telecommunication facilities and upon request from the Government",
+   "Never",
+   "When there are natural calamities"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-80",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "What is the speed of Morse Code exam for General Grade ASOC exam?",
+  "options": [
+   "20 WPM",
+   "12 WPM",
+   "8 WPM",
+   "5 WPM"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-81",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Are Radio Amateurs in India permitted to broadcast news?",
+  "options": [
+   "No",
+   "Yes",
+   "Occasionally",
+   "Once per day"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-82",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Which one of the following is not true regarding issue of reciprocal license?",
+  "options": [
+   "The applicant must have Amateur license issued in his country.",
+   "The applicant must be above 20 years",
+   "The license shall be initially granted for one year or for the validity of the visa, whichever is earlier",
+   "The country of which the applicant is a citizen should grant reciprocal license to Indian nationals"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-83",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The full form of ITU is",
+  "options": [
+   "Indian Telecom University",
+   "Indian Telecommunications Union",
+   "International telecommunications Union",
+   "International Television Union"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-84",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The organization responsible for the International Radio Regulations is",
+  "options": [
+   "European Radio communications Office",
+   "United Nations",
+   "International telecommunication Union",
+   "European Telecommunication Standards Institute"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-87",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is the Phonetics for the alphabet R?",
+  "options": [
+   "Romeo",
+   "Rome",
+   "Romania",
+   "Royal"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-88",
+  "topic": "b-call-signs",
+  "section": "B",
+  "stem": "What is the normal prefix for Restricted Grade Amateur Radio Licence in India?",
+  "options": [
+   "VU2",
+   "VU3",
+   "VU5",
+   "VU9"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-89",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is the Q Code for “My exact location is”?",
+  "options": [
+   "QRL",
+   "QSL",
+   "QRA",
+   "QTH"
+  ],
+  "answer": 3,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-91",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "The Distress signal in Morse Code is :",
+  "options": [
+   "XXX",
+   "SOS",
+   "TTT",
+   "V V V"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-92",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "Pan Pan means:",
+  "options": [
+   "Urgency Signal",
+   "Test Signal",
+   "Weather warning",
+   "Normal message"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-93",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is meaning of CL in Morse code?",
+  "options": [
+   "clearing down",
+   "cloudy",
+   "see you later",
+   "closing down"
+  ],
+  "answer": 3,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-94",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "If in Morse code three series of v v v are sent what it represent?",
+  "options": [
+   "I am busy",
+   "Test Signal",
+   "Ending Signal",
+   "General call"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-95",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "Which type of signal has the highest priority?",
+  "options": [
+   "Urgent Signal",
+   "Test Signal",
+   "Distress Signal",
+   "Weather warning"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-96",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is the meaning of CQ?",
+  "options": [
+   "General call for all stations",
+   "I have nothing for you",
+   "I am busy",
+   "I am closing down"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-97",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "The Morse code signal SOS is sent by a station",
+  "options": [
+   "with an urgent message",
+   "in grave and imminent danger and requiring immediate assistance",
+   "making a report about a shipping hazard",
+   "sending important weather information"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-98",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "What is the 40 Meter Band allocation for Amateur Radio License in India?",
+  "options": [
+   "14.000 to 14.350 MHz",
+   "7.000 to 7.100 MHz",
+   "7.000 to 7.200 MHz",
+   "7.100 to 7.200 MHz"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-99",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "How much power is permitted on HF for Restricted Grade Amateur Radio Licence in India?",
+  "options": [
+   "50 watts",
+   "100 watts",
+   "400 watts",
+   "25 watts"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-100",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "By what name in general are the Amateur Radio Satellites known as:",
+  "options": [
+   "INSAT",
+   "INTELSAT",
+   "IRIDIUM",
+   "OSCAR"
+  ],
+  "answer": 3,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-101",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is the meaning of DE in Morse code?",
+  "options": [
+   "How are you?",
+   "This is",
+   "Who are you?",
+   "Distant station"
+  ],
+  "answer": 1,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-102",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "What type of emission is A1A?",
+  "options": [
+   "Morse Code",
+   "SSB",
+   "FM",
+   "AM"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-103",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "What is emission for SSB, suppressed carrier :",
+  "options": [
+   "A1A",
+   "F3E",
+   "J3E",
+   "A3E"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-105",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The frequency band of 30 to 300 MHz is :",
+  "options": [
+   "HF",
+   "UHF",
+   "VHF",
+   "SHF"
+  ],
+  "answer": 2,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-106",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "How long must a log book be preserved?",
+  "options": [
+   "One year",
+   "One year from date of last entry",
+   "Two years",
+   "Permanently"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
+ },
+ {
+  "id": "rpc-107",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "The Time in the log book must be in :",
+  "options": [
+   "IST",
+   "UTC",
+   "GMT",
+   "Local Time"
+  ],
+  "answer": 0,
+  "source": "rpc-asoc-b"
  }
 ]

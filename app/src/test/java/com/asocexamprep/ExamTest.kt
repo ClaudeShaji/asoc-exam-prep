@@ -14,7 +14,13 @@ class ExamTest {
     private val pack = ContentPack.load { File("src/main/assets/content/asoc-in/$it").readText() }
 
     @Test fun bankIsLargeAndValid() {
-        assertTrue(pack.questions.size >= 250)
+        assertTrue(pack.questions.size >= 200)
+        // Every answer comes from a published bank in sources.json.
+        assertTrue(pack.questions.all { q -> pack.sources.any { it.id == q.source } })
+        // Corrections from the official pool are recorded on the question.
+        val dc = pack.questions.first { it.id == "vu2mue-basic-1" }
+        assertEquals("A direct current", dc.options[dc.answer])
+        assertTrue(dc.verified.single().endsWith("T5A04"))
         assertTrue(pack.questions.count { it.section == "A" } >= 100)
         assertTrue(pack.questions.count { it.section == "B" } >= 50)
     }
