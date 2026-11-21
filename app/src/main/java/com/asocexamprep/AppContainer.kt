@@ -4,6 +4,7 @@ import android.content.Context
 import com.asocexamprep.content.ContentRepository
 import com.asocexamprep.data.db.AppDatabase
 import com.asocexamprep.data.settings.SettingsStore
+import com.asocexamprep.game.GameEngine
 import com.asocexamprep.morse.AudioTrackPlayer
 import com.asocexamprep.morse.MorsePlayer
 
@@ -12,6 +13,7 @@ class AppContainer(context: Context) {
     val db: AppDatabase by lazy { AppDatabase.build(context) }
     val settings: SettingsStore by lazy { SettingsStore(context) }
     val content: ContentRepository by lazy { ContentRepository(context) }
+    val game: GameEngine by lazy { GameEngine(db, settings, content) }
 
     private var player: MorsePlayer? = null
     /** Audio for Morse; UI tests replace it with a silent recorder. */

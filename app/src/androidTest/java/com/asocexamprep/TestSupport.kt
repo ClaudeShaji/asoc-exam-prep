@@ -23,8 +23,9 @@ class FakeMorsePlayer : MorsePlayer {
 
 val app: RadioPrepApp get() = ApplicationProvider.getApplicationContext()
 
-/** Known starting state: General grade, first Learn step, 20/8 WPM, silent audio. */
+/** Known starting state: empty progress, General grade, first Learn step, 20/8 WPM, silent audio. */
 fun resetForTest(): FakeMorsePlayer = runBlocking {
+    app.container.db.clearAllTables()
     val s = app.container.settings
     s.setGrade(Grade.GENERAL)
     s.setTrainerStep(0)

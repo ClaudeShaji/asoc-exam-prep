@@ -1,6 +1,18 @@
 package com.asocexamprep.ui.morse
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.draw.alpha
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import com.asocexamprep.game.Xp
+import androidx.compose.ui.semantics.semantics
+import com.asocexamprep.game.stars
+import com.asocexamprep.ui.game.starText
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.LinearProgressIndicator
@@ -75,14 +87,26 @@ fun LearnScreen(onBack: () -> Unit) {
     // -1 follows the learner's current step; otherwise a pinned (earlier or just-passed) step.
     var pinned by rememberSaveable { mutableIntStateOf(-1) }
     var unlocked by remember { mutableStateOf<String?>(null) }
+    var reward by remember { mutableStateOf<Pair<Int, Int>?>(null) } // stars, xp
     val step = Trainer.step(if (pinned < 0) current else pinned)
     val data = c.content.pack.training
+    val bests by c.db.game().stepBests().collectAsStateWithLifecycle(emptyList())
+    val bestByStep = bests.associate { it.step to it.accuracy }
 
-    fun onDone(accuracy: Float) {
-        if (Trainer.passed(accuracy) && step.index == current && current < Trainer.steps.lastIndex) {
+    fun onDone(accuracy: Float, correct: Int, bestCombo: Int, charDrill: Boolean) {
+        val unlock = Trainer.passed(accuracy) && step.index == current && current < Trainer.steps.lastIndex
+        if (unlock) {
             pinned = step.index
             unlocked = Trainer.step(current + 1).let { n -> n.char?.let { ch -> "${n.label}: ${MorseCode.prosign[ch] ?: ch}" } ?: n.label }
-            scope.launch { c.settings.setTrainerStep(current + 1) }
+        }
+        val xp = if (charDrill) Xp.charDrill(correct, bestCombo) else Xp.textDrill(accuracy)
+        scope.launch {
+            val stars = c.game.learnResult(step.index, accuracy, correct, bestCombo, charDrill)
+            reward = stars to xp
+            if (unlock) {
+                c.settings.setTrainerStep(current + 1)
+                c.game.stepUnlocked(current + 1)
+            }
         }
     }
 
@@ -96,6 +120,7 @@ fun LearnScreen(onBack: () -> Unit) {
                     enabled = open,
                     onClick = {
                         unlocked = null
+                        reward = null
                         pinned = if (current in stageSteps.first().index..stageSteps.last().index) -1 else stageSteps.last().index
                     },
                     label = { Text(st.label) },
@@ -109,28 +134,38 @@ fun LearnScreen(onBack: () -> Unit) {
             trackColor = MaterialTheme.colorScheme.surfaceVariant,
             drawStopIndicator = {},
         )
-        Text(step.label, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("learn_step"))
+        StepMap(step, current, bestByStep) { idx -> unlocked = null; reward = null; pinned = if (idx == current) -1 else idx }
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(step.label, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("learn_step"))
+            bestByStep[step.index]?.let { Text(starText(stars(it)), color = MaterialTheme.colorScheme.secondary, modifier = Modifier.testTag("learn_best")) }
+        }
         if (step.index < current && pinned >= 0 && unlocked == null) {
             Text("Review", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         val timing = MorseTiming(s.charWpm, s.effectiveWpm)
         key(step.index) {
             if (step.stage == Stage.CHARACTERS) {
-                CharDrill(step, timing, s.toneHz, ::onDone)
+                CharDrill(step, timing, s.toneHz, onStart = { reward = null; unlocked = null }) { acc, right, combo -> onDone(acc, right, combo, true) }
             } else if (data != null) {
                 val round = remember { CopyRound() }
                 DisposableEffect(Unit) { onDispose { round.job?.cancel() } }
                 CopyFlow(
                     round = round,
                     tag = "learn",
-                    start = { unlocked = null; Trainer.text(step, data) },
+                    start = { unlocked = null; reward = null; Trainer.text(step, data) },
                     play = { text -> c.morsePlayer.play(text, timing, s.toneHz) },
                     onScored = { score ->
                         recordSession(c, "learn", timing, score, round.startedAt, step.index)
-                        onDone(score.accuracy)
+                        onDone(score.accuracy, 0, 0, false)
                     },
                     resultExtra = { score -> if (Trainer.passed(score.accuracy)) null else "90% unlocks the next step" },
                 )
+            }
+        }
+        reward?.let { (st, xp) ->
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.testTag("learn_reward").semantics(mergeDescendants = true) {}) {
+                Text(starText(st), style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.secondary)
+                Text("+$xp XP", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
             }
         }
         unlocked?.let {
@@ -142,7 +177,7 @@ fun LearnScreen(onBack: () -> Unit) {
 
 /** One character at a time: hear it, type it, see right or wrong at once. */
 @Composable
-private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Float) -> Unit) {
+private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onStart: () -> Unit, onDone: (accuracy: Float, correct: Int, bestCombo: Int) -> Unit) {
     val c = LocalContext.current.container
     val scope = rememberCoroutineScope()
     val ch = step.char!!
@@ -150,6 +185,8 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Flo
     val answers = remember { mutableStateListOf<Char>() }
     var feedback by remember { mutableStateOf<Boolean?>(null) }
     var input by remember { mutableStateOf("") }
+    var combo by remember { mutableIntStateOf(0) }
+    var bestCombo by remember { mutableIntStateOf(0) }
     var startedAt by remember { mutableLongStateOf(0L) }
     var job by remember { mutableStateOf<Job?>(null) }
     DisposableEffect(Unit) { onDispose { job?.cancel() } }
@@ -163,6 +200,8 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Flo
         if (!running || feedback != null) return
         val ok = typed.uppercaseChar() == prompts[i]
         feedback = ok
+        combo = if (ok) combo + 1 else 0
+        bestCombo = maxOf(bestCombo, combo)
         scope.launch {
             delay(if (ok) 500 else 1200)
             answers += typed.uppercaseChar()
@@ -171,7 +210,7 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Flo
             if (answers.size < prompts.size) play(prompts[answers.size]) else {
                 val score = Scoring.score(prompts.joinToString(""), answers.joinToString(""))
                 recordSession(c, "learn", timing, score, startedAt, step.index)
-                onDone(score.accuracy)
+                onDone(score.accuracy, prompts.indices.count { answers[it] == prompts[it] }, bestCombo)
             }
         }
     }
@@ -186,6 +225,7 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Flo
             Button(
                 onClick = {
                     prompts = Trainer.charPrompts(step); answers.clear(); feedback = null; input = ""
+                    combo = 0; bestCombo = 0; onStart()
                     startedAt = System.currentTimeMillis()
                     play(prompts[0])
                 },
@@ -194,7 +234,10 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onDone: (Flo
         }
     }
     if (running) {
-        Text("${i + 1} of ${prompts.size}", color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("char_count"))
+        Row(horizontalArrangement = Arrangement.spacedBy(16.dp), verticalAlignment = Alignment.CenterVertically) {
+            Text("${i + 1} of ${prompts.size}", color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("char_count"))
+            if (combo >= 2) Text("Combo ×$combo", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.secondary, modifier = Modifier.testTag("char_combo"))
+        }
         OutlinedTextField(
             value = input,
             onValueChange = { v ->
@@ -260,7 +303,10 @@ fun CopyScreen(onBack: () -> Unit) {
             tag = "copy",
             start = { Drills.text(mode, qcodes, Trainer.learnedChars(maxOf(s.trainerStep, 9))) },
             play = { text -> c.morsePlayer.play(text, timing, s.toneHz) },
-            onScored = { score -> recordSession(c, "copy-${mode.name.lowercase()}", timing, score, round.startedAt) },
+            onScored = { score ->
+                recordSession(c, "copy-${mode.name.lowercase()}", timing, score, round.startedAt)
+                c.game.copyResult(score.accuracy, examPassed = mode == CopyMode.EXAM && score.errors <= (exam?.maxErrors ?: 5))
+            },
             resultExtra = { score ->
                 if (mode == CopyMode.EXAM) (if (score.errors <= (exam?.maxErrors ?: 5)) "Pass" else "Fail") else null
             },
@@ -315,4 +361,56 @@ private fun CopyFlow(
     }
     if (round.phase == Phase.PLAYING) Text("Listening…", color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.testTag("${tag}_listening"))
     round.score?.let { ScoreView(it, MorseCode.clean(round.sent), tag, resultExtra(it)) }
+}
+
+/** The ladder as a map: one strip of nodes for the current stage, with stars earned. */
+@Composable
+private fun StepMap(step: Step, current: Int, best: Map<Int, Float>, onPick: (Int) -> Unit) {
+    val steps = Trainer.steps.filter { it.stage == step.stage }
+    val listState = androidx.compose.foundation.lazy.rememberLazyListState()
+    LaunchedEffect(step.stage) {
+        val i = steps.indexOfFirst { it.index == step.index }.coerceAtLeast(0)
+        listState.scrollToItem((i - 3).coerceAtLeast(0))
+    }
+    androidx.compose.foundation.lazy.LazyRow(
+        state = listState,
+        horizontalArrangement = Arrangement.spacedBy(6.dp),
+        modifier = Modifier.fillMaxWidth().testTag("step_map"),
+    ) {
+        items(steps.size, key = { steps[it].index }) { n ->
+            val s = steps[n]
+            val open = s.index <= current
+            val selected = s.index == step.index
+            val label = s.char?.let { MorseCode.prosign[it] ?: "$it" } ?: when (s.stage) {
+                Stage.GROUPS -> s.key
+                Stage.WORDS -> if (s.key == "short") "S" else "L"
+                else -> "✎"
+            }
+            Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.width(40.dp).alpha(if (open) 1f else 0.35f)) {
+                androidx.compose.foundation.layout.Box(
+                    Modifier.size(36.dp)
+                        .background(
+                            when {
+                                selected -> MaterialTheme.colorScheme.primary
+                                open -> MaterialTheme.colorScheme.surfaceContainerHigh
+                                else -> MaterialTheme.colorScheme.surfaceContainer
+                            },
+                            CircleShape,
+                        )
+                        .then(if (open && !selected) Modifier.border(1.dp, MaterialTheme.colorScheme.primary, CircleShape) else Modifier)
+                        .then(if (open) Modifier.clickable { onPick(s.index) } else Modifier)
+                        .testTag("map_${s.index}"),
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Text(
+                        label,
+                        fontFamily = FontFamily.Monospace,
+                        color = if (selected) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurface,
+                    )
+                }
+                val st = best[s.index]?.let { stars(it) }
+                Text(st?.let { starText(it) } ?: " ", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.secondary)
+            }
+        }
+    }
 }

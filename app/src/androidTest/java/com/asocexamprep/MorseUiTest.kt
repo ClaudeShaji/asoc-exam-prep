@@ -10,6 +10,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.test.performSemanticsAction
 import androidx.compose.ui.test.performTextInput
@@ -75,7 +76,7 @@ class MorseUiTest {
         rule.onNodeWithTag("char_score").assertTextContains("10 / 10")
         rule.onNodeWithTag("learn_unlocked").assertTextContains("Character 2 of 43: M", substring = true)
         rule.waitUntil(5_000) { runBlocking { app.container.settings.settings.first().trainerStep } == 1 }
-        rule.onNodeWithTag("learn_continue").performClick()
+        rule.onNodeWithTag("learn_continue").performScrollTo().performClick()
         rule.onNodeWithTag("learn_step").assertTextContains("Character 2 of 43")
         rule.onNodeWithTag("char_new").assertTextContains("M")
     }
@@ -120,14 +121,14 @@ class MorseUiTest {
         rule.onNodeWithTag("learn_accuracy").assertTextContains("100%")
         waitForTag("learn_unlocked")
         rule.onNodeWithTag("learn_unlocked").assertTextContains("Groups of 3 letters", substring = true)
-        rule.onNodeWithTag("learn_continue").performClick()
+        rule.onNodeWithTag("learn_continue").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Groups of 3 letters" }
 
         // Earlier stages stay open for review; later ones are locked.
         rule.onNodeWithTag("learn_stage_WORDS").assertIsNotEnabled()
-        rule.onNodeWithTag("learn_stage_CHARACTERS").performClick()
+        rule.onNodeWithTag("learn_stage_CHARACTERS").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Character 43 of 43" }
-        rule.onNodeWithTag("learn_stage_GROUPS").performClick()
+        rule.onNodeWithTag("learn_stage_GROUPS").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Groups of 3 letters" }
     }
 
@@ -139,7 +140,7 @@ class MorseUiTest {
         waitForTag("learn_check")
         val sent = player.played.last()
         assertTrue(sent, app.container.content.pack.training!!.sentences.any { sent.contains(it) })
-        rule.onNodeWithTag("learn_stage_WORDS").performClick()
+        rule.onNodeWithTag("learn_stage_WORDS").performScrollTo().performClick()
         rule.waitUntil(5_000) { text("learn_step") == "Long words" }
     }
 

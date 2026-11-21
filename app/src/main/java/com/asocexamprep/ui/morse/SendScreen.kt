@@ -69,7 +69,10 @@ fun SendScreen(onBack: () -> Unit) {
 
     val matched = decoded.trim() == target
     LaunchedEffect(matched) {
-        if (matched) recordSession(c, "send", MorseTiming(wpm.coerceIn(3, 60)), null, startedAt)
+        if (matched) {
+            recordSession(c, "send", MorseTiming(wpm.coerceIn(3, 60)), null, startedAt)
+            c.game.sendCorrect()
+        }
     }
 
     ScreenScaffold("Send practice", "send", navigationIcon = { MorseBack(onBack) }) {

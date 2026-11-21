@@ -1,6 +1,9 @@
 package com.asocexamprep.ui
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import com.asocexamprep.ui.game.CelebrationHost
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -43,6 +46,7 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
         restoreState = true
     }
 
+    Box(Modifier.fillMaxSize()) {
     Scaffold(
         bottomBar = {
             if (showBar) NavigationBar {
@@ -84,6 +88,9 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             composable(Tab.PROGRESS.route) { ProgressScreen() }
             composable(Routes.SETTINGS) { SettingsScreen(onBack = { nav.popBackStack() }) }
         }
+    }
+
+    CelebrationHost()
     }
 
     // Debug shortcut: jump to a route once the graph exists.

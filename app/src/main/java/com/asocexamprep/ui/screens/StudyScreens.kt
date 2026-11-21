@@ -206,7 +206,8 @@ fun TopicScreen(topicId: String, onBack: () -> Unit) {
                 val now = System.currentTimeMillis()
                 val p = progress ?: TopicProgress(topicId)
                 c.db.progress().upsertTopic(p.copy(studied = !studied, lastSeenAt = now))
-                if (!studied) c.db.activity().add(today(), "study", topic.minutes)
+                // Minutes and XP count once per topic, however often it is re-marked.
+                if (!studied) c.game.topicStudied(topicId, topic.minutes)
             }
         }
         if (studied) OutlinedButton(onClick = toggle, modifier = Modifier.fillMaxWidth().testTag("toggle_studied")) { Text("Studied ✓") }

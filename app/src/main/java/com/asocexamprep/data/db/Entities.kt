@@ -89,3 +89,19 @@ data class DailyActivity(
     val area: String,
     val minutes: Int,
 )
+
+/** One XP award. [reason] is unique, so the same award can never be paid twice. */
+@Entity(tableName = "xp_event", indices = [Index(value = ["reason"], unique = true), Index("at")])
+data class XpEvent(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val at: Long,
+    val amount: Int,
+    val reason: String,
+)
+
+@Entity(tableName = "achievement")
+data class AchievementRow(@PrimaryKey val id: String, val unlockedAt: Long)
+
+/** Best accuracy reached on a Learn step (drives its stars). */
+@Entity(tableName = "step_best")
+data class StepBest(@PrimaryKey val step: Int, val accuracy: Float, val at: Long)
