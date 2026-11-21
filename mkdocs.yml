@@ -1,0 +1,72 @@
+site_name: ASOC Exam Prep
+site_description: User guide for ASOC Exam Prep, an Android app to prepare for India's amateur radio licence exam.
+site_url: https://claudeshaji.github.io/asoc-exam-prep/
+repo_url: https://github.com/ClaudeShaji/asoc-exam-prep
+repo_name: ClaudeShaji/asoc-exam-prep
+edit_uri: edit/main/docs/
+copyright: Code licensed under Apache 2.0. Study content belongs to its publishers.
+
+theme:
+  name: material
+  icon:
+    logo: material/radio-tower
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - toc.follow
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Install the app: install.md
+      - First steps: first-steps.md
+  - Using the app:
+      - Study notes: study.md
+      - Reference and phonetics: reference.md
+      - Morse code: morse.md
+      - Exams and practice: exams.md
+      - Progress and rewards: progress.md
+      - Settings and About: settings.md
+  - Help:
+      - FAQ: faq.md
+      - Sources and licences: sources.md
+  - For developers: developers.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - stylesheets/extra.css

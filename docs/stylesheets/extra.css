@@ -1,0 +1,22 @@
+/* Phone screenshots: fixed width, rounded, side by side when there is room. */
+.md-typeset img.shot {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  margin: 0.4rem 0.6rem 0.4rem 0;
+  vertical-align: top;
+}
+.md-typeset .shots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.md-typeset .shots figure {
+  margin: 0;
+  max-width: 260px;
+}
+.md-typeset .shots figcaption {
+  font-size: 0.75rem;
+  max-width: 260px;
+}

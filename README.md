@@ -4,6 +4,14 @@ An Android app to prepare for India's **Amateur Station Operator's Certificate (
 for both the General and Restricted grades.
 
 **[Download the latest APK from Releases →](https://github.com/ClaudeShaji/asoc-exam-prep/releases/latest)**
+· **[User guide →](https://claudeshaji.github.io/asoc-exam-prep/)**
+
+<p>
+  <img src="docs/images/home.png" alt="Home screen" width="200">
+  <img src="docs/images/study.png" alt="Study notes" width="200">
+  <img src="docs/images/learn.png" alt="Morse trainer" width="200">
+  <img src="docs/images/paper-hint.png" alt="Exam paper with a hint" width="200">
+</p>
 
 ## Features
 
@@ -17,6 +25,8 @@ for both the General and Restricted grades.
 - **Live results** toggle, and hints quoted from the study notes.
 - **Reference**: phonetic alphabet with audio, Q codes, abbreviations and band plan.
 - **Progress tracking** with streaks, levels and badges.
+
+The [user guide](https://claudeshaji.github.io/asoc-exam-prep/) explains every screen, with screenshots.
 
 ## Install
 

@@ -12,3 +12,4 @@ build/
 keystore.properties
 /dist/
 .kotlin/
+/site/
