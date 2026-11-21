@@ -13,3 +13,6 @@
 -keepclassmembers,allowobfuscation class com.asocexamprep.content.** { *; }
 -keepclassmembers,allowobfuscation class com.asocexamprep.morse.** { *; }
 -keep,allowobfuscation interface com.asocexamprep.morse.MorsePlayer { *; }
+-keepclassmembers,allowobfuscation class com.asocexamprep.voice.** { *; }
+-keep,allowobfuscation interface com.asocexamprep.voice.VoicePlayer { *; }
+-keep,allowobfuscation class com.asocexamprep.voice.ClipPlayer { <init>(...); }
