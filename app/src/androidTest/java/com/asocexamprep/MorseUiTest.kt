@@ -193,20 +193,39 @@ class MorseUiTest {
         assertTrue(rule.onAllNodesWithText("0 errors · Pass").fetchSemanticsNodes().isNotEmpty())
     }
 
-    @Test fun keyTapsAreDecoded() {
-        rule.onNodeWithTag("morse_send").performClick()
-        // At 20 WPM a dit is 60 ms: dit, letter gap, dah = "ET".
+    /** Keys [text] on the on-screen key with beginner finger timing (150 ms dots, 450 ms dashes). */
+    private fun keyText(text: String) {
         rule.onNodeWithTag("send_key").performTouchInput {
-            down(center); advanceEventTime(60); up()
-            advanceEventTime(200)
-            down(center); advanceEventTime(200); up()
+            text.forEachIndexed { ci, ch ->
+                if (ci > 0) advanceEventTime(900)
+                com.asocexamprep.morse.MorseCode.pattern(ch)!!.forEachIndexed { si, sym ->
+                    if (si > 0) advanceEventTime(200)
+                    down(center); advanceEventTime(if (sym == '.') 150 else 450); up()
+                }
+            }
         }
-        rule.waitUntil(5_000) {
-            rule.onAllNodesWithTag("send_decoded").fetchSemanticsNodes().firstOrNull()
-                ?.config?.get(androidx.compose.ui.semantics.SemanticsProperties.Text)?.joinToString()?.startsWith("ET") == true
-        }
-        assertEquals(2, player.keyDowns)
+    }
+
+    @Test fun fingerKeyingIsDecoded() {
+        rule.onNodeWithTag("morse_send").performClick()
+        keyText("ET")
+        rule.waitUntil(5_000) { text("send_decoded").startsWith("ET") }
+        assertEquals(2, player.keyDowns) // E = one dot, T = one dash
         rule.onNodeWithTag("send_clear").performClick()
+        rule.waitUntil(5_000) { text("send_decoded").isBlank() }
+        // K keyed with long pauses between its dash-dot-dash stays one letter.
+        keyText("K")
+        rule.waitUntil(5_000) { text("send_decoded").trim() == "K" }
+    }
+
+    @Test fun sendingTheTargetIsAcceptedAndMovesOn() {
+        rule.onNodeWithTag("morse_send").performClick()
+        val target = text("send_target")
+        keyText(target)
+        rule.waitUntil(5_000) { rule.onAllNodesWithTag("send_match").fetchSemanticsNodes().isNotEmpty() }
+        rule.waitUntil(5_000) { runBlocking { app.container.db.progress().countMorse("send", 0f) } == 1 }
+        // A new target appears and the decoded line is cleared.
+        rule.waitUntil(5_000) { text("send_decoded").isBlank() }
         rule.onNodeWithTag("send_hear").performClick()
         rule.waitUntil(5_000) { player.played.isNotEmpty() }
         rule.onNodeWithTag("send_target").assertTextContains(player.played.last())

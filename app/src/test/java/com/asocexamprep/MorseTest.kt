@@ -85,6 +85,36 @@ class MorseTest {
         assertEquals("VU2ABC DE VU3XYZ", d.decoded)
     }
 
+    /** Keys [text] with the given timings into a fresh decoder. */
+    private fun key(text: String, start: Double, dit: Double, dah: Double, elementGap: Double, letterGap: Double, wordGap: Double): String {
+        val d = KeyDecoder(start)
+        var gap: Double? = null
+        text.split(' ').forEachIndexed { wi, word ->
+            word.forEachIndexed { ci, ch ->
+                MorseCode.pattern(ch)!!.forEachIndexed { si, s ->
+                    val g = when { si > 0 -> elementGap; ci > 0 -> letterGap; wi > 0 -> wordGap; else -> null }
+                    d.mark(if (s == '.') dit else dah, g ?: gap)
+                    gap = null
+                }
+            }
+        }
+        d.flushLetter()
+        return d.decoded
+    }
+
+    @Test fun decoderReadsSlowUnevenFingerKeying() {
+        // A beginner: long taps and pauses between dots and dashes nearly as long as a dit-and-a-half.
+        assertEquals("CQ DE VU2ABC", key("CQ DE VU2ABC", KeyDecoder.initialDitFor(8), dit = 160.0, dah = 430.0, elementGap = 230.0, letterGap = 750.0, wordGap = 1700.0))
+    }
+
+    @Test fun decoderReadsFastKeyingFromASlowStart() {
+        assertEquals("PARIS PARIS", key("PARIS PARIS", KeyDecoder.initialDitFor(8), dit = 70.0, dah = 210.0, elementGap = 70.0, letterGap = 230.0, wordGap = 520.0))
+    }
+
+    @Test fun kIsNotSplitByGenerousElementGaps() {
+        assertEquals("K", key("K", KeyDecoder.initialDitFor(8), dit = 140.0, dah = 420.0, elementGap = 300.0, letterGap = 900.0, wordGap = 2000.0))
+    }
+
     @Test fun scoringCountsErrorsAndIgnoresSpaces() {
         val perfect = Scoring.score("KMKMK MKKMM", "kmkmkmkkmm")
         assertEquals(0, perfect.errors)

@@ -21,6 +21,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -49,29 +55,46 @@ fun SendScreen(onBack: () -> Unit) {
     val s by c.settings.settings.collectAsStateWithLifecycle(Settings())
     val scope = rememberCoroutineScope()
     var target by remember { mutableStateOf(Drills.sendTarget()) }
-    val decoder = remember(s.charWpm) { KeyDecoder(1200.0 / s.charWpm) }
+    // One decoder for the screen; its starting speed follows the saved overall speed.
+    var decoder by remember { mutableStateOf(KeyDecoder(KeyDecoder.initialDitFor(s.effectiveWpm))) }
     var decoded by remember { mutableStateOf("") }
     var pending by remember { mutableStateOf("") }
-    var wpm by remember { mutableIntStateOf(s.charWpm) }
+    var wpm by remember { mutableIntStateOf(0) }
     var down by remember { mutableStateOf(false) }
     var lastUp by remember { mutableLongStateOf(-1L) }
-    val startedAt = remember { System.currentTimeMillis() }
-    DisposableEffect(Unit) { onDispose { c.morsePlayer.keyUp() } }
+    var startedAt by remember { mutableLongStateOf(System.currentTimeMillis()) }
+    var touched by remember { mutableStateOf(false) }
+    val tone by rememberUpdatedState(s.toneHz)
 
     fun refresh() { decoded = decoder.decoded; pending = decoder.pending; wpm = decoder.wpm }
+    fun reset(newTarget: Boolean) {
+        if (newTarget) target = Drills.sendTarget()
+        decoder = KeyDecoder(KeyDecoder.initialDitFor(s.effectiveWpm))
+        lastUp = -1; touched = false; startedAt = System.currentTimeMillis()
+        refresh()
+    }
 
-    // A pause of three dits ends the letter.
-    LaunchedEffect(lastUp) {
-        if (lastUp < 0) return@LaunchedEffect
-        delay((3 * decoder.ditMs).toLong())
+    // Until the learner touches the key, follow the saved speed once settings load.
+    LaunchedEffect(s.effectiveWpm) { if (!touched) { decoder = KeyDecoder(KeyDecoder.initialDitFor(s.effectiveWpm)); refresh() } }
+    DisposableEffect(Unit) { onDispose { c.morsePlayer.keyUp(); c.morsePlayer.release() } }
+    LifecycleEventEffect(Lifecycle.Event.ON_STOP) { c.morsePlayer.keyUp(); c.morsePlayer.release() }
+
+    // A pause longer than a letter gap ends the letter, but only while the key is up.
+    LaunchedEffect(lastUp, down) {
+        if (lastUp < 0 || down) return@LaunchedEffect
+        delay(decoder.letterGapMs.toLong())
         decoder.flushLetter(); refresh()
     }
 
-    val matched = decoded.trim() == target
+    // Targets are single words or call signs, so an accidental word gap doesn't count against you.
+    val sent = decoded.replace(" ", "")
+    val matched = sent.isNotEmpty() && sent == target
     LaunchedEffect(matched) {
         if (matched) {
             recordSession(c, "send", MorseTiming(wpm.coerceIn(3, 60)), null, startedAt)
             c.game.sendCorrect()
+            delay(1500)
+            reset(newTarget = true)
         }
     }
 
@@ -80,23 +103,30 @@ fun SendScreen(onBack: () -> Unit) {
         Text(target, style = MaterialTheme.typography.headlineMedium, fontFamily = FontFamily.Monospace, modifier = Modifier.testTag("send_target"))
         MorsePattern(target, dot = 7.dp)
         Text("Decoded", color = MaterialTheme.colorScheme.onSurfaceVariant)
+        // Each decoded character green when it matches the target at that position, red when not.
+        val good = MaterialTheme.colorScheme.primary
+        val bad = MaterialTheme.colorScheme.error
         Text(
-            decoded.ifEmpty { " " },
+            buildAnnotatedString {
+                if (sent.isEmpty()) append(" ")
+                sent.forEachIndexed { i, ch ->
+                    withStyle(SpanStyle(color = if (target.getOrNull(i) == ch) good else bad)) { append(ch) }
+                }
+            },
             style = MaterialTheme.typography.headlineSmall,
             fontFamily = FontFamily.Monospace,
             modifier = Modifier.testTag("send_decoded"),
         )
         Box(Modifier.height(10.dp)) {
             if (pending.isNotEmpty()) Row(horizontalArrangement = Arrangement.spacedBy(5.dp)) {
-                pending.forEach { s ->
-                    Box(Modifier.size(if (s == '.') 10.dp else 30.dp, 10.dp).background(MaterialTheme.colorScheme.primary, RoundedCornerShape(5.dp)))
+                pending.forEach { sym ->
+                    Box(Modifier.size(if (sym == '.') 10.dp else 30.dp, 10.dp).background(MaterialTheme.colorScheme.primary, RoundedCornerShape(5.dp)))
                 }
             }
         }
-        Text("About $wpm WPM", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(if (wpm > 0) "About $wpm WPM" else " ", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         if (matched) Text("Correct", color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("send_match"))
 
-        var pressedAt by remember { mutableLongStateOf(0L) }
         Box(
             Modifier
                 .fillMaxWidth()
@@ -104,19 +134,20 @@ fun SendScreen(onBack: () -> Unit) {
                 .clip(RoundedCornerShape(24.dp))
                 .background(if (down) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primaryContainer)
                 .testTag("send_key")
-                .pointerInput(s.toneHz) {
+                .pointerInput(Unit) {
                     awaitEachGesture {
                         val d = awaitFirstDown()
-                        pressedAt = d.uptimeMillis
+                        val pressedAt = d.uptimeMillis
                         down = true
-                        c.morsePlayer.keyDown(s.toneHz)
+                        touched = true
+                        c.morsePlayer.keyDown(tone)
                         val up = waitForUpOrCancellation()
                         c.morsePlayer.keyUp()
-                        down = false
                         val upAt = up?.uptimeMillis ?: pressedAt
                         val gap = if (lastUp >= 0) (pressedAt - lastUp).toDouble() else null
                         decoder.mark((upAt - pressedAt).toDouble(), gap)
                         lastUp = upAt
+                        down = false
                         refresh()
                     }
                 },
@@ -129,11 +160,8 @@ fun SendScreen(onBack: () -> Unit) {
             )
         }
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedButton(onClick = { decoder.clear(); lastUp = -1; refresh() }, modifier = Modifier.testTag("send_clear")) { Text("Clear") }
-            OutlinedButton(
-                onClick = { target = Drills.sendTarget(); decoder.clear(); lastUp = -1; refresh() },
-                modifier = Modifier.testTag("send_next"),
-            ) { Text("New") }
+            OutlinedButton(onClick = { reset(newTarget = false) }, modifier = Modifier.testTag("send_clear")) { Text("Clear") }
+            OutlinedButton(onClick = { reset(newTarget = true) }, modifier = Modifier.testTag("send_next")) { Text("New") }
             OutlinedButton(
                 onClick = { scope.launch { c.morsePlayer.play(target, MorseTiming(s.charWpm, s.effectiveWpm), s.toneHz) } },
                 modifier = Modifier.testTag("send_hear"),
