@@ -74,4 +74,14 @@ class ScreenshotTour {
         shot("phonetics")
         rule.onNodeWithTag("phon_spell").performClick()
     }
+
+    @Test fun about() {
+        resetForTest()
+        rule.onNodeWithTag("open_settings").performClick()
+        rule.onNodeWithTag("scroll_settings").performScrollToNode(hasTestTag("open_about"))
+        rule.onNodeWithTag("open_about").performClick()
+        shot("about-top")
+        rule.onNodeWithTag("scroll_about").performScrollToNode(hasTestTag("about_licence_voice"))
+        shot("about-voice")
+    }
 }

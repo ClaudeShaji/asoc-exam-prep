@@ -6,7 +6,6 @@ package com.asocexamprep.voice
  */
 object Phonetics {
     const val DIR = "audio/phonetics"
-    const val CREDIT = "Voice: Allison Smith, Asterisk core sounds · CC BY-SA 3.0"
 
     /** One spoken item: the character, and the clip to play (null = a pause between words). */
     data class Spoken(val char: Char, val clip: String?)

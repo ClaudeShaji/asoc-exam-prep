@@ -42,7 +42,7 @@ private const val DAY_MS = 86_400_000L
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SettingsScreen(onBack: () -> Unit) {
+fun SettingsScreen(onBack: () -> Unit, onAbout: () -> Unit = {}) {
     val store = LocalContext.current.container.settings
     val s by store.settings.collectAsStateWithLifecycle(Settings())
     val scope = rememberCoroutineScope()
@@ -80,6 +80,11 @@ fun SettingsScreen(onBack: () -> Unit) {
                 valueRange = 5f..120f,
                 steps = 22,
             )
+        }
+        Section("About") {
+            OutlinedButton(onClick = onAbout, modifier = Modifier.testTag("open_about")) {
+                Text("About, sources and licences")
+            }
         }
     }
 

@@ -149,7 +149,7 @@ fun PhoneticsTab(table: List<Spelled>) {
         HorizontalDivider(color = MaterialTheme.colorScheme.surfaceVariant)
     }
     Text(
-        "Letters are spoken as their code words. The recordings say figures as plain numbers; the ITU figure code word is shown beside each. ${Phonetics.CREDIT}.",
+        "Letters are spoken as their code words. The recordings say figures as plain numbers; the ITU figure code word is shown beside each. Voice credits: Settings → About.",
         style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.outline,
         modifier = Modifier.padding(bottom = 16.dp).testTag("phon_credit"),

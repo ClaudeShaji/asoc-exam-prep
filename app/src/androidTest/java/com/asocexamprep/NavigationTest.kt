@@ -29,6 +29,21 @@ class NavigationTest {
         }
     }
 
+    @Test fun aboutListsSourcesAndLicences() {
+        rule.onNodeWithTag("open_settings").performClick()
+        rule.onNodeWithTag("scroll_settings").performScrollToNode(hasTestTag("open_about"))
+        rule.onNodeWithTag("open_about").performClick()
+        rule.onNodeWithTag("about_version").assertTextContains("Version ", substring = true)
+        rule.onNodeWithTag("about_source_vu2mue-2020").assertTextContains("176 exam questions", substring = true)
+        for (tag in listOf("about_licence_voice", "about_licence_apache")) {
+            rule.onNodeWithTag("scroll_about").performScrollToNode(hasTestTag(tag))
+            rule.onNodeWithTag(tag).performClick()
+            rule.onNodeWithTag("${tag}_text").assertExists()
+        }
+        rule.onNodeWithTag("about_licence_voice_text").assertTextContains("Allison Smith", substring = true)
+        rule.onNodeWithTag("about_licence_apache_text").assertTextContains("Apache License", substring = true)
+    }
+
     @Test fun settingsOpensAndGradeSaves() {
         rule.onNodeWithTag("open_settings").performClick()
         rule.onNodeWithTag("screen_settings").assertIsDisplayed()

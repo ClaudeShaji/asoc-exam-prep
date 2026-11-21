@@ -45,7 +45,7 @@ class PhoneticsUiTest {
         rule.onNodeWithTag("phon_row_Q").performClick()
         rule.waitUntil(3_000) { voice.said.toList() == listOf("q") }
         rule.onNodeWithTag("scroll_reference").performScrollToNode(hasTestTag("phon_credit"))
-        rule.onNodeWithTag("phon_credit").assertTextContains("Allison Smith", substring = true)
+        rule.onNodeWithTag("phon_credit").assertTextContains("Settings → About", substring = true)
         rule.onNodeWithTag("scroll_reference").performScrollToNode(hasTestTag("phon_all"))
         rule.onNodeWithTag("phon_all").performClick()
         rule.waitUntil(10_000) { voice.said.size == 37 }

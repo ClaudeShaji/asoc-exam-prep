@@ -108,7 +108,8 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
                 QuizScreen(it.arguments?.getString("key").orEmpty(), onTopic = { t -> nav.navigate("topic/$t") }, onBack = { nav.popBackStack() })
             }
             composable(Tab.PROGRESS.route) { ProgressScreen() }
-            composable(Routes.SETTINGS) { SettingsScreen(onBack = { nav.popBackStack() }) }
+            composable(Routes.SETTINGS) { SettingsScreen(onBack = { nav.popBackStack() }, onAbout = { nav.navigate(Routes.ABOUT) }) }
+            composable(Routes.ABOUT) { com.asocexamprep.ui.screens.AboutScreen(onBack = { nav.popBackStack() }) }
         }
     }
 
