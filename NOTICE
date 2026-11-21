@@ -1,0 +1,21 @@
+ASOC Exam Prep
+Copyright 2026 Claude Shaji
+
+The app's source code is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The study content bundled under app/src/main/assets is NOT covered by that licence.
+It is quoted or extracted from these publications, each credited in the app
+(Settings -> About), and remains the property of its publisher:
+
+- Telecommunications (Amateur Services) Rules, 2024 - Department of Telecommunications,
+  Government of India (Gazette of India)
+- NIAR Study Manual (2021 and 2016 editions) - National Institute of Amateur Radio, Hyderabad
+- Amateur Radio Study Material (2020) - Sandeep Baruah, VU2MUE
+- ASOC Exam Question Paper with Answers, Section B - RPC Ham Radio Club,
+  Ranganathan Polytechnic College, Coimbatore
+- NCVEC question pools (USA), public domain - used only to cross-check answer keys
+
+The phonetic-alphabet voice clips (app/src/main/assets/audio/phonetics) were recorded by
+Allison Smith for the Asterisk project, Copyright (C) 2003-2008 Allison Smith, and are
+licensed under Creative Commons Attribution-ShareAlike 3.0 (see that folder's LICENSE.txt).
+They were converted from G.722 to Ogg Vorbis; the sound is otherwise unmodified.

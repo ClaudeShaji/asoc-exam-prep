@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -18,6 +20,22 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // Release key: from environment variables (CI secrets) or an untracked keystore.properties.
+    // Without either, release builds fall back to the debug key so local builds still work.
+    val keyProps = Properties().apply {
+        rootProject.file("keystore.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
+    }
+    fun keyValue(name: String): String? = System.getenv("ASOC_$name") ?: keyProps.getProperty(name)
+    val releaseKey = keyValue("STORE_FILE")?.let { rootProject.file(it) }?.takeIf { it.exists() }
+    signingConfigs {
+        if (releaseKey != null) create("release") {
+            storeFile = releaseKey
+            storePassword = keyValue("STORE_PASSWORD")
+            keyAlias = keyValue("KEY_ALIAS")
+            keyPassword = keyValue("KEY_PASSWORD")
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
@@ -26,7 +44,7 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
             testProguardFiles("proguard-test-rules.pro")
             if (project.hasProperty("releaseTests")) proguardFiles("proguard-release-tests.pro")
         }
