@@ -92,6 +92,20 @@ data class Reference(
 @Serializable data class Bands(val source: String, val page: Int, val power: String, val rows: List<BandRow>)
 @Serializable data class BandRow(val band: String, val range: String, val note: String)
 
+/** A multiple-choice exam question. [answer] is the index of the correct option. */
+@Serializable
+data class Question(
+    val id: String,
+    val topic: String,
+    val section: String,
+    val stem: String,
+    val options: List<String>,
+    val answer: Int,
+    val explanation: String? = null,
+    val source: String,
+    val page: Int? = null,
+)
+
 /** Study notes for a topic, converted from one source's pages. */
 @Serializable
 data class NoteRef(val topic: String, val source: String, val file: String, val pages: String)
@@ -109,6 +123,7 @@ class ContentPack(
     val reference: Reference,
     val notes: List<NoteRef> = emptyList(),
     val training: com.asocexamprep.morse.TrainingData? = null,
+    val questions: List<Question> = emptyList(),
     private val read: (String) -> String = { error("no reader") },
 ) {
     private val noteCache = HashMap<String, String>()
@@ -154,6 +169,7 @@ class ContentPack(
                 infoText = info.associate { it.id to read("info/${it.id}.md") },
                 reference = json.decodeFromString(read("reference.json")),
                 notes = json.decodeFromString(read("notes.json")),
+                questions = runCatching { json.decodeFromString<List<Question>>(read("questions.json")) }.getOrDefault(emptyList()),
                 training = runCatching { json.decodeFromString<com.asocexamprep.morse.TrainingData>(read("morse/training.json")) }.getOrNull(),
                 read = read,
             )

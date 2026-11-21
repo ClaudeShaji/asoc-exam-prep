@@ -18,7 +18,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.asocexamprep.ui.screens.ExamScreen
+import com.asocexamprep.ui.exam.ExamScreen
+import com.asocexamprep.ui.exam.MockScreen
+import com.asocexamprep.ui.exam.PracticeTopicsScreen
+import com.asocexamprep.ui.exam.QuizScreen
 import com.asocexamprep.ui.screens.HomeScreen
 import com.asocexamprep.ui.screens.InfoListScreen
 import com.asocexamprep.ui.screens.InfoPageScreen
@@ -75,7 +78,7 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
                     onReference = { nav.navigate(Routes.REFERENCE) },
                 )
             }
-            composable("topic/{id}") { TopicScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }) }
+            composable("topic/{id}") { TopicScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }, onPractice = { t -> nav.navigate("exam/practice/$t") }) }
             composable(Routes.INFO) { InfoListScreen(onPage = { id -> nav.navigate("info/$id") }, onBack = { nav.popBackStack() }) }
             composable("info/{id}") { InfoPageScreen(it.arguments?.getString("id").orEmpty(), onBack = { nav.popBackStack() }) }
             composable(Routes.REFERENCE) { ReferenceScreen(onBack = { nav.popBackStack() }) }
@@ -88,7 +91,13 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             }
             composable("morse/send") { SendScreen(onBack = { nav.popBackStack() }) }
             composable("morse/alphabet") { AlphabetScreen(onBack = { nav.popBackStack() }) }
-            composable(Tab.EXAM.route) { ExamScreen() }
+            composable(Tab.EXAM.route) { ExamScreen(onOpen = { nav.navigate("exam/$it") }) }
+            composable("exam/mock") { MockScreen(onTopic = { nav.navigate("topic/$it") }, onBack = { nav.popBackStack() }) }
+            composable("exam/topics") { PracticeTopicsScreen(onPick = { nav.navigate("exam/practice/$it") }, onBack = { nav.popBackStack() }) }
+            composable("exam/review") { QuizScreen("review", onTopic = { nav.navigate("topic/$it") }, onBack = { nav.popBackStack() }) }
+            composable("exam/practice/{key}") {
+                QuizScreen(it.arguments?.getString("key").orEmpty(), onTopic = { t -> nav.navigate("topic/$t") }, onBack = { nav.popBackStack() })
+            }
             composable(Tab.PROGRESS.route) { ProgressScreen() }
             composable(Routes.SETTINGS) { SettingsScreen(onBack = { nav.popBackStack() }) }
         }
@@ -98,7 +107,7 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
     }
 
     // Debug shortcut: jump to a route once the graph exists.
-    if (startRoute != Tab.HOME.route && (startRoute in Routes.all || startRoute.startsWith("topic/"))) {
+    if (startRoute != Tab.HOME.route && (startRoute in Routes.all || startRoute.startsWith("topic/") || startRoute.startsWith("exam/"))) {
         androidx.compose.runtime.LaunchedEffect(startRoute) {
             Tab.entries.firstOrNull { it.route == startRoute }?.let { goTab(it) } ?: nav.navigate(startRoute)
         }

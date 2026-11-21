@@ -89,6 +89,19 @@ class GameEngine(
         refreshLocked()
     }
 
+    /** A topic or review quiz finished. */
+    suspend fun quizResult(accuracy: Float) = lock.withLock {
+        practice(accuracy)
+        refreshLocked()
+    }
+
+    /** A mock exam was submitted. */
+    suspend fun mockResult(accuracy: Float, passed: Boolean) = lock.withLock {
+        practice(accuracy)
+        if (passed) award(Xp.MOCK_PASS, "mock:${epochDay()}", "Mock exam passed")
+        refreshLocked()
+    }
+
     suspend fun sendCorrect() = lock.withLock {
         practice(1f)
         refreshLocked()
@@ -143,6 +156,7 @@ class GameEngine(
             perfectDrills = db.progress().countMorse("learn", 1f),
             sendsCorrect = db.progress().countMorse("send", 0f),
             examPasses = dao.countReasons("exam:"),
+            mockPasses = dao.countReasons("mock:"),
             streak = currentStreak(db.activity().activeDaysNow(), epochDay()),
             goalDays = dao.countReasons("goal:"),
             threeStarSteps = dao.threeStarCount(),

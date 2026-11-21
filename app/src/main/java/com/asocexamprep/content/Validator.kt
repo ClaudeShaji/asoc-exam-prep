@@ -43,6 +43,14 @@ fun validate(pack: ContentPack): List<String> = buildList {
         if (n.source !in sourceIds) add("note ${n.file}: unknown source ${n.source}")
         if (runCatching { pack.noteText(n) }.getOrNull().isNullOrBlank()) add("note ${n.file}: missing or empty")
     }
+    pack.questions.groupBy { it.id }.filter { it.value.size > 1 }.keys.forEach { add("duplicate question $it") }
+    pack.questions.forEach { q ->
+        if (q.topic !in topicIds) add("question ${q.id}: unknown topic ${q.topic}")
+        if (q.section != pack.unitOf(q.topic)?.section) add("question ${q.id}: section ${q.section} but topic is in ${pack.unitOf(q.topic)?.section}")
+        if (q.options.size != 4 || q.options.any { it.isBlank() }) add("question ${q.id}: needs 4 options")
+        if (q.answer !in 0..3) add("question ${q.id}: bad answer")
+        if (q.source !in sourceIds) add("question ${q.id}: unknown source")
+    }
     pack.topics.filter { t -> pack.notesFor(t.id).isEmpty() }.forEach { add("topic ${it.id}: no notes") }
 
     // Every Section A/B topic should point to at least one reading.

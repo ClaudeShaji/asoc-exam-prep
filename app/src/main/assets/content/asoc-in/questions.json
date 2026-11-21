@@ -1,0 +1,4126 @@
+[
+ {
+  "id": "vu2mue-rules-1",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "Which emission mode must be used to obtain assistance during a disaster?",
+  "options": [
+   "Only SSB",
+   "Only SSB and CW",
+   "Any mode",
+   "Only CW"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-2",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What should you do if a CW station sends \"QRS\" when using Morse code?",
+  "options": [
+   "Send slower",
+   "Change frequency",
+   "Increase your power",
+   "Repeat everything twice"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-3",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is the recommended way to break into a conversation when using phone?",
+  "options": [
+   "Say \"QRZ\" several times followed by your call sign",
+   "Say your call sign during a break between transmissions from the other stations",
+   "Say \"Break\" \"Break\" \"Break\" and wait for a response",
+   "Say \"CQ\" followed by the call sign of either station"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-4",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "Which of the following 20 meter band segments is most often used for most data transmissions?",
+  "options": [
+   "14.000 – 14.050 MHz",
+   "14.070 - 14.100 MHz",
+   "14.150 - 14.225 MHz",
+   "14.275 - 14.350 MHz"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-5",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What action should be taken if the frequency on which a net normally meets is in use just before the net begins?",
+  "options": [
+   "Reduce your output power and start the net as usual",
+   "Increase your power output so that net participants will be able to hear you",
+   "Ask the stations if the net may use the frequency, or move the net to a nearby clear frequency if necessary",
+   "Cancel the net for that day"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-6",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "Which of the following is an advantage when using single sideband as compared to other voice modes on the HF amateur bands?",
+  "options": [
+   "Very high fidelity voice modulation",
+   "Less bandwidth used and high power efficiency",
+   "Ease of tuning on receive",
+   "Less subject to static crashes (atmospherics)"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-7",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is an azimuthal projection map?",
+  "options": [
+   "A world map projection centered on the North Pole",
+   "A world map projection centered on a particular location",
+   "A world map that shows the angle at which an amateur satellite crosses the equator",
+   "A world map that shows the number of degrees longitude that an amateur satellite appears to move westward at the equator with each orbit"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-8",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "How do you call another station on a repeater if you know the station\\'s call sign?",
+  "options": [
+   "Say \"break, break\" then say the station's call sign",
+   "Say the station's call sign then identify your own station",
+   "Say \"CQ\" three times then the other station's call sign",
+   "Wait for the station to call \"CQ\" then answer it"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-9",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The frequency of 40 Meter band in MHz is",
+  "options": [
+   "14 - 14.350",
+   "7 - 7.2",
+   "21 - 21.450",
+   "15 - 15.400"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-10",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "Which sideband is commonly used in the VHF and UHF bands?",
+  "options": [
+   "Upper Side Band",
+   "Lower side band",
+   "Vestigial side band",
+   "Double side band"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-11",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "When are you prohibited from helping a station in distress?",
+  "options": [
+   "When that station is not transmitting on amateur frequencies",
+   "When the station in distress offers no call sign",
+   "You are never prohibited from helping any station in distress",
+   "When the station is not another amateur station"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 153
+ },
+ {
+  "id": "vu2mue-rules-12",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is a practical way to avoid harmful interference when calling CQ using Morse code or CW?",
+  "options": [
+   "Send the letter \"V\" 12 times and then listen for a response",
+   "Keep your CQ to less than 2 minutes in length to avoid interference with contacts already in progress",
+   "Send \"QRL? de\" followed by your call sign and listen for a response",
+   "Call CQ at low power first; if there is no indication of interference then increase power as necessary"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-13",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What does it mean when a CW operator sends \"KN\" at the end of a transmission?",
+  "options": [
+   "Listening for novice stations",
+   "Operating full break-in",
+   "Listening only for a specific station or stations",
+   "Closing station now"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-14",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Who is accountable if a repeater station inadvertently retransmits communications that violate WPC rules?",
+  "options": [
+   "The repeater trustee",
+   "The repeater control operator",
+   "The transmitting station",
+   "All of these answers are correct"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-15",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "Which of the following statements is true of the single sideband (SSB) voice mode?",
+  "options": [
+   "Only one sideband and the carrier are transmitted; the other sideband is suppressed",
+   "Only one sideband is transmitted; the other sideband and carrier are suppressed",
+   "SSB voice transmissions have higher average power than any other mode",
+   "SSB is the only mode that is authorized on the 160, 75 and 40 meter amateur bands"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-16",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Which layer of ionosphere disappears during night time?",
+  "options": [
+   "F",
+   "E",
+   "D",
+   "C"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-17",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "When sending CW, what does a “C” mean when added to the RST report?",
+  "options": [
+   "Chirpy or unstable signal",
+   "Report was read from S meter reading rather than estimated",
+   "100 percent copy",
+   "Key clicks"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-19",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What does the Q signal \"QSL\" mean when operating CW?",
+  "options": [
+   "We have already confirmed by card",
+   "I acknowledge receipt",
+   "We have worked before",
+   "Send slower"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-20",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is the first thing you should do if you are communicating with another amateur station and hear a station in distress break in?",
+  "options": [
+   "Continue your communication because you were on frequency first",
+   "Acknowledge the station in distress and determine what assistance may be needed",
+   "Change to a different frequency",
+   "Immediately cease all transmissions"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-21",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "How do you indicate you are looking for any station with which to make contact?",
+  "options": [
+   "CQ followed by your call sign",
+   "RST followed by your call sign",
+   "QST followed by your call sign",
+   "SK followed by your call sign"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 154
+ },
+ {
+  "id": "vu2mue-rules-22",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What should you transmit when responding to a call of CQ?",
+  "options": [
+   "Your own CQ followed by the other station’s call sign",
+   "Your call sign followed by the other station’s call sign",
+   "The other station’s call sign followed by your call sign",
+   "A signal report followed by your call sign"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-23",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What must an amateur do when making a transmission to test equipment or antennas?",
+  "options": [
+   "Properly identify the station",
+   "Make test transmissions only after 10:00 PM local time",
+   "Notify the WPC of the test transmission",
+   "State the purpose of the test during the test procedure"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-24",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "What is the meaning of the procedural signal \"CQ\"?",
+  "options": [
+   "Call on the quarter hour",
+   "New antenna is being tested (no station should answer)",
+   "Only the called station should transmit",
+   "Calling any station"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-25",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What brief statement is often used in place of \"CQ\" to indicate that you are listening for calls on a repeater?",
+  "options": [
+   "Say \"Hello test\" followed by your call sign",
+   "Say your call sign",
+   "Say the repeater call sign followed by your call sign",
+   "Say the letters \"QSY\" followed by your call sign"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-26",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "Why should you use the International Telecommunication Union (ITU) phonetic alphabet when identifying your station?",
+  "options": [
+   "The words are internationally recognized substitutes for letters",
+   "There is no advantage",
+   "The words have been chosen to represent amateur radio terms",
+   "It preserves traditions begun in the early days of amateur radio"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-28",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is the main purpose of repeater coordination?",
+  "options": [
+   "To reduce interference and promote proper use of spectrum",
+   "To coordinate as many repeaters as possible in a small area",
+   "To coordinate all possible frequencies available for repeater use",
+   "To promote and encourage use of simplex frequencies"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-29",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Which of these statements is true about legal power levels on the amateur bands?",
+  "options": [
+   "Always use the maximum power allowed to ensure that you complete the contact",
+   "An amateur may use no more than 200 Watts PEP to make an amateur contact",
+   "An amateur may use up to 1500 Watts PEP on any amateur frequency",
+   "An amateur must use the minimum transmitter power necessary to carry out the desired communication"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-30",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What is the proper way to break into a conversation between two stations that are using the frequency?",
+  "options": [
+   "Say your call sign between their transmissions",
+   "Wait for them to finish and then call CQ",
+   "Say \"Break-break\" between their transmissions",
+   "Call one of the operators on the telephone to interrupt the conversation"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-31",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Amateurs are forbidden to transmit about",
+  "options": [
+   "Equipments",
+   "weather",
+   "Antennas",
+   "Third party messages"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-32",
+  "topic": "b-time-frequency",
+  "section": "B",
+  "stem": "Standard time and frequency is transmitted on",
+  "options": [
+   "7050 KHz",
+   "14050 KHz",
+   "21050 KHz",
+   "10000 Khz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 155
+ },
+ {
+  "id": "vu2mue-rules-34",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "What rule applies if two amateur stations want to use the same frequency?",
+  "options": [
+   "The station operator with a Restricted Grade license must yield the frequency to an General Grade licensee",
+   "The station operator with a lower power output must yield the frequency to the station with a higher power output",
+   "No frequency will be assigned for the exclusive use of any station and neither has priority",
+   "Station operators in ITU Regions 1 and 3 must yield the frequency to stations in ITU Region 2"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-35",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "What should you do if you hear a newly licensed operator that is having trouble with their station?",
+  "options": [
+   "Tell them to get off the air until they learn how operate properly",
+   "Report them to the WPC HO.",
+   "Contact them and offer to help with the problem",
+   "Move to another frequency"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-36",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "A3E indicates",
+  "options": [
+   "SSB",
+   "AM-DSB voice",
+   "FM Voice",
+   "FSK"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-37",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Line of sight propagation is the mode of communication in",
+  "options": [
+   "LF",
+   "HF",
+   "MF",
+   "VHF"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-38",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The wavelength of 300 MHz is in Meters is",
+  "options": [
+   "1",
+   ".1",
+   "1.1",
+   "0.01"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-39",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "Squelch control is used to eliminate",
+  "options": [
+   "static interference",
+   "electrical disturbance",
+   "receiver noise",
+   "unwanted carrier"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-40",
+  "topic": "a-transmitters",
+  "section": "A",
+  "stem": "4th harmonic of 2.5 MHz is",
+  "options": [
+   "10 MHz",
+   "15 MHz",
+   "8 MHz",
+   "7.5 MHz"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-41",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The UHF range is",
+  "options": [
+   "30 to 300 KHz",
+   "300 to 3000 KHz",
+   "3 to 30 GHz",
+   "300 to 3000 MHz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 156
+ },
+ {
+  "id": "vu2mue-rules-42",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Indian amateurs can communicate with other amateurs in",
+  "options": [
+   "All countries",
+   "Countries permitted by ITU",
+   "Countries permitted by Indian Government",
+   "Countries permitted by Indian Amateur society"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 157,
+  "explanation": "Amateurs may not contact stations of countries whose administrations have objected under the ITU Convention."
+ },
+ {
+  "id": "vu2mue-rules-43",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "Restricted grade amateurs can communicate on 7 MHz in",
+  "options": [
+   "A1",
+   "A3",
+   "F3",
+   "A3E"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-44",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "Lady amateurs are known as",
+  "options": [
+   "XL",
+   "XYL",
+   "YL",
+   "LY"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-45",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Minimum age to become an amateur is",
+  "options": [
+   "18 years",
+   "14 years",
+   "12 years",
+   "16 years"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 157,
+  "explanation": "The Telecommunications (Amateur Services) Rules, 2024 set the minimum age at 12."
+ },
+ {
+  "id": "vu2mue-rules-46",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "All timing in the Log book should be in",
+  "options": [
+   "IST",
+   "UTC",
+   "GMT",
+   "Local time"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-47",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "Amateurs should preserve their log for a period of",
+  "options": [
+   "6 months",
+   "1 year",
+   "2 years",
+   "9 months from the date of the last entry"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-48",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "Q code to indicate time is",
+  "options": [
+   "QRG",
+   "QRX",
+   "QTR",
+   "QSA"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-49",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "Test signal shall not be continued more than",
+  "options": [
+   "30 seconds",
+   "1 minute",
+   "2 minutes",
+   "3 minutes"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-50",
+  "topic": "b-time-frequency",
+  "section": "B",
+  "stem": "In India the standard time signal is broadcast by",
+  "options": [
+   "ISRO",
+   "WPC",
+   "OCS",
+   "NPL"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-51",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "PANPAN transmitted thrice indicates",
+  "options": [
+   "Distress",
+   "Emergency",
+   "Urgency",
+   "Distress and emergency"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 157
+ },
+ {
+  "id": "vu2mue-rules-52",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The broadcast of music is allowed in amateur service",
+  "options": [
+   "on request",
+   "when channel is free",
+   "never",
+   "only for testing"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-53",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The abbreviation VA means",
+  "options": [
+   "End of transmission",
+   "End of message",
+   "End of working",
+   "End of schedule"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-54",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Swl's are permitted to transmit in the frequency band of",
+  "options": [
+   "7-7.1 MHz",
+   "3.89-3.9 MHz",
+   "144-146 MHz",
+   "None of these"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-55",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The amateur license is renewed by",
+  "options": [
+   "P & T",
+   "Ministry of communication",
+   "Monitoring stations",
+   "None of these"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-56",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "FM Broadcasting station emission is",
+  "options": [
+   "A1E",
+   "A3E",
+   "J3E",
+   "F3E"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-57",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "Q code to indicate the location of a station is",
+  "options": [
+   "QTL",
+   "QTH",
+   "QTN",
+   "None of these"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-58",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Amateur station on a ship can contact another amateur on land on a frequency authorized to",
+  "options": [
+   "the ship",
+   "amateur stations",
+   "by the ministry of communication",
+   "ships calling frequency"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-rules-59",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "SOS transmitted three times indicates",
+  "options": [
+   "urgency",
+   "distress",
+   "safety",
+   "none of these"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 158
+ },
+ {
+  "id": "vu2mue-basic-1",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the name of a current that flows only in one direction?",
+  "options": [
+   "An alternating current",
+   "A direct current",
+   "A normal current",
+   "A smooth current"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-2",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What is the standard unit of frequency?",
+  "options": [
+   "The megacycle",
+   "The Hertz",
+   "One thousand cycles per second",
+   "The electromagnetic force"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-3",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How much voltage does an automobile battery usually supply?",
+  "options": [
+   "About 12 volts",
+   "About 30 volts",
+   "About 120 volts",
+   "About 240 volts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-4",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the name of a current that reverses direction on a regular basis?",
+  "options": [
+   "An alternating current",
+   "A direct current",
+   "A circular current",
+   "A vertical current"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-5",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the term used to describe opposition to current flow in ordinary conductors such as wires?",
+  "options": [
+   "Inductance",
+   "Resistance",
+   "Counter EMF",
+   "Magnetism"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-6",
+  "topic": "a-frequency-measurement",
+  "section": "A",
+  "stem": "What instrument is used to measure the flow of current in an electrical circuit?",
+  "options": [
+   "Frequency meter",
+   "SWR meter",
+   "Ammeter",
+   "Voltmeter"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-7",
+  "topic": "a-frequency-measurement",
+  "section": "A",
+  "stem": "What instrument is used to measure Electromotive Force (EMF) between two points such as the poles of a battery?",
+  "options": [
+   "Magnetometer",
+   "Voltmeter",
+   "Ammeter",
+   "Ohmmeter"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-8",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "What is the name for the distance a radio wave travels during one complete cycle?",
+  "options": [
+   "Wave speed",
+   "Waveform",
+   "Wavelength",
+   "Wave spread"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-9",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What term describes the number of times that an alternating current flows back and forth per second?",
+  "options": [
+   "Pulse rate",
+   "Speed",
+   "Wavelength",
+   "Frequency"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-10",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What does 50 hertz (Hz) mean?",
+  "options": [
+   "5000 cycles per second",
+   "50 cycles per second",
+   "5000 meters per second",
+   "50 meters per second"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-11",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Electromagnetic waves that oscillate more than 20,000 times per second as they travel through space are generally referred to as what?",
+  "options": [
+   "Gravity waves",
+   "Sound waves",
+   "Radio waves",
+   "Gamma radiation"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 159
+ },
+ {
+  "id": "vu2mue-basic-12",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "How fast does a radio wave travel through space?",
+  "options": [
+   "At the speed of light",
+   "At the speed of sound",
+   "Its speed is inversely proportional to its wavelength",
+   "Its speed increases as the frequency increases"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-13",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "How does the wavelength of a radio wave relate to its frequency?",
+  "options": [
+   "The wavelength gets longer as the frequency increases",
+   "The wavelength gets shorter as the frequency increases",
+   "There is no relationship between wavelength and frequency",
+   "The wavelength depends on the bandwidth of the signal"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-14",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "What is the formula for converting frequency to wavelength in meters?",
+  "options": [
+   "Wavelength in meters equals frequency in Hertz multiplied by 300",
+   "Wavelength in meters equals frequency in Hertz divided by 300",
+   "Wavelength in meters equals frequency in megahertz divided by 300",
+   "Wavelength in meters equals 300 divided by frequency in megahertz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-15",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "What are sound waves in the range between 300 and 3000 Hertz called?",
+  "options": [
+   "Test signals",
+   "Ultrasonic waves",
+   "Voice frequencies",
+   "Radio frequencies"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-16",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "What property of a radio wave is often used to identify the different bands amateur radio operators use?",
+  "options": [
+   "The physical length of the wave",
+   "The magnetic intensity of the wave",
+   "The time it takes for the wave to travel one mile",
+   "The voltage standing wave ratio of the wave"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-17",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "What is the frequency range of the 2 meter band in the India?",
+  "options": [
+   "144 to 146 MHz",
+   "222 to 225 MHz",
+   "434 to 438 MHz",
+   "50 to 54 MHz"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-18",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "What is used to convert radio signals into sounds we can hear?",
+  "options": [
+   "Transmitter",
+   "Receiver",
+   "Microphone",
+   "Antenna"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-19",
+  "topic": "a-transmitters",
+  "section": "A",
+  "stem": "What is used to convert sounds from our voice into radio signals?",
+  "options": [
+   "Transmitter",
+   "Receiver",
+   "Speaker",
+   "Antenna"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-20",
+  "topic": "a-transmitters",
+  "section": "A",
+  "stem": "What two devices are combined into one unit in a transceiver?",
+  "options": [
+   "Receiver, transmitter",
+   "Receiver, transformer",
+   "Receiver, transistor",
+   "Transmitter, deceiver"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-21",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What device is used to convert the alternating current from a wall outlet into low-voltage direct current?",
+  "options": [
+   "Inverter",
+   "Compressor",
+   "Power Supply",
+   "Demodulator"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 160
+ },
+ {
+  "id": "vu2mue-basic-22",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "What device is used to increase the output of a 10 watt radio to 100 watts?",
+  "options": [
+   "Amplifier",
+   "Power supply",
+   "Antenna",
+   "Attenuator"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-23",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "Which of the battery types listed below offers the longest life when used with a hand-held radio, assuming each battery is the same physical size?",
+  "options": [
+   "Lead-acid",
+   "Alkaline",
+   "Nickel-cadmium",
+   "Lithium-ion"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-24",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the nominal voltage per cell of a fully charged nickel-cadmium battery?",
+  "options": [
+   "1.0 volts",
+   "1.2 volts",
+   "1.5 volts",
+   "2.2 volts"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-25",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What battery type on this list is not designed to be re-charged?",
+  "options": [
+   "Nickel-cadmium",
+   "Carbon-zinc",
+   "Lead-acid",
+   "Lithium-ion"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-26",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is required to keep rechargeable batteries in good condition and ready for emergencies?",
+  "options": [
+   "They must be inspected for physical damage and replaced if necessary",
+   "They should be stored in a cool and dry location",
+   "They must be given a maintenance recharge at least every 6 months",
+   "All of these answers are correct"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-27",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the best way to get the most amount of energy from a battery?",
+  "options": [
+   "Draw current from the battery as rapidly as possible",
+   "Draw current from the battery at the slowest rate needed",
+   "Reverse the leads when the battery reaches the 1/2 charge level",
+   "Charge the battery as frequently as possible"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-28",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What formula is used to calculate current in a circuit?",
+  "options": [
+   "Current (I) equals voltage (E) multiplied by resistance (R)",
+   "Current (I) equals voltage (E) divided by resistance (R)",
+   "Current (I) equals voltage (E) added to resistance (R)",
+   "Current (I) equals voltage (E) minus resistance (R)"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161,
+  "explanation": "I=E/R Ohm's Law"
+ },
+ {
+  "id": "vu2mue-basic-29",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What formula is used to calculate voltage in a circuit?",
+  "options": [
+   "Voltage (E) equals current (I) multiplied by resistance (R)",
+   "Voltage (E) equals current (I) divided by resistance (R)",
+   "Voltage (E) equals current (I) added to resistance (R)",
+   "Voltage (E) equals current (I) minus resistance (R)"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 161,
+  "explanation": "E=I*R Ohm's Law"
+ },
+ {
+  "id": "vu2mue-basic-30",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What formula is used to calculate resistance in a circuit?",
+  "options": [
+   "Resistance (R) equals voltage (E) multiplied by current (I)",
+   "Resistance (R) equals voltage (E) divided by current (I)",
+   "Resistance (R) equals voltage (E) added to current (I)",
+   "Resistance (R) equals voltage (E) minus current (I)"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161,
+  "explanation": "R=E/I Ohm's Law"
+ },
+ {
+  "id": "vu2mue-basic-31",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the resistance of a circuit when a current of 3 amperes flows through a resistor connected to 90 volts?",
+  "options": [
+   "3 ohms",
+   "30 ohms",
+   "93 ohms",
+   "270 ohms"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 161,
+  "explanation": "As per ohm's law R=E/I, Thus R = 90 Volts / 3 Ampere"
+ },
+ {
+  "id": "vu2mue-basic-32",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the resistance in a circuit where the applied voltage is 12 volts and the current flow is 1.5 amperes?",
+  "options": [
+   "18 ohms",
+   "0.125 ohms",
+   "8 ohms",
+   "13.5 ohms"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 161
+ },
+ {
+  "id": "vu2mue-basic-33",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the current flow in a circuit with an applied voltage of 120 volts and a resistance of 80 ohms?",
+  "options": [
+   "9600 amperes",
+   "200 amperes",
+   "0.667 amperes",
+   "1.5 amperes"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-34",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the voltage across the resistor if a current of 0.5 amperes flows through a 2 ohm resistor?",
+  "options": [
+   "1 volt",
+   "0.25 volts",
+   "2.5 volts",
+   "1.5 volts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-35",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the voltage across the resistor if a current of 1 ampere flows through a 10 ohm resistor?",
+  "options": [
+   "10 volts",
+   "1 volt",
+   "11 volts",
+   "9 volts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-36",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the voltage across the resistor if a current of 2 amperes flows through a 10 ohm resistor?",
+  "options": [
+   "20 volts",
+   "0.2 volts",
+   "12 volts",
+   "8 volts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-37",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the current flowing through a 100 ohm resistor connected across 200 volts?",
+  "options": [
+   "20,000 amperes",
+   "0.5 amperes",
+   "2 amperes",
+   "100 amperes"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-38",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the current flowing through a 24 ohm resistor connected across 240 volts?",
+  "options": [
+   "24,000 amperes",
+   "0.1 amperes",
+   "10 amperes",
+   "216 amperes"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-39",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the formula used to calculate electrical power in a DC circuit?",
+  "options": [
+   "Power (P) equals voltage (E) multiplied by current (I)",
+   "Power (P) equals voltage (E) divided by current (I)",
+   "Power (P) equals voltage (E) minus current (I)",
+   "Power (P) equals voltage (E) plus current (I)"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-40",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How much power is represented by a voltage of 13.8 volts DC and a current of 10 amperes?",
+  "options": [
+   "138 watts",
+   "0.7 watts",
+   "23.8 watts",
+   "3.8 watts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-41",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How much power is being used in a circuit when the voltage is 120 volts DC and the current is 2.5 amperes?",
+  "options": [
+   "1440 watts",
+   "300 watts",
+   "48 watts",
+   "30 watts"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-42",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How can you determine how many watts are being drawn by your transceiver when you are transmitting?",
+  "options": [
+   "Measure the DC voltage and divide it by 60 Hz",
+   "Check the fuse in the power leads to see what size it is",
+   "Look in the Radio Amateur's Handbook",
+   "Measure the DC voltage at the transceiver and multiply by the current drawn when you transmit"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-43",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How many amperes are flowing in a circuit when the applied voltage is 120 volts DC and the load is 1200 watts?",
+  "options": [
+   "20 amperes",
+   "10 amperes",
+   "120 amperes",
+   "5 amperes"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 162
+ },
+ {
+  "id": "vu2mue-basic-44",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How many milliamperes is the same as 1.5 amperes?",
+  "options": [
+   "15 milliamperes",
+   "150 milliamperes",
+   "1500 milliamperes",
+   "15000 mill amperes"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-45",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What is another way to specify the frequency of a radio signal that is oscillating at 1,500,000 Hertz?",
+  "options": [
+   "1500 kHz",
+   "1500 MHz",
+   "15 GHz",
+   "150 kHz"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-46",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How many volts are equal to one kilovolt?",
+  "options": [
+   "One one-thousandth of a volt",
+   "one hundred volts",
+   "one thousand volts",
+   "one million volts"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-47",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How many volts are equal to one microvolt?",
+  "options": [
+   "one one-millionth of a volt",
+   "one million volts",
+   "one thousand kilovolts",
+   "one one-thousandth of a volt"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-48",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How many watts does a hand-held transceiver put out if the output power is 500 mill watts?",
+  "options": [
+   "0.02 watts",
+   "0.5 watts",
+   "5 watts",
+   "50 watts"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-49",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What will happen to the resistance if the temperature of a carbon resistor is increased?",
+  "options": [
+   "It will increase by 20% for every 10 degrees centigrade",
+   "It will stay the same",
+   "It will change depending on the resistor's temperature coefficient rating",
+   "It will become time dependent"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-50",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What type of capacitor is often used in power-supply circuits to filter the rectified AC?",
+  "options": [
+   "Disc ceramic",
+   "Vacuum variable",
+   "Mica",
+   "Electrolytic"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-51",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "Which of the following is the primary advantage of ceramic capacitors?",
+  "options": [
+   "Tight tolerance",
+   "High stability",
+   "High capacitance for given volume",
+   "Comparatively low cost"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-52",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "Which of the following is an advantage of an electrolytic capacitor?",
+  "options": [
+   "Tight tolerance",
+   "Non-polarized",
+   "High capacitance for given volume",
+   "Inexpensive RF capacitor"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-53",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "Which of the following is one effect of lead inductance in a capacitor used at VHF and above?",
+  "options": [
+   "Effective capacitance may be reduced",
+   "Voltage rating may be reduced",
+   "ESR may be reduced",
+   "The polarity of the capacitor might become reversed"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-54",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "What is the main disadvantage of using a conventional wire-wound resistor in a resonant circuit?",
+  "options": [
+   "The resistor's tolerance value would not be adequate for such a circuit",
+   "The resistor's inductance could detune the circuit",
+   "The resistor could overheat",
+   "The resistor's internal capacitance would detune the circuit"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 163
+ },
+ {
+  "id": "vu2mue-basic-55",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "What is an advantage of using a ferrite core with a toroidal inductor?",
+  "options": [
+   "Large values of inductance may be obtained",
+   "The magnetic properties of the core may be optimized for a specific range of frequencies",
+   "Most of the magnetic field is contained in the core",
+   "All of these choices are correct"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-56",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "How should two solenoid inductors be placed so as to minimize their mutual inductance?",
+  "options": [
+   "In line with their winding axis",
+   "With their winding axes parallel to each other",
+   "With their winding axes at right angles to each another",
+   "Within the same shielded enclosure"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-57",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "Why might it be important to minimize the mutual inductance between two inductors?",
+  "options": [
+   "To increase the energy transfer between both circuits",
+   "To reduce or eliminate unwanted coupling",
+   "To reduce conducted emissions",
+   "To increase the self-resonant frequency of both inductors"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-58",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "What is an effect of inter-turn capacitance in an inductor?",
+  "options": [
+   "The magnetic field may become inverted",
+   "The inductor may become self resonant at some frequencies",
+   "The permeability will increase",
+   "The voltage rating may be exceeded"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-59",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "What is the common name for a capacitor connected across a transformer secondary that is used to absorb transient voltage spikes?",
+  "options": [
+   "Clipper capacitor",
+   "Trimmer capacitor",
+   "Feedback capacitor",
+   "Suppressor capacitor"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-60",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What is the common name for an inductor used to help smooth the DC output from the rectifier in a conventional power supply?",
+  "options": [
+   "Back EMF choke",
+   "Repulsion coil",
+   "Charging inductor",
+   "Filter choke"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-61",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "What type of component is a thermistor?",
+  "options": [
+   "A resistor that is resistant to changes in value with temperature variations",
+   "A device having a controlled change in resistance with temperature variations",
+   "A special type of transistor for use at very cold temperatures",
+   "A capacitor that changes value with temperature"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-62",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What is the peak-inverse-voltage rating of a rectifier?",
+  "options": [
+   "The maximum voltage the rectifier will handle in the conducting direction",
+   "1.4 times the AC frequency",
+   "The maximum voltage the rectifier will handle in the non-conducting direction",
+   "2.8 times the AC frequency"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-63",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What are the two major ratings that must not be exceeded for silicon-diode rectifiers?",
+  "options": [
+   "Peak inverse voltage; average forward current",
+   "Average power; average voltage",
+   "Capacitive reactance; avalanche voltage",
+   "Peak load impedance; peak voltage"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-64",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "What is the approximate junction threshold voltage of a germanium diode?",
+  "options": [
+   "0.1 volt",
+   "0.3 volts",
+   "0.7 volts",
+   "1.0 volts"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-65",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "When two or more diodes are connected in parallel to increase current handling capacity, what is the purpose of the resistor connected in series with each diode?",
+  "options": [
+   "The resistors ensure the thermal stability of the power supply",
+   "The resistors regulate the power supply output voltage",
+   "The resistors ensure that one diode doesn't carry most of the current",
+   "The resistors act as swamping resistors in the circuit"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 164
+ },
+ {
+  "id": "vu2mue-basic-66",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "What is the approximate junction threshold voltage of a silicon diode?",
+  "options": [
+   "0.1 volt",
+   "0.3 volts",
+   "0.7 volts",
+   "1.0 volts"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-67",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "Which of the following is an advantage of using a Schottky diode in an RF switching circuit as compared to a standard silicon diode?",
+  "options": [
+   "Lower capacitance",
+   "Lower inductance",
+   "Longer switching times",
+   "Higher breakdown voltage"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-68",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "What are the stable operating points for a bipolar transistor that is used as a switch in a logic circuit?",
+  "options": [
+   "Its saturation and cut-off regions",
+   "Its active region (between the cut-off and saturation regions)",
+   "Between its peak and valley current points",
+   "Between its enhancement and deletion modes"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-69",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "Why is it often necessary to insulate the case of a large power transistor?",
+  "options": [
+   "To increase the beta of the transistor",
+   "To improve the power dissipation capability",
+   "To reduce stray capacitance",
+   "To avoid shorting the collector or drain voltage to ground"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-70",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "Which of the following describes the construction of a MOSFET?",
+  "options": [
+   "The gate is formed by a back-biased junction",
+   "The gate is separated from the channel with a thin insulating layer",
+   "The source is separated from the drain by a thin insulating later",
+   "The source is formed by depositing metal on silicon"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-71",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "Which element of a triode vacuum tube is used to regulate the flow of electrons between cathode and plate?",
+  "options": [
+   "Control grid",
+   "Heater",
+   "Screen Grid",
+   "Suppressor grid"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-72",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "Which of the following solid state devices is most like a vacuum tube in its general characteristics?",
+  "options": [
+   "A bipolar transistor",
+   "An FET",
+   "A Tunnel diode",
+   "A varistor"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-73",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "What is the primary purpose of a screen grid in a vacuum tube?",
+  "options": [
+   "To reduce grid-to-plate capacitance",
+   "To increase efficiency",
+   "To increase the high frequency response",
+   "To decrease plate resistance"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-74",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is an advantage of the low internal resistance of Nickel Cadmium batteries?",
+  "options": [
+   "Long life",
+   "High discharge current",
+   "High voltage",
+   "Rapid recharge"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-75",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "What is the minimum allowable discharge voltage for maximum life of a standard 12 volt lead acid battery?",
+  "options": [
+   "6 volts",
+   "8.5 volts",
+   "10.5 volts",
+   "12 volts"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 165
+ },
+ {
+  "id": "vu2mue-basic-76",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "When is it acceptable to recharge a carbon-zinc primary cell?",
+  "options": [
+   "As long as the voltage has not been allowed to drop below 1.0 volt",
+   "When the cell is kept warm during the recharging period",
+   "When a constant current charger is used",
+   "Never"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-77",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "Which of the following is a rechargeable battery?",
+  "options": [
+   "Carbon-zinc",
+   "Silver oxide",
+   "Nickel Metal Hydride",
+   "Mercury"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-78",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What is impedance?",
+  "options": [
+   "The electric charge stored by a capacitor",
+   "The inverse of resistance",
+   "The opposition to the flow of current in an AC circuit",
+   "The force of repulsion between two similar electric fields"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-79",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What is reactance?",
+  "options": [
+   "Opposition to the flow of direct current caused by resistance",
+   "Opposition to the flow of alternating current caused by capacitance or inductance",
+   "A property of ideal resistors in AC circuits",
+   "A large spark produced at switch contacts when an inductor is de-energized"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-80",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "Which of the following causes opposition to the flow of alternating current in an inductor?",
+  "options": [
+   "Conductance",
+   "Reluctance",
+   "Admittance",
+   "Reactance"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-81",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "Which of the following causes opposition to the flow of alternating current in a capacitor?",
+  "options": [
+   "Conductance",
+   "Reluctance",
+   "Reactance",
+   "Admittance"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-82",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "How does a coil react to AC?",
+  "options": [
+   "As the frequency of the applied AC increases, the reactance decreases",
+   "As the amplitude of the applied AC increases, the reactance increases",
+   "As the amplitude of the applied AC increases, the reactance decreases",
+   "As the frequency of the applied AC increases, the reactance increases"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-83",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "How does a capacitor react to AC?",
+  "options": [
+   "As the frequency of the applied AC increases, the reactance decreases",
+   "As the frequency of the applied AC increases, the reactance increases",
+   "As the amplitude of the applied AC increases, the reactance increases",
+   "As the amplitude of the applied AC increases, the reactance decreases"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-84",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What happens when the impedance of an electrical load is equal to the internal impedance of the power source?",
+  "options": [
+   "The source delivers minimum power to the load",
+   "The electrical load is shorted",
+   "No current can flow through the circuit",
+   "The source can deliver maximum power to the load"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-85",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "Why is impedance matching important?",
+  "options": [
+   "So the source can deliver maximum power to the load",
+   "So the load will draw minimum power from the source",
+   "To ensure that there is less resistance than reactance in the circuit",
+   "To ensure that the resistance and reactance in the circuit are equal"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-86",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What unit is used to measure reactance?",
+  "options": [
+   "Farad",
+   "Ohm",
+   "Ampere",
+   "Siemens"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 166
+ },
+ {
+  "id": "vu2mue-basic-87",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "What unit is used to measure impedance?",
+  "options": [
+   "Volt",
+   "Ohm",
+   "Ampere",
+   "Watt"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-88",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "Why should core saturation of a conventional impedance matching transformer be avoided?",
+  "options": [
+   "Harmonics and distortion could result",
+   "Magnetic flux would increase with frequency",
+   "RF susceptance would increase",
+   "Temporary changes of the core permeability could result"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-89",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "What is one reason to use an impedance matching transformer?",
+  "options": [
+   "To reduce power dissipation in the transmitter",
+   "To maximize the transfer of power",
+   "To minimize SWR at the antenna",
+   "To minimize SWR in the transmission line"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-90",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "Which of the following devices can be used for impedance matching at radio frequencies?",
+  "options": [
+   "A transformer",
+   "A Pi-network",
+   "A length of transmission line",
+   "All of these choices are correct"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-91",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "Which of the following describes one method of impedance matching between two AC circuits?",
+  "options": [
+   "Insert an LC network between the two circuits",
+   "Reduce the power output of the first circuit",
+   "Increase the power output of the first circuit",
+   "Insert a circulator between the two circuits"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-92",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "A two-times increase or decrease in power results in a change of how many dB?",
+  "options": [
+   "2 dB",
+   "3 dB",
+   "6 dB",
+   "12 dB"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-93",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "How does the total current relate to the individual currents in each branch of a parallel circuit?",
+  "options": [
+   "It equals the average of each branch current",
+   "It decreases as more parallel branches are added to the circuit",
+   "It equals the sum of the currents through each branch",
+   "It is the sum of the reciprocal of each individual voltage drop"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 167,
+  "explanation": "Kirchhoff’s Current Law"
+ },
+ {
+  "id": "vu2mue-basic-94",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "Capacitance is measured in",
+  "options": [
+   "Amperes",
+   "watt",
+   "Farad",
+   "Coulombs"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-95",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "Frequency is",
+  "options": [
+   "cycles per second",
+   "Kilo cycles per second",
+   "Cycles per minute",
+   "cycles per hour"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-96",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "Resonant frequency in a tuned circuit is equal to",
+  "options": [
+   "1/2piLC",
+   "1/2pi√LC",
+   "2pi√LC",
+   "2pi√L+C"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-97",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "Power dissipated in a 400 Ohm resistor at 1 Amp is",
+  "options": [
+   "40 Watts",
+   "400 KW",
+   "4 Watts",
+   "400 Watts"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 167
+ },
+ {
+  "id": "vu2mue-basic-98",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "Zener diode is used for",
+  "options": [
+   "Rectification",
+   "Voltage regulation",
+   "Current regulation",
+   "Switching"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-99",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "Plate current in a diode flows only when the plate is",
+  "options": [
+   "Negative with respect to cathode",
+   "positive with respect to cathode",
+   "when plate is at a lower voltage than cathode",
+   "both at same potential"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-100",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "3 resistors of 2,3 & 4 ohms are connected in series. The voltage across the circuit is 9 V , the current drawn by 3 ohms resistor is",
+  "options": [
+   "1.5 Amps",
+   "27 Amps",
+   "1 Amp",
+   "3 Amps"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-101",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "A superhetrodyne receiver is tuned to 555 KHz and its local oscillator at 1010 KHz . The image frequency will be",
+  "options": [
+   "1565 KHz",
+   "455 KHz",
+   "1465 KHz",
+   "none of these"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 168,
+  "explanation": "Image = signal + 2 × IF. The IF is 1010 − 555 = 455 kHz, so the image is 555 + 910 = 1465 kHz."
+ },
+ {
+  "id": "vu2mue-basic-102",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "3 to 30 MHz band is known as",
+  "options": [
+   "MF",
+   "LF",
+   "VHF",
+   "HF"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-103",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The wavelength of a broadcast station at 1000 KHz is",
+  "options": [
+   "30 Meters",
+   "300 Meters",
+   "0.3 Meteors",
+   "none of these"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-104",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "The core of power supply transformer is laminated to",
+  "options": [
+   "decrease impedance",
+   "increase impedance",
+   "decrease eddy current losses",
+   "none of these"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-105",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "In a resonant circuit",
+  "options": [
+   "Xl = Xc",
+   "Xl > Xc",
+   "Xl < Xc",
+   "none of these"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-106",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "When frequency of a carrier is varied according to modulation the result is",
+  "options": [
+   "frequency modulation",
+   "amplitude modulation",
+   "product detection",
+   "none of these"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 168
+ },
+ {
+  "id": "vu2mue-basic-107",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "The phase relationship between the input and output of a common emitter circuit in degrees is",
+  "options": [
+   "90",
+   "180",
+   "270",
+   "0"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-108",
+  "topic": "a-oscillators",
+  "section": "A",
+  "stem": "The quartz crystal oscillator is known for its",
+  "options": [
+   "linearity",
+   "stability",
+   "high output",
+   "flexibility"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-109",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "The effect of inter electrode capacitance of a triode is more predominant at",
+  "options": [
+   "HF",
+   "VHF",
+   "LF",
+   "none of these"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-110",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "Which of the following is a characteristic of a liquid crystal display?",
+  "options": [
+   "It requires ambient or back lighting",
+   "It offers a wide dynamic range",
+   "It has a wide viewing angle",
+   "All of these choices are correct"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-111",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "What is meant by the term MMIC?",
+  "options": [
+   "Multi Megabyte Integrated Circuit",
+   "Monolithic Microwave Integrated Circuit",
+   "Military-specification Manufactured Integrated Circuit",
+   "Mode Modulated Integrated Circuit"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-112",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "What is a microprocessor?",
+  "options": [
+   "A low powered analog signal processor used as a microwave detector",
+   "A miniature computer on a single integrated circuit chip",
+   "A microwave detector, amplifier, and local oscillator on a chip",
+   "A low voltage amplifier used in a microwave transmitter modulator stage"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-113",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What safety feature does a power-supply bleeder resistor provide?",
+  "options": [
+   "It acts as a fuse for excess voltage",
+   "It discharges the filter capacitors",
+   "It removes shock hazards from the induction coils",
+   "It eliminates ground-loop current"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-114",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What components are used in a power-supply filter network?",
+  "options": [
+   "Diodes",
+   "Transformers and transistors",
+   "Quartz crystals",
+   "Capacitors and inductors"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-115",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What should be the minimum peak-inverse-voltage rating of the rectifier in a full-wave power supply?",
+  "options": [
+   "One-quarter the normal output voltage of the power supply",
+   "Half the normal output voltage of the power supply",
+   "Double the normal peak output voltage of the power supply",
+   "Equal to the normal output voltage of the power supply"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-116",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What should be the approximate minimum peak-inverse-voltage rating of the rectifier in a half-wave power supply?",
+  "options": [
+   "One-half the normal peak output voltage of the power supply",
+   "Half the normal output voltage of the power supply",
+   "Equal to the normal output voltage of the power supply",
+   "Two times the normal peak output voltage of the power supply"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 169
+ },
+ {
+  "id": "vu2mue-basic-117",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What should be the impedance of a low-pass filter as compared to the impedance of the transmission line into which it is inserted?",
+  "options": [
+   "Substantially higher",
+   "About the same",
+   "Substantially lower",
+   "Twice the transmission line impedance"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-118",
+  "topic": "a-transmitters",
+  "section": "A",
+  "stem": "What is an advantage of a crystal controlled transmitter?",
+  "options": [
+   "Stable output frequency",
+   "Excellent modulation clarity",
+   "Ease of switching between bands",
+   "Ease of changing frequency"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-119",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "What type of receiver is suitable for CW and SSB reception but does not require a mixer stage or an IF amplifier?",
+  "options": [
+   "A super-regenerative receiver",
+   "A TRF receiver",
+   "A super-heterodyne receiver",
+   "A direct conversion receiver"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-120",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "What type of circuit is used in many FM receivers to convert signals coming from the IF amplifier to audio?",
+  "options": [
+   "Product detector",
+   "Phase inverter",
+   "Mixer",
+   "Discriminator"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-121",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What portion of the AC cycle is converted to DC by a half-wave rectifier?",
+  "options": [
+   "90 degrees",
+   "180 degrees",
+   "270 degrees",
+   "360 degrees"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-122",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What portion of the AC cycle is converted to DC by a full-wave rectifier?",
+  "options": [
+   "90 degrees",
+   "180 degrees",
+   "270 degrees",
+   "360 degrees"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-123",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "What is the output waveform of an unfiltered full-wave rectifier connected to a resistive load?",
+  "options": [
+   "A series of DC pulses at twice the frequency of the AC input",
+   "A series of DC pulses at the same frequency as the AC input",
+   "A sine wave at half the frequency of the AC input",
+   "A steady DC voltage"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-124",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "Which of the following is a characteristic of a Class A amplifier?",
+  "options": [
+   "Low standby power",
+   "High Efficiency",
+   "No need for bias",
+   "Low distortion"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-125",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "For which of the following modes is a Class C power stage appropriate for amplifying a modulated signal?",
+  "options": [
+   "SSB",
+   "CW",
+   "AM",
+   "All of these answers are correct"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 170
+ },
+ {
+  "id": "vu2mue-basic-126",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "Which of the following is an advantage of a Class C amplifier?",
+  "options": [
+   "High efficiency",
+   "Linear operation",
+   "No need for tuned circuits",
+   "All of these answers are correct"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 171
+ },
+ {
+  "id": "vu2mue-basic-127",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "How is the efficiency of an RF power amplifier determined?",
+  "options": [
+   "Divide the DC input power by the DC output power",
+   "Divide the RF output power by the DC input power",
+   "Multiply the RF input power by the reciprocal of the RF output power",
+   "Add the RF input power to the DC output power"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 171
+ },
+ {
+  "id": "vu2mue-basic-128",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "Which of the following describes a linear amplifier?",
+  "options": [
+   "Any RF power amplifier used in conjunction with an amateur transceiver",
+   "An amplifier whose output preserves the input waveform",
+   "A Class C high efficiency amplifier",
+   "An amplifier used as a frequency multiplier"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 171
+ },
+ {
+  "id": "vu2mue-paper-1",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "Parameter that determines lowest signal reception capability of a receiver is",
+  "options": [
+   "Sensitivity",
+   "Fidelity",
+   "Selectivity",
+   "Squelch"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 172
+ },
+ {
+  "id": "vu2mue-paper-2",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "TRF stands for",
+  "options": [
+   "Turning radio frequency",
+   "Turning rod frequency",
+   "Tuned radio feed",
+   "Tuned radio frequency"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 172
+ },
+ {
+  "id": "vu2mue-paper-3",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "If a super hetero dyne radio receiver is tuned to 1255 KHz & the IF frequency is 455KHz, then the frequency of the local oscillator of the receiver is",
+  "options": [
+   "1255 KHz",
+   "800 KHz",
+   "1710 KHz",
+   "455 KHz"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 172,
+  "explanation": "The local oscillator runs one IF above the signal: 1255 + 455 = 1710 kHz."
+ },
+ {
+  "id": "vu2mue-paper-4",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "Kirchhoff’s voltage Law states that",
+  "options": [
+   "The sum of voltages in a loop is zero",
+   "The algebraic sum of voltages in a loop is zero",
+   "The sum of currents at a junction is zero",
+   "The algebraic sum of currents at a junction is zero"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 172
+ },
+ {
+  "id": "vu2mue-paper-5",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "Among all these materials, which one has poor conductivity ?",
+  "options": [
+   "Copper",
+   "Aluminum",
+   "Silicon",
+   "Silver"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 172
+ },
+ {
+  "id": "vu2mue-paper-6",
+  "topic": "a-magnetism",
+  "section": "A",
+  "stem": "A magnet does not attract which one in the following",
+  "options": [
+   "Nickel",
+   "Aluminum",
+   "Iron",
+   "Cobalt"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 172
+ },
+ {
+  "id": "vu2mue-paper-7",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "The unit of resistance is",
+  "options": [
+   "Mho",
+   "Volts",
+   "Ampere",
+   "Ohm"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-8",
+  "topic": "a-semiconductors",
+  "section": "A",
+  "stem": "The expanded form for ‘LDR’ is",
+  "options": [
+   "Light Emitting Display",
+   "Low Dependent Reading",
+   "Light Emitting Diode",
+   "Light Dependent Resistor"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-9",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "The three leads of a common transistor are",
+  "options": [
+   "Base Collector Case",
+   "Emitter Collector Bias",
+   "Collector Base Omitter",
+   "Collector Base Emitter"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-10",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "If R is resistance, I is current and V is voltage, then Ohms law states that",
+  "options": [
+   "R=V/I",
+   "I=R/V",
+   "V=R/I",
+   "V/(R/I)=1"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-11",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "If two capacitors are placed in series, is the final capacitance will be:",
+  "options": [
+   "Higher than the sum of the two capacitors",
+   "Lower than the least of the two capacitors",
+   "The sum of the two capacitors",
+   "Cannot be determined the given data."
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-12",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "Which is the unit of energy in electronics?",
+  "options": [
+   "Ohm",
+   "Ampere",
+   "Joules",
+   "Watt"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-13",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The high frequency band (HF) is",
+  "options": [
+   "3KHz to 30KHz",
+   "3MHz to 30MHz",
+   "30KHz to 300KHz",
+   "30MHz to300MHz"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-14",
+  "topic": "a-aerials",
+  "section": "A",
+  "stem": "Among the following which is not a directional antenna",
+  "options": [
+   "Whip antenna",
+   "Yagi-Uda antenna",
+   "Loop antenna",
+   "Dish antenna"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 173
+ },
+ {
+  "id": "vu2mue-paper-15",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "The unit of current is",
+  "options": [
+   "Volts",
+   "Ampere",
+   "Watt",
+   "Hertz"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-16",
+  "topic": "a-inductors",
+  "section": "A",
+  "stem": "If a small value of inductance is connected in parallel with a large value, the combined inductance will be",
+  "options": [
+   "The same",
+   "Higher",
+   "Lower",
+   "Cannot be determined with the given data."
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-17",
+  "topic": "a-capacitors",
+  "section": "A",
+  "stem": "The equivalent capacitance when three capacitors of 150 micro farad are connected in series is",
+  "options": [
+   "450 micro farad capacitor",
+   "300 micro farad capacitor",
+   "150 micro farad capacitor",
+   "50 micro farad capacitor"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-18",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "A resistor with color bands: Red-Violet-Orange-Silver, has the value of",
+  "options": [
+   "23 kilo Ohm , 5% tolerance",
+   "27 kilo Ohm , 5% tolerance",
+   "2.7 kilo Ohm , l0%tolerance",
+   "27 kilo Ohm , 10% tolerance"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 174,
+  "explanation": "Red 2, violet 7, orange ×1000 = 27 kΩ; silver = ±10%."
+ },
+ {
+  "id": "vu2mue-paper-19",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "The abbreviation of RMS voltage is",
+  "options": [
+   "Railway Mail Service voltage",
+   "Real Mean Square voltage",
+   "Root Mean Square voltage",
+   "Root Mean Service voltage"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-20",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "If the peak voltage of a sinusoidal ac supply is 150 volts, the RMS value is",
+  "options": [
+   "Less than peak value",
+   "More than peak value",
+   "Equal to peak value",
+   "Not related to peak value of the voltage"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-21",
+  "topic": "a-ac",
+  "section": "A",
+  "stem": "A capacitor and inductor in series is called a",
+  "options": [
+   "Tuned Circuit",
+   "Timing Circuit",
+   "Delay Circuit",
+   "Schmitt Circuit"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 174
+ },
+ {
+  "id": "vu2mue-paper-22",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "A domestic inverter",
+  "options": [
+   "Converts ac to ac",
+   "Converts ac to dc",
+   "Converts dc to ac",
+   "Converts dc to dc"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 175
+ },
+ {
+  "id": "vu2mue-paper-23",
+  "topic": "a-atomic",
+  "section": "A",
+  "stem": "The current in a circuit is 25mA, then the equivalent value is",
+  "options": [
+   "0.00025 Ampere",
+   "0.0025 Ampere",
+   "0.025 Ampere",
+   "0.25 Ampere"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 175
+ },
+ {
+  "id": "vu2mue-paper-24",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "If 2 mA current flows through a 100 Kohm resistor, then the voltage across it is",
+  "options": [
+   "2 volts",
+   "20 volts",
+   "200 volts",
+   "0.2 volts"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 175,
+  "explanation": "V = I × R = 0.002 A × 100,000 Ω = 200 V."
+ },
+ {
+  "id": "vu2mue-paper-25",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "The tolerance bands with colors gold, silver & brown represent",
+  "options": [
+   "5%, 10%, 2%",
+   "5%, 10%, 1%",
+   "10%, 5%, 1%",
+   "10%, 5%, 2%"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 175
+ },
+ {
+  "id": "vu2mue-paper-26",
+  "topic": "g-fax-tv",
+  "section": "A",
+  "stem": "India uses which encoding technique for commercial TV broad cast",
+  "options": [
+   "NTSC",
+   "SECAM",
+   "PAL",
+   "None of the above"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 175
+ },
+ {
+  "id": "vu2mue-paper-28",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Sky wave propagation utilizes",
+  "options": [
+   "Troposphere",
+   "Stratosphere",
+   "Ionosphere",
+   "Exosphere"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 175
+ },
+ {
+  "id": "vu2mue-paper-29",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Ionosphere does not have _______ layer.",
+  "options": [
+   "C",
+   "D",
+   "E",
+   "F"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-30",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Which layer of ionosphere disappears during night time?",
+  "options": [
+   "C",
+   "D",
+   "E",
+   "F"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-31",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "In dealing with sky/ground wave propagation, the area of silence where no signals are received is the",
+  "options": [
+   "dead zone",
+   "skip distance",
+   "skip zone",
+   "propagation distance."
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-32",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Frequencies lesser than the critical frequency are",
+  "options": [
+   "passed into space",
+   "the most desirable",
+   "returned to earth",
+   "refracted by the F2 layer"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-33",
+  "topic": "g-space",
+  "section": "A",
+  "stem": "For mobile communications, the up-link frequency is _____ down link frequency .",
+  "options": [
+   "Less than",
+   "More than",
+   "Equal to",
+   "Less or more than the"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-34",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "All India Radio (AIR) does not broadcast",
+  "options": [
+   "Amplitude Modulation transmission",
+   "Frequency Modulation transmission",
+   "Pulse Modulation transmission",
+   "Both a and b"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-35",
+  "topic": "a-receivers",
+  "section": "A",
+  "stem": "A diode can be used in the following stages of a radio receiver",
+  "options": [
+   "Detector",
+   "Mixer",
+   "Rectification",
+   "All of the above"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 176
+ },
+ {
+  "id": "vu2mue-paper-37",
+  "topic": "a-aerials",
+  "section": "A",
+  "stem": "Which antenna is used for direction finding purpose?",
+  "options": [
+   "Loop antenna",
+   "Active Whip antenna",
+   "Whip antenna",
+   "Dipole antenna"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 177
+ },
+ {
+  "id": "vu2mue-paper-38",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "A transformer converts",
+  "options": [
+   "AC voltage into DC voltage",
+   "DC voltage into AC voltage",
+   "AC voltage into different AC voltage",
+   "DC voltage into different DC voltage"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 177
+ },
+ {
+  "id": "vu2mue-paper-39",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "A matching transformer (10:1 turns ratio) is used to match 200 ohms into ___ ohms.",
+  "options": [
+   "2",
+   "20",
+   "200",
+   "5"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 177,
+  "explanation": "Impedance ratio is the square of the turns ratio: 10² = 100, so 200 Ω ÷ 100 = 2 Ω."
+ },
+ {
+  "id": "vu2mue-paper-40",
+  "topic": "a-transformers",
+  "section": "A",
+  "stem": "The following are transformer losses",
+  "options": [
+   "Hysteresis losses",
+   "Eddy current losses",
+   "Copper losses",
+   "All of the above"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 177
+ },
+ {
+  "id": "vu2mue-paper-41",
+  "topic": "a-modulation",
+  "section": "A",
+  "stem": "Digital modulation techniques are",
+  "options": [
+   "Amplitude modulation",
+   "Frequency modulation",
+   "Phase shift keying",
+   "Phase modulation"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 177
+ },
+ {
+  "id": "vu2mue-paper-42",
+  "topic": "a-resistors",
+  "section": "A",
+  "stem": "The following idle component dissipates energy",
+  "options": [
+   "Capacitor",
+   "Inductor",
+   "Resistor",
+   "All of the above"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-43",
+  "topic": "a-amplifiers",
+  "section": "A",
+  "stem": "The most common stage used for amplifying an electrical signal is",
+  "options": [
+   "Common Base",
+   "Common collector",
+   "Common emitter",
+   "Emitter follower"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-44",
+  "topic": "a-transistors",
+  "section": "A",
+  "stem": "The biasing of a transistor is to",
+  "options": [
+   "To avoid thermal run away",
+   "To provide stable operation",
+   "To have a stable quiescent point",
+   "All of the above"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-45",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "The ideal value of ripple factor should be",
+  "options": [
+   "0",
+   "1",
+   "0.707",
+   "1.414"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-47",
+  "topic": "a-rectifiers",
+  "section": "A",
+  "stem": "The following is used as a Voltage smoothing device",
+  "options": [
+   "Resistor",
+   "Capacitor",
+   "Inductor",
+   "Both a and b"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-48",
+  "topic": "g-fax-tv",
+  "section": "A",
+  "stem": "The following modulation is used for audio transmission in TV broadcast",
+  "options": [
+   "Amplitude modulation",
+   "Frequency modulation",
+   "Pulse modulation",
+   "None of the above"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-49",
+  "topic": "g-fax-tv",
+  "section": "A",
+  "stem": "NICAM technique is used in TV broadcast",
+  "options": [
+   "For transmitting video",
+   "For transmitting mono aural audio",
+   "For transmitting stereo audio",
+   "For transmitting timing signals"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 178
+ },
+ {
+  "id": "vu2mue-paper-52",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "An amateur is forbidden to transmit",
+  "options": [
+   "communications of business",
+   "transmissions of entertainment value or music",
+   "advertisements",
+   "all the above"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 179
+ },
+ {
+  "id": "vu2mue-paper-53",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "Log containing chronological record of all transmissions should be preserved for",
+  "options": [
+   "1 day",
+   "1 month",
+   "6 months",
+   "12 months"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 179
+ },
+ {
+  "id": "vu2mue-paper-54",
+  "topic": "b-station-records",
+  "section": "B",
+  "stem": "Log containing chronological record of all transmissions should contain",
+  "options": [
+   "Date and time of all transmissions",
+   "Call sings intercepted",
+   "Summary of communications",
+   "All of the above"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 179
+ },
+ {
+  "id": "vu2mue-paper-55",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "Which of the following should be given top priority?",
+  "options": [
+   "Safety signal",
+   "Routine communication signal",
+   "Distress signal",
+   "Urgency signal"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 179
+ },
+ {
+  "id": "vu2mue-paper-56",
+  "topic": "b-call-signs",
+  "section": "B",
+  "stem": "The following is not an amateur call sign of India",
+  "options": [
+   "VU2XYZ",
+   "VU3ABC",
+   "VU44AB",
+   "VU3RS"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-57",
+  "topic": "b-time-frequency",
+  "section": "B",
+  "stem": "The standard time & frequency signal in India is",
+  "options": [
+   "5 MHz",
+   "10 MHz",
+   "20 MHz",
+   "100 MHz"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-58",
+  "topic": "b-time-frequency",
+  "section": "B",
+  "stem": "The standard time & frequency signal in India call sign is",
+  "options": [
+   "VU2",
+   "VU3",
+   "ATA",
+   "ATU"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-59",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The abbreviation for end of message in Morse code is",
+  "options": [
+   "AA",
+   "AR",
+   "ED",
+   "EN"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-60",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "QTR stands for ?",
+  "options": [
+   "What is the correct time?",
+   "What is your position in latitude and longitude?",
+   "Thank you for sending",
+   "What is Time and Hour?"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-61",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The standard emission designation consists of",
+  "options": [
+   "8 letters/numerals",
+   "3 letters/numerals",
+   "6 letters/numerals",
+   "2 letters/numerals"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 180
+ },
+ {
+  "id": "vu2mue-paper-62",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "Metric waves means",
+  "options": [
+   "3-30 MHz",
+   "3-30 KHz",
+   "30-300 KHz",
+   "30-300 MHz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-63",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The standard bandwidth designation consistsof",
+  "options": [
+   "5 letters/numerals",
+   "3 letters/numerals",
+   "4 letters/numerals",
+   "2 letters/numerals"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-64",
+  "topic": "b-call-signs",
+  "section": "B",
+  "stem": "Which should be used as a suffix in call sign for mobile amateur stations",
+  "options": [
+   "ME",
+   "MB",
+   "MO",
+   "ML"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-65",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Q code for “What is the correct time” is",
+  "options": [
+   "QCT",
+   "QTM",
+   "QRT",
+   "QTR"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-66",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Q code for “ Are my signals fading? ” is",
+  "options": [
+   "QSB",
+   "QAM",
+   "QSI",
+   "QSF"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-67",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Q code QRQ represents",
+  "options": [
+   "Shall I stop slowing?",
+   "Shall I increase power?",
+   "Shall I send faster?",
+   "Shall I decreasepower?"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-68",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Phonetic alphabet for L is",
+  "options": [
+   "Lilly",
+   "Lima",
+   "Limca",
+   "Lisa"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-69",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Phonetic for ‘3’ is",
+  "options": [
+   "Terra Three",
+   "Tele Three",
+   "Tango Three",
+   "Tango Tree"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 181
+ },
+ {
+  "id": "vu2mue-paper-71",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The expanded form for TU in Morse code is",
+  "options": [
+   "Thank u",
+   "Thank you",
+   "Thank everyone",
+   "None of the above"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 182
+ },
+ {
+  "id": "vu2mue-paper-72",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The expanded form for CQ in Morse code is",
+  "options": [
+   "Calling you",
+   "Calling any station",
+   "Calling Quebec",
+   "Calling none"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 182
+ },
+ {
+  "id": "vu2mue-paper-73",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The abbreviation for ‘stand by’ in Morse code is",
+  "options": [
+   "SY",
+   "AS",
+   "SB",
+   "AD"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 182
+ },
+ {
+  "id": "vu2mue-paper-74",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Q code for “What is the name of your station ?” is",
+  "options": [
+   "QNS",
+   "QRA",
+   "QYS",
+   "QNA"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 182
+ },
+ {
+  "id": "vu2mue-paper-75",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The Q code for “Are you ready?” is",
+  "options": [
+   "QRY",
+   "QRV",
+   "QAR",
+   "QRE"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 182
+ },
+ {
+  "id": "vu2mue-paper-77",
+  "topic": "b-operating",
+  "section": "B",
+  "stem": "The distress signal in radio telephony is",
+  "options": [
+   "Help, Help, Help",
+   "May day. May day, May day",
+   "Save, Save, Save",
+   "Save our souls"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 183
+ },
+ {
+  "id": "vu2mue-paper-78",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The phonetic for alphabet ‘Y’ is",
+  "options": [
+   "Yardly",
+   "Yankee",
+   "Yan",
+   "Yarn"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 183
+ },
+ {
+  "id": "vu2mue-paper-79",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The phonetic for ‘9’ is",
+  "options": [
+   "New Nine",
+   "Nove Nine",
+   "Novel Nine",
+   "Nine"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 183
+ },
+ {
+  "id": "vu2mue-paper-80",
+  "topic": "b-time-frequency",
+  "section": "B",
+  "stem": "Which one of this is not a standard frequency signal",
+  "options": [
+   "l5 MHz",
+   "l0 MHz",
+   "5 MHz",
+   "1 MHz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 183
+ },
+ {
+  "id": "vu2mue-paper-83",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The maximum DC power permitted under new rules for Restricted grade amateurs under 144-146 MHz band is",
+  "options": [
+   "10 watts",
+   "25 watts",
+   "50 watts",
+   "100 watts"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 183
+ },
+ {
+  "id": "vu2mue-paper-84",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The maximum DC power permitted under new rules for General grade amateurs under 7000-7100 KHz band is",
+  "options": [
+   "50 watts",
+   "100 watts",
+   "200 watts",
+   "400 watts"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-85",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The permitted emission under new rules for Restricted grade amateurs under 144-l46 MHz band is",
+  "options": [
+   "A3E",
+   "J3E",
+   "F3E",
+   "AlA"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-86",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The first symbol in the designation for classification of emission represents",
+  "options": [
+   "Nature of signals modulating the main carrier",
+   "Type of modulation of the main carrier",
+   "Type of information to be transmitted",
+   "None of the above"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-87",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "Emission designation of commercial FM broadcast transmission in India is",
+  "options": [
+   "ME",
+   "J3E",
+   "F3E",
+   "R3E"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-88",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "Conventional Morse code transmission can be represented by",
+  "options": [
+   "J3E",
+   "F3E",
+   "ME",
+   "AlA"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-89",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The second symbol in the designation of emission represents",
+  "options": [
+   "Nature of signals modulating the main earner",
+   "Type of modulation of the main carrier",
+   "Type of information to be transmitted",
+   "None of the above"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 184
+ },
+ {
+  "id": "vu2mue-paper-91",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The fee for change of location new rules is",
+  "options": [
+   "Rs. 100",
+   "Rs. 200",
+   "Rs. 500",
+   "Rs. 1000"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 185,
+  "explanation": "Rules 2024, rule 7(6): duplicate certificate or change of location costs ₹1,000."
+ },
+ {
+  "id": "vu2mue-paper-92",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "The maximum DC power permitted under new rules for General grade amateurs under 144-146 MHz band is",
+  "options": [
+   "10 watts",
+   "25 watts",
+   "50 watts",
+   "100 watts"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 185
+ },
+ {
+  "id": "vu2mue-paper-93",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The standard designation for a bandwidth of 4.8 KHz is",
+  "options": [
+   "4800 Hz",
+   "4K8",
+   "4K80",
+   "4800"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 185,
+  "explanation": "Bandwidth is written with three numerals and a letter in place of the decimal point: 4.8 kHz = 4K80."
+ },
+ {
+  "id": "vu2mue-paper-94",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "A bandwidth of 402 M represents",
+  "options": [
+   "4000 MHz",
+   "402 MHz",
+   "4.2 MHz",
+   "420 MHz"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 185
+ },
+ {
+  "id": "vu2mue-paper-95",
+  "topic": "b-emissions-bands",
+  "section": "B",
+  "stem": "The emission C3F denotes",
+  "options": [
+   "Single side band analog audio emission",
+   "Common analog radio emission",
+   "Vestigial sideband analog TV emission",
+   "Vestigial sideband digital TV emission"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 185
+ },
+ {
+  "id": "vu2mue-paper-96",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The expanded form for RST is",
+  "options": [
+   "Readability signal tone",
+   "Readability strength tone",
+   "Readability strength testing",
+   "Readability signal strength tone"
+  ],
+  "answer": 1,
+  "source": "vu2mue-2020",
+  "page": 186
+ },
+ {
+  "id": "vu2mue-paper-97",
+  "topic": "b-phonetics-codes",
+  "section": "B",
+  "stem": "The phonetic for ‘W’ is",
+  "options": [
+   "Wine",
+   "White",
+   "Whiskey",
+   "Wheel"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 186
+ },
+ {
+  "id": "vu2mue-paper-98",
+  "topic": "a-propagation",
+  "section": "A",
+  "stem": "The UHF band extends from",
+  "options": [
+   "3-30 KHz",
+   "30-300 MHz",
+   "3-30 MHz",
+   "300-3000 MHz"
+  ],
+  "answer": 3,
+  "source": "vu2mue-2020",
+  "page": 186
+ },
+ {
+  "id": "vu2mue-paper-99",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "Which of the frequency bands was not allocated for Amateur service",
+  "options": [
+   "7000 - 7100 KHz",
+   "7100 - 7200 KHz",
+   "10120 - 10240 KHZ",
+   "28000 - 29700 KHz"
+  ],
+  "answer": 2,
+  "source": "vu2mue-2020",
+  "page": 186
+ },
+ {
+  "id": "vu2mue-paper-100",
+  "topic": "b-licensing",
+  "section": "B",
+  "stem": "‘WPC’ stands for",
+  "options": [
+   "Wireless Planning and Coordination",
+   "Wireless Placement cell",
+   "Wireless Planning cell",
+   "Wireless Placement and Coordination"
+  ],
+  "answer": 0,
+  "source": "vu2mue-2020",
+  "page": 186
+ }
+]

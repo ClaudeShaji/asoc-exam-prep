@@ -185,7 +185,7 @@ private fun BackButton(onBack: () -> Unit) =
     IconButton(onClick = onBack, modifier = Modifier.testTag("back")) { Icon(Icons.AutoMirrored.Outlined.ArrowBack, "Back") }
 
 @Composable
-fun TopicScreen(topicId: String, onBack: () -> Unit) {
+fun TopicScreen(topicId: String, onBack: () -> Unit, onPractice: ((String) -> Unit)? = null) {
     val c = LocalContext.current.container
     val pack = c.content.pack
     val topic = pack.topic(topicId) ?: return
@@ -212,6 +212,12 @@ fun TopicScreen(topicId: String, onBack: () -> Unit) {
         }
         if (studied) OutlinedButton(onClick = toggle, modifier = Modifier.fillMaxWidth().testTag("toggle_studied")) { Text("Studied ✓") }
         else FilledTonalButton(onClick = toggle, modifier = Modifier.fillMaxWidth().testTag("toggle_studied")) { Text("Mark as studied") }
+        val questionCount = remember(topicId) { pack.questions.count { it.topic == topicId } }
+        if (onPractice != null && questionCount > 0) {
+            OutlinedButton(onClick = { onPractice(topicId) }, modifier = Modifier.fillMaxWidth().testTag("topic_practice")) {
+                Text("Practice questions ($questionCount)")
+            }
+        }
 
         Text("Syllabus", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
         Markdown(topic.syllabus.joinToString("\n") { "- $it" })

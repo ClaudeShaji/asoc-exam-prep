@@ -32,6 +32,7 @@ object Xp {
     /** Per star newly earned on a Learn step (beating your own best). */
     const val STAR = 10
     const val EXAM_PASS = 50
+    const val MOCK_PASS = 50
     const val DAILY_GOAL = 30
     const val QUEST = 20
     /** Any genuine practice session (at least half right), up to [PRACTICE_DAILY_CAP] a day. */
@@ -60,6 +61,7 @@ data class Stats(
     val perfectDrills: Int = 0,
     val sendsCorrect: Int = 0,
     val examPasses: Int = 0,
+    val mockPasses: Int = 0,
     val streak: Int = 0,
     val goalDays: Int = 0,
     val threeStarSteps: Int = 0,
@@ -89,6 +91,8 @@ object Badges {
         Badge("three-stars", "Star collector", "Earn 3 stars on 10 steps", "star") { it.threeStarSteps >= 10 },
         Badge("first-send", "On the key", "Send a call sign or word correctly", "key") { it.sendsCorrect >= 1 },
         Badge("exam-pass", "Exam ready", "Pass the 8 WPM copy test", "verified") { it.examPasses >= 1 },
+        Badge("mock-pass", "Paper passed", "Pass a full mock exam", "verified") { it.mockPasses >= 1 },
+        Badge("mock-3", "Consistent", "Pass mock exams on 3 days", "verified") { it.mockPasses >= 3 },
         Badge("streak-3", "Warming up", "3-day streak", "fire") { it.streak >= 3 },
         Badge("streak-7", "On air every day", "7-day streak", "fire") { it.streak >= 7 },
         Badge("goal", "Goal met", "Meet your daily goal", "flag") { it.goalDays >= 1 },

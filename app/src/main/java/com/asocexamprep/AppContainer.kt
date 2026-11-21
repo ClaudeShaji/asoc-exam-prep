@@ -14,6 +14,7 @@ class AppContainer(context: Context) {
     val settings: SettingsStore by lazy { SettingsStore(context) }
     val content: ContentRepository by lazy { ContentRepository(context) }
     val game: GameEngine by lazy { GameEngine(db, settings, content) }
+    val exams: com.asocexamprep.exam.ExamStore by lazy { com.asocexamprep.exam.ExamStore(db) }
 
     private var player: MorsePlayer? = null
     /** Audio for Morse; UI tests replace it with a silent recorder. */

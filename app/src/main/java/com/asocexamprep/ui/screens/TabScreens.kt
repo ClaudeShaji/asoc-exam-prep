@@ -27,10 +27,6 @@ import com.asocexamprep.ui.game.badgeIcon
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Edit
-import androidx.compose.material.icons.outlined.History
-import androidx.compose.material.icons.outlined.Repeat
-import androidx.compose.material.icons.outlined.Timer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -40,14 +36,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.asocexamprep.container
 import com.asocexamprep.domain.currentStreak
-
-@Composable
-fun ExamScreen() = ScreenScaffold("Exam", "exam") {
-    PlannedRow(Icons.Outlined.Edit, "Topic practice", "M5")
-    PlannedRow(Icons.Outlined.Timer, "Mock exam", "M5")
-    PlannedRow(Icons.Outlined.Repeat, "Review", "M5")
-    PlannedRow(Icons.Outlined.History, "History", "M5")
-}
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable

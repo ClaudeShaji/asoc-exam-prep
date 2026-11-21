@@ -25,6 +25,10 @@ interface ProgressDao {
     @Query("SELECT COUNT(*) FROM question_attempt") fun attemptCount(): Flow<Int>
 
     @Upsert suspend fun upsertCard(c: SrsCard)
+    @Query("SELECT * FROM srs_card WHERE cardId = :id") suspend fun card(id: String): SrsCard?
+    /** Questions answered wrongly and not yet answered right twice since. */
+    @Query("SELECT * FROM srs_card WHERE repetitions < 2") fun openMistakes(): Flow<List<SrsCard>>
+    @Query("SELECT * FROM srs_card WHERE repetitions < 2 AND dueAt <= :now ORDER BY dueAt") suspend fun dueMistakes(now: Long): List<SrsCard>
     @Query("SELECT COUNT(*) FROM srs_card WHERE dueAt <= :now") fun dueCount(now: Long): Flow<Int>
 
     @Insert suspend fun insertMorse(s: MorseSession): Long
