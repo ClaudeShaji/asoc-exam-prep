@@ -15,6 +15,7 @@ interface ProgressDao {
     @Query("SELECT topicId FROM topic_progress WHERE studied = 1") suspend fun studiedIds(): List<String>
     @Query("SELECT COUNT(*) FROM topic_progress WHERE studied = 1 AND lastSeenAt >= :since") suspend fun studiedSince(since: Long): Int
     @Query("SELECT * FROM morse_session WHERE startedAt >= :since") suspend fun morseSince(since: Long): List<MorseSession>
+    @Query("SELECT * FROM morse_session ORDER BY startedAt DESC LIMIT :limit") suspend fun recentMorseNow(limit: Int): List<MorseSession>
     @Query("SELECT COUNT(*) FROM morse_session WHERE mode = :mode AND accuracy >= :minAccuracy") suspend fun countMorse(mode: String, minAccuracy: Float): Int
 
     @Upsert suspend fun upsertPdf(p: PdfProgress)

@@ -222,13 +222,23 @@ class MorseUiTest {
         rule.onNodeWithTag("morse_send").performClick()
         val target = text("send_target")
         keyText(target)
-        rule.waitUntil(5_000) { rule.onAllNodesWithTag("send_match").fetchSemanticsNodes().isNotEmpty() }
+        // A correct send is recorded; the screen then shows the next target with a clear decode line.
         rule.waitUntil(5_000) { runBlocking { app.container.db.progress().countMorse("send", 0f) } == 1 }
-        // A new target appears and the decoded line is cleared.
         rule.waitUntil(5_000) { text("send_decoded").isBlank() }
         rule.onNodeWithTag("send_hear").performClick()
         rule.waitUntil(5_000) { player.played.isNotEmpty() }
         rule.onNodeWithTag("send_target").assertTextContains(player.played.last())
+    }
+
+    @Test fun aWrongSendIsNotAccepted() {
+        rule.onNodeWithTag("morse_send").performClick()
+        val target = text("send_target")
+        val wrong = if (target.first() == 'E') "T" else "E"
+        keyText(wrong)
+        rule.waitUntil(5_000) { text("send_decoded").trim() == wrong }
+        Thread.sleep(300)
+        assertEquals(0, runBlocking { app.container.db.progress().countMorse("send", 0f) })
+        rule.onNodeWithTag("send_target").assertTextContains(target)
     }
 
     @Test fun alphabetHasSeparatePagesAndPlaysTappedCharacter() {

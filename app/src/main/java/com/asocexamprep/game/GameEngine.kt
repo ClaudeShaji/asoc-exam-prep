@@ -36,12 +36,12 @@ class GameEngine(
     private fun epochDay() = LocalDate.now().toEpochDay()
     private fun dayStartMillis() = LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
 
-    /** Pays [amount] XP once for [reason]; announces it and any level-up. */
-    private suspend fun award(amount: Int, reason: String, label: String): Boolean {
+    /** Pays [amount] XP once for [reason]; announces it (unless [quiet]) and any level-up. */
+    private suspend fun award(amount: Int, reason: String, label: String, quiet: Boolean = false): Boolean {
         if (amount <= 0) return false
         val before = dao.totalXpNow()
         if (dao.insertXp(XpEvent(at = System.currentTimeMillis(), amount = amount, reason = reason)) == -1L) return false
-        _celebrations.tryEmit(Celebration.XpGained(amount, label))
+        if (!quiet) _celebrations.tryEmit(Celebration.XpGained(amount, label))
         val (was, now) = Levels.levelFor(before) to Levels.levelFor(before + amount)
         if (now > was) _celebrations.tryEmit(Celebration.LevelUp(now, Levels.rank(now)))
         return true
@@ -55,14 +55,27 @@ class GameEngine(
         refreshLocked()
     }
 
-    /** A Learn session finished. Returns the stars earned this time. */
-    suspend fun learnResult(step: Int, accuracy: Float, correct: Int = 0, bestCombo: Int = 0, charDrill: Boolean): Int = lock.withLock {
-        val xp = if (charDrill) Xp.charDrill(correct, bestCombo) else Xp.textDrill(accuracy)
-        award(xp, "learn:${System.nanoTime()}", "Learn session")
+    /** Small, capped XP for a genuine practice session. Returns the XP paid. */
+    private suspend fun practice(accuracy: Float): Int {
+        if (accuracy < Xp.PRACTICE_MIN_ACCURACY) return 0
+        val day = epochDay()
+        val done = dao.countReasons("practice:$day:")
+        if (done >= Xp.PRACTICE_DAILY_CAP) return 0
+        return if (award(Xp.PRACTICE, "practice:$day:$done", "Practice", quiet = true)) Xp.PRACTICE else 0
+    }
+
+    /** A Learn session finished. Returns (stars this time, XP earned). */
+    suspend fun learnResult(step: Int, accuracy: Float): Pair<Int, Int> = lock.withLock {
+        var xp = practice(accuracy)
         val best = dao.stepBest(step)
+        val gained = Xp.newStars(best?.accuracy, accuracy)
+        if (gained > 0) {
+            val total = stars(accuracy)
+            if (award(Xp.STAR * gained, "stars:$step:$total", if (gained == 1) "New star" else "$gained new stars")) xp += Xp.STAR * gained
+        }
         if (best == null || accuracy > best.accuracy) dao.upsertStepBest(StepBest(step, accuracy, System.currentTimeMillis()))
         refreshLocked()
-        stars(accuracy)
+        stars(accuracy) to xp
     }
 
     suspend fun stepUnlocked(newStep: Int) = lock.withLock {
@@ -71,15 +84,30 @@ class GameEngine(
     }
 
     suspend fun copyResult(accuracy: Float, examPassed: Boolean) = lock.withLock {
-        award(Xp.copyPractice(accuracy), "copy:${System.nanoTime()}", "Copy practice")
-        if (examPassed) award(Xp.EXAM_PASS, "exam:${System.nanoTime()}", "Exam test passed")
+        practice(accuracy)
+        if (examPassed) award(Xp.EXAM_PASS, "exam:${epochDay()}", "Exam test passed")
         refreshLocked()
     }
 
     suspend fun sendCorrect() = lock.withLock {
-        award(Xp.SEND_CORRECT, "send:${System.nanoTime()}", "Sent correctly")
+        practice(1f)
         refreshLocked()
     }
+
+    /** Per character (sent, correct) from the last 40 Learn and copy sessions. */
+    suspend fun charStats(): Map<Char, Pair<Int, Int>> {
+        val out = HashMap<Char, Pair<Int, Int>>()
+        db.progress().recentMorseNow(40).filter { it.mode == "learn" || it.mode.startsWith("copy") }.forEach { s ->
+            runCatching { kotlinx.serialization.json.Json.decodeFromString<Map<String, List<Int>>>(s.perCharStats) }.getOrNull()?.forEach { (k, v) ->
+                val c = k.firstOrNull() ?: return@forEach
+                val (a, b) = out[c] ?: (0 to 0)
+                out[c] = (a + v[0]) to (b + v[1])
+            }
+        }
+        return out
+    }
+
+    suspend fun weakChars(): List<Char> = weakChars(charStats())
 
     /** Re-checks the daily goal, quests and badges (e.g. on app start). */
     suspend fun refresh() = lock.withLock { refreshLocked() }
@@ -93,6 +121,7 @@ class GameEngine(
             learnPasses = sessions.count { it.mode == "learn" && it.accuracy >= 0.9f },
             copySessions = sessions.count { it.mode.startsWith("copy") },
             sendsCorrect = sessions.count { it.mode == "send" },
+            reviews = sessions.count { it.mode == "learn" && it.kochLevel < s.trainerStep },
             minutes = db.activity().minutesOnNow(epochDay()),
             goalMinutes = s.dailyMinutes,
         )
@@ -112,7 +141,7 @@ class GameEngine(
             sectionBDone = sectionDone("B"),
             trainerStep = s.trainerStep,
             perfectDrills = db.progress().countMorse("learn", 1f),
-            sendsCorrect = dao.countReasons("send:"),
+            sendsCorrect = db.progress().countMorse("send", 0f),
             examPasses = dao.countReasons("exam:"),
             streak = currentStreak(db.activity().activeDaysNow(), epochDay()),
             goalDays = dao.countReasons("goal:"),

@@ -11,6 +11,8 @@ import androidx.compose.material.icons.outlined.GridView
 import androidx.compose.material.icons.outlined.Hearing
 import androidx.compose.material.icons.outlined.School
 import androidx.compose.material.icons.outlined.TouchApp
+import androidx.compose.material.icons.outlined.TrackChanges
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -56,6 +58,11 @@ fun MorseScreen(onOpen: (String) -> Unit) {
         }
         val step = com.asocexamprep.morse.Trainer.step(s.trainerStep)
         MenuCard(Icons.Outlined.School, "Learn", step.label + (step.char?.let { " · $it" } ?: ""), "morse_learn") { onOpen("learn") }
+        var weak by remember { mutableStateOf(emptyList<Char>()) }
+        LaunchedEffect(last) { weak = c.game.weakChars() }
+        if (weak.isNotEmpty()) {
+            MenuCard(Icons.Outlined.TrackChanges, "Needs work", weak.joinToString("  "), "morse_weak") { onOpen("copy/WEAK") }
+        }
         MenuCard(Icons.Outlined.Hearing, "Copy practice", "Letters, call signs, Q codes, words, exam test", "morse_copy") { onOpen("copy") }
         MenuCard(Icons.Outlined.TouchApp, "Send practice", "Key with your finger", "morse_send") { onOpen("send") }
         MenuCard(Icons.Outlined.GridView, "Alphabet", "Tap a character to hear it", "morse_alphabet") { onOpen("alphabet") }

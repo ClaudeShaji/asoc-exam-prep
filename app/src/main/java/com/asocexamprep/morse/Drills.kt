@@ -3,7 +3,7 @@ package com.asocexamprep.morse
 import kotlin.random.Random
 
 enum class CopyMode(val label: String) {
-    LETTERS("Letters"), CALLSIGNS("Call signs"), QCODES("Q codes"), WORDS("Words"), EXAM("Exam test"),
+    LETTERS("Letters"), WEAK("Needs work"), CALLSIGNS("Call signs"), QCODES("Q codes"), WORDS("Words"), EXAM("Exam test"),
 }
 
 /** Practice text generators. */
@@ -42,7 +42,7 @@ object Drills {
     }
 
     fun text(mode: CopyMode, qcodes: List<String>, chars: String, rnd: Random = Random.Default): String = when (mode) {
-        CopyMode.LETTERS -> groups(chars, 5, rnd)
+        CopyMode.LETTERS, CopyMode.WEAK -> groups(chars, 5, rnd)
         CopyMode.CALLSIGNS -> List(5) { callsign(rnd) }.joinToString(" ")
         CopyMode.QCODES -> List(6) { qcodes[rnd.nextInt(qcodes.size)] }.joinToString(" ")
         CopyMode.WORDS -> List(8) { words[rnd.nextInt(words.size)] }.joinToString(" ")

@@ -7,6 +7,7 @@ import com.asocexamprep.game.Stats
 import com.asocexamprep.game.Today
 import com.asocexamprep.game.Xp
 import com.asocexamprep.game.stars
+import com.asocexamprep.game.weakChars
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotEquals
@@ -33,10 +34,17 @@ class GameRulesTest {
         assertEquals(3, stars(1f))
     }
 
-    @Test fun xpRewardsAccuracyAndCombos() {
-        assertEquals(10 + 20 + 5, Xp.charDrill(correct = 10, bestCombo = 10))
-        assertTrue(Xp.textDrill(1f) > Xp.textDrill(0.5f))
-        assertEquals(20, Xp.copyPractice(1f))
+    @Test fun xpRewardsProgressNotRepetition() {
+        assertEquals(3, Xp.newStars(null, 1f))
+        assertEquals(1, Xp.newStars(0.9f, 0.95f))
+        assertEquals(0, Xp.newStars(1f, 1f)) // replaying a mastered step earns no star XP
+        assertEquals(0, Xp.newStars(0.95f, 0.5f))
+        assertTrue(Xp.STEP_UNLOCK > Xp.PRACTICE && Xp.STAR > Xp.PRACTICE)
+    }
+
+    @Test fun weakCharactersNeedEnoughTriesAndErrors() {
+        val stats = mapOf('E' to (10 to 4), 'T' to (10 to 9), 'K' to (3 to 0), 'S' to (8 to 5))
+        assertEquals(listOf('E', 'S'), weakChars(stats))
     }
 
     @Test fun badgesUnlockFromStats() {

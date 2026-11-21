@@ -42,11 +42,14 @@ object Trainer {
     /** Characters known once [stepIndex] is reached (all of them after the character stage). */
     fun learnedChars(stepIndex: Int): String = CHAR_ORDER.take((stepIndex + 1).coerceIn(1, CHAR_ORDER.length))
 
-    /** Single-character prompts: the new character three times first, then a mix weighted to it. */
-    fun charPrompts(step: Step, rnd: Random = Random.Default): List<Char> {
+    /**
+     * Single-character prompts: the new character three times first, then a mix weighted to it
+     * and to any learned characters the learner keeps getting wrong ([weak]).
+     */
+    fun charPrompts(step: Step, rnd: Random = Random.Default, weak: Collection<Char> = emptyList()): List<Char> {
         val c = requireNotNull(step.char)
         val known = learnedChars(step.index)
-        val pool = known + "$c$c"
+        val pool = known + "$c$c" + weak.filter { it in known && it != c }.joinToString("") { "$it$it" }
         return List(3) { c } + List(CHAR_PROMPTS - 3) { pool[rnd.nextInt(pool.length)] }
     }
 

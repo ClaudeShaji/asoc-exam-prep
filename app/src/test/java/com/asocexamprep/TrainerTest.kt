@@ -66,4 +66,14 @@ class TrainerTest {
         assertTrue(Trainer.passed(0.9f))
         assertFalse(Trainer.passed(0.89f))
     }
+
+    @Test fun weakCharactersComeUpMoreOften() {
+        val step = Trainer.steps[9] // K M U R E S N A P T
+        val rnd = Random(5)
+        val plain = (1..200).flatMap { Trainer.charPrompts(step, rnd).drop(3) }.count { it == 'E' }
+        val weighted = (1..200).flatMap { Trainer.charPrompts(step, rnd, weak = listOf('E')).drop(3) }.count { it == 'E' }
+        assertTrue("E plain=$plain weighted=$weighted", weighted > plain * 1.8)
+        // A weak character not yet learned is never sent.
+        assertTrue((1..50).flatMap { Trainer.charPrompts(step, rnd, weak = listOf('X')) }.none { it == 'X' })
+    }
 }

@@ -82,6 +82,10 @@ fun RadioPrepRoot(startRoute: String = Tab.HOME.route) {
             composable(Tab.MORSE.route) { MorseScreen(onOpen = { nav.navigate("morse/$it") }) }
             composable("morse/learn") { LearnScreen(onBack = { nav.popBackStack() }) }
             composable("morse/copy") { CopyScreen(onBack = { nav.popBackStack() }) }
+            composable("morse/copy/{mode}") {
+                val mode = runCatching { com.asocexamprep.morse.CopyMode.valueOf(it.arguments?.getString("mode").orEmpty()) }.getOrDefault(com.asocexamprep.morse.CopyMode.LETTERS)
+                CopyScreen(onBack = { nav.popBackStack() }, initialMode = mode)
+            }
             composable("morse/send") { SendScreen(onBack = { nav.popBackStack() }) }
             composable("morse/alphabet") { AlphabetScreen(onBack = { nav.popBackStack() }) }
             composable(Tab.EXAM.route) { ExamScreen() }

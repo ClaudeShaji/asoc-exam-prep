@@ -96,15 +96,20 @@ fun LearnScreen(onBack: () -> Unit) {
     val bests by c.db.game().stepBests().collectAsStateWithLifecycle(emptyList())
     val bestByStep = bests.associate { it.step to it.accuracy }
 
+    // Characters the learner keeps missing, mixed in more often (refreshed after each session).
+    var weak by remember { mutableStateOf(emptyList<Char>()) }
+    var sessions by remember { mutableIntStateOf(0) }
+    LaunchedEffect(sessions) { weak = c.game.weakChars() }
+
     fun onDone(accuracy: Float, correct: Int, bestCombo: Int, charDrill: Boolean) {
         val unlock = Trainer.passed(accuracy) && step.index == current && current < Trainer.steps.lastIndex
         if (unlock) {
             pinned = step.index
             unlocked = Trainer.step(current + 1).let { n -> n.char?.let { ch -> "${n.label}: ${MorseCode.prosign[ch] ?: ch}" } ?: n.label }
         }
-        val xp = if (charDrill) Xp.charDrill(correct, bestCombo) else Xp.textDrill(accuracy)
         scope.launch {
-            val stars = c.game.learnResult(step.index, accuracy, correct, bestCombo, charDrill)
+            val (stars, xp) = c.game.learnResult(step.index, accuracy)
+            sessions++
             reward = stars to xp
             if (unlock) {
                 c.settings.setTrainerStep(current + 1)
@@ -160,7 +165,7 @@ fun LearnScreen(onBack: () -> Unit) {
         val timing = MorseTiming(s.charWpm, s.effectiveWpm)
         key(step.index) {
             if (step.stage == Stage.CHARACTERS) {
-                CharDrill(step, timing, s.toneHz, onStart = { reward = null; unlocked = null }) { acc, right, combo -> onDone(acc, right, combo, true) }
+                CharDrill(step, timing, s.toneHz, weak, onStart = { reward = null; unlocked = null }) { acc, right, combo -> onDone(acc, right, combo, true) }
             } else if (data != null) {
                 val round = remember { CopyRound() }
                 DisposableEffect(Unit) { onDispose { round.job?.cancel() } }
@@ -180,7 +185,7 @@ fun LearnScreen(onBack: () -> Unit) {
         reward?.let { (st, xp) ->
             Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.testTag("learn_reward").semantics(mergeDescendants = true) {}) {
                 Text(starText(st), style = MaterialTheme.typography.headlineSmall, color = MaterialTheme.colorScheme.secondary)
-                Text("+$xp XP", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+                if (xp > 0) Text("+$xp XP", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
             }
         }
         unlocked?.let {
@@ -192,7 +197,7 @@ fun LearnScreen(onBack: () -> Unit) {
 
 /** One character at a time: hear it, type it, see right or wrong at once. */
 @Composable
-private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onStart: () -> Unit, onDone: (accuracy: Float, correct: Int, bestCombo: Int) -> Unit) {
+private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, weak: List<Char>, onStart: () -> Unit, onDone: (accuracy: Float, correct: Int, bestCombo: Int) -> Unit) {
     val c = LocalContext.current.container
     val scope = rememberCoroutineScope()
     val ch = step.char!!
@@ -239,7 +244,7 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onStart: () 
             OutlinedButton(onClick = { job?.cancel(); job = scope.launch { c.morsePlayer.play("$ch $ch $ch", timing, toneHz) } }, modifier = Modifier.testTag("char_hear")) { Text("Hear it") }
             Button(
                 onClick = {
-                    prompts = Trainer.charPrompts(step); answers.clear(); feedback = null; input = ""
+                    prompts = Trainer.charPrompts(step, weak = weak); answers.clear(); feedback = null; input = ""
                     combo = 0; bestCombo = 0; onStart()
                     startedAt = System.currentTimeMillis()
                     play(prompts[0])
@@ -286,12 +291,15 @@ private fun CharDrill(step: Step, timing: MorseTiming, toneHz: Int, onStart: () 
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun CopyScreen(onBack: () -> Unit) {
+fun CopyScreen(onBack: () -> Unit, initialMode: CopyMode = CopyMode.LETTERS) {
     val c = LocalContext.current.container
     val s by c.settings.settings.collectAsStateWithLifecycle(Settings())
     val scope = rememberCoroutineScope()
     val round = remember { CopyRound() }
-    var mode by rememberSaveable { mutableStateOf(CopyMode.LETTERS) }
+    var mode by rememberSaveable { mutableStateOf(initialMode) }
+    var weak by remember { mutableStateOf(emptyList<Char>()) }
+    var rounds by remember { mutableIntStateOf(0) }
+    LaunchedEffect(rounds) { weak = c.game.weakChars() }
     DisposableEffect(Unit) { onDispose { round.job?.cancel() } }
     val exam = c.content.pack.grade("GENERAL")?.morse
     val timing = if (mode == CopyMode.EXAM) MorseTiming(exam?.wpm ?: 8) else MorseTiming(s.charWpm, s.effectiveWpm)
@@ -299,7 +307,7 @@ fun CopyScreen(onBack: () -> Unit) {
 
     ScreenScaffold("Copy practice", "copy", navigationIcon = { MorseBack(onBack) }) {
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            CopyMode.entries.forEach { m ->
+            CopyMode.entries.filter { it != CopyMode.WEAK || weak.isNotEmpty() || mode == CopyMode.WEAK }.forEach { m ->
                 FilterChip(
                     selected = mode == m,
                     onClick = { round.job?.cancel(); round.phase = Phase.READY; round.typed = ""; mode = m },
@@ -309,18 +317,23 @@ fun CopyScreen(onBack: () -> Unit) {
             }
         }
         Text(
-            if (mode == CopyMode.EXAM) "${exam?.wpm ?: 8} WPM plain text, about ${exam?.characters ?: 200} characters. Pass: ${exam?.maxErrors ?: 5} errors or fewer."
+            if (mode == CopyMode.WEAK) "Your weakest characters: ${weak.joinToString(" ").ifEmpty { "none yet" }}"
+            else if (mode == CopyMode.EXAM) "${exam?.wpm ?: 8} WPM plain text, about ${exam?.characters ?: 200} characters. Pass: ${exam?.maxErrors ?: 5} errors or fewer."
             else "${timing.charWpm}/${timing.effectiveWpm} WPM",
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )
         CopyFlow(
             round = round,
             tag = "copy",
-            start = { Drills.text(mode, qcodes, Trainer.learnedChars(maxOf(s.trainerStep, 9))) },
+            start = {
+                val chars = if (mode == CopyMode.WEAK && weak.isNotEmpty()) weak.joinToString("") else Trainer.learnedChars(maxOf(s.trainerStep, 9))
+                Drills.text(mode, qcodes, chars)
+            },
             play = { text -> c.morsePlayer.play(text, timing, s.toneHz) },
             onScored = { score ->
                 recordSession(c, "copy-${mode.name.lowercase()}", timing, score, round.startedAt)
                 c.game.copyResult(score.accuracy, examPassed = mode == CopyMode.EXAM && score.errors <= (exam?.maxErrors ?: 5))
+                rounds++
             },
             resultExtra = { score ->
                 if (mode == CopyMode.EXAM) (if (score.errors <= (exam?.maxErrors ?: 5)) "Pass" else "Fail") else null

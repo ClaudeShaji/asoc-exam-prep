@@ -1,6 +1,5 @@
 package com.asocexamprep.game
 
-import kotlin.math.roundToInt
 
 /** XP needed for each level: L2 at 100, L3 at 300, L4 at 600 … (50·L·(L−1)). */
 object Levels {
@@ -23,19 +22,24 @@ object Levels {
     }
 }
 
-/** XP awarded for each kind of activity. */
+/**
+ * XP rewards learning, not volume: most XP comes from progress (a topic studied, a new star,
+ * the next step unlocked, the exam test passed); practice earns a little, capped each day.
+ */
 object Xp {
     const val TOPIC = 20
     const val STEP_UNLOCK = 25
-    const val SEND_CORRECT = 10
+    /** Per star newly earned on a Learn step (beating your own best). */
+    const val STAR = 10
     const val EXAM_PASS = 50
     const val DAILY_GOAL = 30
     const val QUEST = 20
+    /** Any genuine practice session (at least half right), up to [PRACTICE_DAILY_CAP] a day. */
+    const val PRACTICE = 5
+    const val PRACTICE_DAILY_CAP = 10
+    const val PRACTICE_MIN_ACCURACY = 0.5f
 
-    /** Character drill: base + per correct answer + half the longest combo. */
-    fun charDrill(correct: Int, bestCombo: Int) = 10 + 2 * correct + bestCombo / 2
-    fun textDrill(accuracy: Float) = 10 + (20 * accuracy).roundToInt()
-    fun copyPractice(accuracy: Float) = 5 + (15 * accuracy).roundToInt()
+    fun newStars(previousBest: Float?, accuracy: Float): Int = (stars(accuracy) - (previousBest?.let { stars(it) } ?: 0)).coerceAtLeast(0)
 }
 
 /** 1-3 stars for a session: 90%, 95%, 100%. */
@@ -100,6 +104,8 @@ data class Today(
     val sendsCorrect: Int = 0,
     val minutes: Int = 0,
     val goalMinutes: Int = 30,
+    /** Learn sessions today on steps already passed. */
+    val reviews: Int = 0,
 )
 
 data class Quest(val id: String, val title: String, val done: (Today) -> Boolean)
@@ -112,8 +118,15 @@ object Quests {
         Quest("send", "Send one word correctly") { it.sendsCorrect >= 1 },
         Quest("half-goal", "Practise for half your daily goal") { it.minutes * 2 >= it.goalMinutes },
         Quest("two-topics", "Study two topics") { it.topicsStudied >= 2 },
+        Quest("review", "Review an earlier Learn step") { it.reviews >= 1 },
     )
 
     /** Three quests for the day, the same all day, different on most days. */
     fun forDay(epochDay: Long): List<Quest> = pool.shuffled(kotlin.random.Random(epochDay)).take(3)
 }
+
+/** Characters answered wrongly often enough to need extra practice: at least 5 tries, under 80% right. */
+fun weakChars(stats: Map<Char, Pair<Int, Int>>, limit: Int = 6): List<Char> = stats
+    .filter { (_, v) -> v.first >= 5 && v.second.toFloat() / v.first < 0.8f }
+    .entries.sortedBy { (_, v) -> v.second.toFloat() / v.first }
+    .take(limit).map { it.key }
